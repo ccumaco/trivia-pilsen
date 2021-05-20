@@ -1,0 +1,124 @@
+
+.cc-message {
+  padding: 2rem 0;
+  &:after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 80vw;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: auto 100%;
+    background-image: url('#{$img-path}/gato-message.jpg');
+    transform: translateX(-100%);
+    animation-delay: .3s;
+    animation-name: translateGato;
+    animation-duration: 4.2s;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: translateGato;
+    -webkit-animation-duration: 4.2s;
+    -webkit-animation-fill-mode: forwards;
+    @include media-query(medium) {
+      margin: -12vw 0 0;
+      height: 30vw;
+    }
+    @include media-query(full) {
+      height: 36vw;
+    }
+  }
+  .cc-title {
+    font-family: 'intensaposter';
+    @include font-rem(40px);
+    color: $c-brand;
+    margin: 0;
+    padding-bottom: .6rem;
+    @include media-query(wide) {
+      @include font-rem(50px);    
+    }
+    @include media-query(full) {
+      @include font-rem(60px);    
+    }
+  }
+  .cc-lead {
+    @include font-rem(24px);
+    color: $c-brand;
+    margin: 0;
+    padding-bottom: .6rem;
+    @include media-query(wide) {
+      @include font-rem(30px); 
+      padding-bottom: 1rem;
+    }
+    @include media-query(full) {
+      @include font-rem(40px);    
+    }
+  }
+  .cc-lead__time {
+    @include font-rem(50px);
+    color: $c-primary;
+    margin: 0;
+    padding-bottom: .6rem;
+    line-height: 1;
+    @include media-query(wide) {
+      @include font-rem(60px); 
+      padding-bottom: 1rem;
+    }
+    @include media-query(full) {
+      @include font-rem(80px);    
+    }
+  }
+  @include media-query(wide) {
+    padding: 4rem 0;
+  }
+}
+
+@keyframes translateGato {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.cc-message__content {
+  position: relative;
+  z-index: 3;
+}
+
+.cc-message__header {
+  text-align: center;
+  font-family: 'intensaposter';
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+}
+
+.cc-message__txt {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: $f-regular;
+  margin: 0;
+  color: $c-brand;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  @include font-rem(18px);
+  width: 80%;
+  max-width: 400px;
+  padding-bottom: 2rem;
+  @include media-query(wide) {
+    @include font-rem(22px);
+  }
+  @include media-query(full) {
+    @include font-rem(24px);
+  }
+}
+.cc-message__txt div:first-child{
+  width: 100% !important;
+}
+
+.cc-message__grid-btn {
+  text-align: center;
+}

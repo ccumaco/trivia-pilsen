@@ -1,0 +1,227 @@
+<template lang="pug">
+  <div class="cc-trivia cc-page ">
+    .layout-general
+      .cc-trivia__inner
+        p.cc-trivia__txt Pregunta {{ askActive }}
+        p.cc-trivia__timer-tiempo Tiempo restante
+        .cc-trivia__timer
+          p#countdown.cc-trivia__clock.i-time {{ '0' + countdown + ':00' }}
+        transition(name="fade")
+          Loader(v-if="isLoader", :full="true")
+        .algo(v-if="start")
+          Loader(v-if="isLoaderUni", :full="false")
+          .cc-trivia__c(v-else)
+            .cc-trivia__wrap
+              .cc-trivia__item
+                p.cc-trivia__ask {{ statement }}
+              ul.cc-trivia__number-list
+                li.cc-trivia__number-item.i-brand-lata(v-for="(item, index) in triviaListLength" :class="{ 'active': askActive == item, 'done': item < askActive}")
+              ul.cc-trivia__ask-list
+                li.cc-trivia__ask-item
+                  input.cc-trivia__ask-input(type="radio" name="answer" id="answerA" value="A" v-model="answerAR")
+                  label.cc-trivia__ask-btn(for="answerA") {{ answerA }}
+                li.cc-trivia__ask-item
+                  input.cc-trivia__ask-input(type="radio" name="answer" id="answerB" value="B" v-model="answerAR")
+                  label.cc-trivia__ask-btn(for="answerB") {{ answerB }}
+                li.cc-trivia__ask-item
+                  input.cc-trivia__ask-input(type="radio" name="answer" id="answerC" value="c" v-model="answerAR")
+                  label.cc-trivia__ask-btn(for="answerC") {{ answerC }}
+              .cc-trivia__footer
+                button.cc-btn.cc-btn__primary.cc-promotion__card-btn.i-arrow-after(v-if="askActive < 8" type="button" @click="AskQuestion" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") Voy
+                button.cc-btn.cc-btn__primary.cc-promotion__card-btn(v-else type="button" @click="AskQuestion" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") Enviar respuestas
+  </div>
+</template>
+
+<script>
+import Loader from '@/components/Loader.vue'
+import axios from "axios";
+
+export default {
+  name: 'Trivia',
+  components: {
+    Loader
+  },
+  data () {
+    return {
+      round: 1,
+      statement : '',
+      answerA : '',
+      answerB : '',
+      answerC : '',
+      active : true,
+      triviaListLength: 8,
+      askActive: 1,
+      time: 'September 4, 2020, 15:15',
+      countdown: 5,
+      withoutTime: false,
+      output: '',
+      outputQ: '',
+      outputA: '',
+      triviaId: '',
+      questionId: '',
+      start: false,
+      answerAR: null,
+      questionsLeft: '',
+      once: 0,
+      isLoader: true,
+      isLoaderUni: false,
+      isDisabled: true,
+      timeTotal: false
+    }
+  },
+  created() {
+    this.isLoader = true
+    this.startTrivia();
+  },
+  watch: {
+    isLoader: function () {
+    },
+    answerAR: function() {
+      this.btnDisable()
+    },
+  },
+  methods:{
+    btnDisable() {
+      if(this.answerAR != null) {
+        this.isDisabled = false
+      } else {
+        this.isDisabled = true
+      }
+    },
+    startTrivia() {
+      let self = this
+      const info = this.$_encry({
+        username: this.$route.params.mail
+      });
+      axios({
+        method: "post",
+        url: "https://api.trivia-becker.cl/ab/trivia/start?_format=json",
+        data: info,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      .then((response) => {
+        self.output = response.data
+        self.triviaId = self.output.triviaId
+        this.nextQuestion();
+        self.startCountdown()
+      }, (error) => {
+        console.log(error);
+      });
+    },
+    nextQuestion() {
+      let self = this
+      this.answerAR = null
+      const inf2 = this.$_encry({
+        triviaId: this.triviaId
+      }); 
+      axios({
+        method: "post",
+        url: "https://api.trivia-becker.cl/ab/trivia/q/next?_format=json",
+        data: inf2,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      .then((response) => {
+        self.isLoader = false
+        self.outputQ = response.data
+        self.answerA = self.outputQ.question.A[1]
+        self.answerB = self.outputQ.question.B[1]
+        self.answerC = self.outputQ.question.C[1]
+        self.statement = self.outputQ.question.statement
+        self.askActive = self.outputQ.currentQuestion
+        self.questionId = self.outputQ.questionId
+        self.start = true
+        self.isLoaderUni = false
+      }, (error) => {
+        console.log(error);
+      });
+    },
+    AskQuestion() {
+      let self = this
+      self.isLoaderUni = true
+      const inf3 = this.$_encry({
+        questionId: this.questionId,
+        answer: this.answerAR
+      });
+      axios({
+        method: "post",
+        url: "https://api.trivia-becker.cl/ab/trivia/q/answer?_format=json",
+        data: inf3,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      .then((response) => {
+        self.outputA = response.data
+        self.questionsLeft = self.outputA.questionsLeft
+        if (self.questionsLeft == true ) {
+          this.nextQuestion();
+          this.nextTrivia();
+          self.timeTotal = false
+        } else {
+          self.timeTotal = true
+          self.$router.push({name: 'Message', params: {mail: self.$route.params.mail, user: self.$route.params.user, triviaId: self.triviaId}})
+        }
+      }, (error) => {
+        console.log(error);
+      });
+    },
+    callFunction: function (duration, display) {
+      var timer = duration, minutes, seconds;
+      var self = this
+      var interval = setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+        if(self.timeTotal) {
+          clearInterval(interval)          
+        }
+        if(timer <= 0) {
+          self.finishTime();
+          clearInterval(interval)
+        }
+        timer -= 1;
+      }, 1000);
+    },
+    finishTime : function () {
+      this.withoutTime = true
+      localStorage.fisishTrivia = true;
+      var intentos = (this.$route.params.attempts - 1)
+      if(this.$route.name == "Trivia") {
+        this.$router.push({name: 'WithoutTime', params: {mail: this.$route.params.mail, attempts: intentos}})
+      }
+    },
+    nextTrivia () {
+      this.askActive += 1
+    },
+    startCountdown() {
+        var display = document.querySelector('#countdown');
+        var duration = this.countdown * 60; 
+        this.callFunction(duration, display)
+        if (this.withoutTime && localStorage.fisishTrivia) {
+          this.$router.push({name: 'Message', params: {mail: self.$route.params.mail, triviaId: self.triviaId}})
+        }
+    }
+  },
+  beforeRouteLeave (to, from, next) {
+    if((to.name !== 'Message')) {
+      const answer = window.confirm('Desea salir de la trivia, no quedarán guardadas sus respuestas')
+      if (answer) {
+        this.timeTotal = true
+        next()
+      } else {
+        next(false)
+      }
+    } else {
+      next()
+    }
+  }
+}
+</script>

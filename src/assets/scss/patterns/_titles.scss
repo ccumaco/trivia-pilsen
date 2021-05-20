@@ -1,0 +1,118 @@
+/*------------------------------------*\
+    Transversal Elements
+    #Styles for Titles
+\*------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+.cc-header {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(center);
+  padding: 50px 0 24px;
+  text-align: center;
+  width: 100%;
+  @include media-query(wide) {
+    padding-top: 90px;
+  }
+}
+
+.cc-header__img {
+  display: block;
+  margin: 0 auto 30px;
+  max-width: 150px;
+}
+
+.cc-title {
+  display: block;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  @include font-rem(24px);
+  line-height: 1.2;
+  color: $c-neutro;
+  @include media-query(wide) {
+    @include font-rem(32px);
+  }
+}
+
+.cc-title_block {
+  display: block;
+  margin-bottom: -10px;
+  @include media-query(medium) {
+    display: inline-block;
+  }
+}
+
+
+//subtitle
+.cc-subtitle {
+  font-family: 'intensaposter';
+  @include font-rem(22px);
+  color: $c-neutro;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  padding-bottom: 20px;
+  &:after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: $c-brand-2;
+    margin: .6rem auto 0;
+  }
+  @include media-query(wide) {
+    @include font-rem(28px);
+  }
+}
+
+.cc-title-section {
+  display: block;
+  margin-bottom: 2rem;
+  font-family: 'intensaposter';
+  @include font-rem(20px);
+  text-transform: uppercase;
+  @include media-query(medium) {
+    @include font-rem(24px);
+  }
+  @include media-query(big) {
+    @include font-rem(30px);
+  }
+  @include media-query(full) {
+    @include font-rem(36px);
+  }
+  &:after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: $c-brand-2;
+    margin: .6rem auto 0;
+  }
+}
+
+.cc-text {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: $f-regular;
+  @include font-rem(16px);
+  @include media-query(medium) {
+    @include font-rem(18px);
+  }
+  @include media-query(big) {
+    @include font-rem(20px);
+  }
+  strong {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: $f-bold;
+    display: block;
+    margin-bottom: 1rem;
+  }
+}

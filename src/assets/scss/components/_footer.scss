@@ -1,0 +1,144 @@
+.cc-footer {
+  padding: 1rem 0;
+  text-align: center;
+  background-color: $c-dark;
+  color: $c-neutro;
+  @include media-query(big) {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+  }
+}
+
+.cc-footer__social-list,
+.cc-footer__nav {
+  list-style-type: none;
+  @include flexbox;
+  @include align-items(center);
+}
+
+.cc-footer__social-list {
+  @include justify-content(center);
+}
+
+.cc-footer__social {
+  border-top: 1px solid $c-primary;
+  padding-top: 1rem;
+  @include media-query(wide) {
+    border: none;
+  }
+}
+
+.cc-footer__social-txt {
+  padding-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.cc-footer__nav {
+  padding: 0 0 1rem;
+  position: relative;
+  @include flex-wrap(wrap);
+  @include flex-direction(column);
+  @include media-query(wide) {
+    padding: 0;
+    @include justify-content(center);
+    @include flex-direction(row);
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: $c-primary;
+      top: 60px;
+      left: 0;
+    }
+  }
+}
+.cc-footer__nav-item {
+  padding: .4rem;
+  @include media-query(wide) {
+    padding: 1rem 10px;
+    margin: 2px 6px;
+  }
+}
+.cc-footer__nav-item:nth-child(1) {
+  @include media-query(wide) {
+    @include order(-1);
+    // padding: 2px 25px;
+  }
+}
+.cc-footer__nav-item:nth-child(4) {
+  @include media-query(wide) {
+    @include order(-1);
+    padding: 1rem 25px;
+  }
+}
+.cc-footer__nav-item:nth-child(5) {
+  @include media-query(wide) {
+    @include order(-1); 
+    padding: 1rem 25px;
+  }
+}
+.cc-footer__nav-item:nth-child(6) {
+  @include media-query(wide) {
+    @include order(-1);
+    padding: 1rem 25px;
+  }
+}
+
+.cc-footer__brand-logo {
+  display: block;
+  width: auto;
+  height: 28px;
+  margin: 0 auto 1rem;
+  @include media-query(wide) {
+    margin: 0 auto
+  }
+}
+
+.cc-footer__nav-link {
+  color: $c-neutro;
+  @include font-rem(14px);
+  font-family: 'Open Sans', sans-serif;
+  transition: all .3s linear;
+  text-decoration: none;
+  &:hover {
+    color: $c-primary;
+    text-decoration: underline;
+  }
+}
+
+.cc-footer__social-txt {
+  display: block;
+  margin: 0;
+  padding-bottom: 14px;
+  @include font-rem(14px);
+  @include media-query(full) {
+    @include font-rem(16px);
+  }
+}
+
+.cc-footer__social-link {
+  display: inline-block;
+  padding: 0 2px;
+  margin: 0 10px;
+  transition: all .3s linear;
+  &:before {
+    color: $c-neutro;
+    display: inline-block;
+    @include font-rem(22px);
+    transition: all .3s linear;
+  }
+  &:hover {
+    &:before {
+      color: $c-primary;
+    }
+  }
+}
+
+.cc-footer__nav-txt {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  @include font-rem(14px);
+}

@@ -1,0 +1,106 @@
+/*------------------------------------*\
+  Transversal Elements
+  #Styles for botones
+\*------------------------------------*/
+
+button {
+  line-height: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: none;
+  outline: none;
+  outline-width: 0;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  &:focus {
+    outline-width: 0;
+  }
+  &:disabled {
+    cursor: default;
+  }
+}
+
+
+.cc-btn {
+  position: relative;
+  @include inline-flex;
+  @include justify-content(center);
+  @include align-items(center);
+  padding: 1rem 2rem 1rem 1.3rem;
+  line-height: 1;
+  max-width: max-content;
+  vertical-align: middle;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $c-neutro;
+  @include font-rem(18px);
+  font-family: 'intensaposter';
+  border-radius: 30px;
+  background-color: $c-primary;
+  transition: all .3s linear;
+  &:after {
+    position: absolute;
+    right: .6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    @include font-rem(30px);
+  }
+  &:hover,
+  &:focus{
+    color: $c-primary;
+    background-color: $c-neutro;
+    &:before {
+      opacity: 1;
+    }
+  }
+  @include media-query(wide) {
+    @include font-rem(20px);
+  }
+  @include media-query(full) {
+    @include font-rem(24px);
+    padding: 1.2rem 2.2rem 1.2rem 1.5rem;
+  }
+  &.cc-btn_secondary {
+    color: $c-neutro;
+    background-color: $c-primary;
+    &:before {
+      color: $c-neutro;
+    }
+  }
+  &.cc-btn_disabled {
+    background-color: #D8D8D8;
+    color: #636363;
+    cursor: not-allowed!important;
+    &:before {
+      border-color: #D8D8D8;
+      background-color: rgb(216 216 216 / .25);
+    }
+  }
+}
+
+
+
+.btn_outline {
+  color: $c-neutro;
+  border: 1px solid $c-neutro;
+  background-color: transparent;
+  &:hover{
+    color: $c-brand;
+    border-color: $c-neutro;
+    background-color: $c-neutro;
+  }
+  &:focus,
+  &:active {
+    color: $c-brand;
+    border-color: $c-neutro;
+    background-color: $c-neutro;
+  }
+}
+
+.cc-link {
+  color: $c-primary;
+}

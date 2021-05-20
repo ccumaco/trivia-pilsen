@@ -1,0 +1,40 @@
+@import
+  'utils/variables/var-path',
+  'utils/variables/var-color',
+  'utils/variables/var-typo',
+  'utils/variables/var-breakpoint';
+
+@import
+  'utils/mix/mix-flex',
+  'utils/mix/mix-font-rem',
+  'utils/mix/mix-mediaquery';
+
+@import
+  'generic/normalize',
+  'generic/font-face';
+
+@import
+  'patterns/buttons',
+  'patterns/layout',
+  'patterns/titles';
+
+@import
+  'components/temporizador',
+  'components/navigation',
+  'components/footer',
+  'components/home',
+  'components/form',
+  'components/age-gate',
+  'components/trivia',
+  'components/message',
+  'components/404',
+  'components/terms',
+  'components/ranking',
+  'components/modal',
+  'components/loader',
+  'components/whitoutTime',
+  'components/learn',
+  'components/promo';
+
+@import
+  'blocks/grid';

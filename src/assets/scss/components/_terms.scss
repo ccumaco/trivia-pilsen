@@ -1,0 +1,26 @@
+
+.cc-terms {
+  padding-bottom: 50px;
+  @include media-query(wide) {
+    padding-bottom: 90px;
+  }
+}
+.cc-terms__header {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.cc-terms__content {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: 'nunito_sansregular';
+  strong {
+    font-family: 'nunito_sansbold';
+  }
+  @include media-query(large) {
+    max-width: 600px;
+  }
+  @include media-query(big) {
+    max-width: 700px;
+  }
+}

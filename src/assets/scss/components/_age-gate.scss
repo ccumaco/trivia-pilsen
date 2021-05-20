@@ -1,0 +1,231 @@
+.cc-body-agegate {
+  .cc-nav {
+    position: relative;
+    padding: 0;
+    background-color: transparent;
+  }
+  @include media-query(medium) {
+    .cc-nav__brand-logo {
+      display: none;
+    }
+  }
+}
+
+.cc-age-gate {
+  margin-top: -92px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 140%;
+  background-image: url('#{$img-path}/bg-age-gate-mobile-1.jpg');
+  .layout-general {
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(stretch);
+    @include justify-content(flex-end);
+    position: relative;
+    width: 100%;
+    // min-height: 40rem;
+    // padding-top: 267px;
+  }
+  .cc-title {
+    @include font-rem(16px);
+    text-transform: initial;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+  }
+
+  .cc-form__label_check {
+    padding-bottom: 0;
+    &:after {
+      border-radius: 50%;
+      background-color: $c-neutro;
+      border-color: transparent;
+    }
+    &:before {
+      content: '';
+      display: block;
+      width: 0.6rem;
+      height: 0.6rem;
+      left: 0.4rem;
+      border-radius: 50%;
+      background: $c-primary;
+    }
+  }
+  .cc-form__terms {
+    width: 90%;
+    margin: 0 auto  ;
+  }
+  .cc-age-gate__input {
+    width: 100%;
+    height: 44px;
+    padding: 0;
+    letter-spacing: 0.3em;
+    text-align: center;
+    border: 2px solid $c-brand-2;
+    &:focus,
+    &:active {
+      outline: none;
+      -webkit-box-shadow:  0px 0px 9px 1px rgba($c-brand-2, 0.8);
+      -moz-box-shadow:  0px 0px 9px 1px rgba($c-brand-2, 0.8);
+      box-shadow:  0px 0px 9px 1px rgba($c-brand-2, 0.8);
+    }
+  }
+  .cc-age-gate__input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    text-align: center;
+    color: $c-brand;
+  }
+  .cc-age-gate__input::-moz-placeholder { /* Firefox 19+ */
+    text-align: center;
+  }
+  .cc-age-gate__input:-ms-input-placeholder { /* IE 10+ */
+    text-align: center;
+  }
+  .cc-age-gate__input:-moz-placeholder { /* Firefox 18- */
+    text-align: center;
+  }
+  .cc-form__label {
+    font-family: 'Open Sans', sans-serif;
+    &.cc-form__label_small {
+      padding: 10px 0 0 28px;
+      color: $c-bg-general;
+      font-family: 'Open Sans', sans-serif;
+    }
+  }
+  .cc-form__terms-item {
+    padding-bottom: 20px;
+  }
+  .cc-btn {
+    display: block;
+    margin: 0 auto;
+  }
+  //media-queries
+  @media only screen and (min-width: 400px) {
+    background-size: 120%;
+    .layout-general {
+      min-height: 40rem;
+    }
+  }
+  @media only screen and (min-width: 500px) {
+    background-size: 110%;
+  }
+  @include media-query(medium) {
+    background-size: cover;
+    background-image: url('#{$img-path}/bg-age-gate.jpg');
+    background-position: center bottom;
+    .layout-general {
+      @include flex-direction(row);
+      @include justify-content(flex-end);
+      @include align-items(stretch);
+      width: 94%;
+      // min-height: calc(100vh - 228px);
+      padding-top: 0;
+    }
+    .cc-title {
+      @include font-rem(18px);
+    }
+    .cc-age-gate__input {
+      height: 54px;
+    }
+  }
+  .layout-general {
+    @media only screen and (max-height: 823px) and (max-width: 767px)  {
+      min-height: calc(100vh - 11.2rem);
+    }
+    @media only screen and (max-height: 812px) and (max-width: 767px)  {
+      min-height: calc(100vh - 9.2rem);
+    }
+    @media only screen and (max-height: 737px) and (max-width: 767px) {
+      min-height: calc(100vh - 6.2rem);
+    }
+    @media only screen and (max-height: 668px) and (max-width: 767px) {
+      min-height: calc(100vh + 0.6rem);
+    }
+    @media only screen and (max-height: 568px) and (max-width: 767px) {
+      min-height: calc(100vh + 2.2rem);
+    }
+  }
+  @include media-query(big) {
+    .layout-general {
+      min-height: calc(100vh - 118px);
+    }
+    .cc-title {
+      @include font-rem(20px);
+    }
+  }
+  @include media-query(large) {
+    .cc-title {
+      @include font-rem(22px);
+    }
+  }
+  @include media-query(full) {
+    .cc-title {
+      @include font-rem(24px);
+    }
+  }
+}
+
+.cc-age-gate__wrapper {
+  padding-bottom: 20px;
+  background-image: url('#{$img-path}/bg-age-gate-trama.jpg');
+  @include media-query(medium) {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-direction(column);
+    padding: 20px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 50%;
+    min-width: 370px;
+    &:before {
+      content: '';
+      display: block;
+      width: 50vh;
+      height: 30vh;
+      max-width: 100%;
+      max-height: 100%;
+      margin: 0 auto;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100%;
+      background-image: url('#{$img-path}/logo.png');
+    }
+  }
+  @include media-query(wide) {
+    padding: 40px;
+  }
+}
+
+.cc-age-gate__grid-wrapper {
+  width: 100%;
+}
+
+.cc-age-gate__grid {
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(space-between);
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto
+}
+
+.cc-age-gate__label {
+  position: absolute; 
+}
+
+.cc-age-gate__control {
+  margin: 0 10px;
+}
+
+.cc-age-gate__control_day {
+  @include flex(0 1 28%);
+}
+.cc-age-gate__control_month {
+  @include flex(0 1 28%);
+}
+.cc-age-gate__control_year {
+  @include flex(0 1 44%);
+}

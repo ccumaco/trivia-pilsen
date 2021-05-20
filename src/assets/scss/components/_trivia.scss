@@ -1,0 +1,313 @@
+
+.cc-trivia__inner {
+  padding: 30px 0;
+  min-height: 612px;
+  @include media-query(medium) {
+    width: 70%;
+    margin: 0 auto;
+    padding: 30px 0 50px;
+  }
+}
+
+.cc-trivia__number-list {
+  list-style-type: none;
+  padding-bottom: 1rem;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  @include media-query(medium) {
+    padding-bottom: 1.6rem;
+  }
+}
+
+.cc-trivia__number-item {
+  position: relative;
+  text-align: center;
+  margin: 0 4px;
+  width: 1.6rem;
+  height: 3.8rem;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  color: $c-neutro;
+  @include font-rem(20px);
+  line-height: 1;
+  transition: all .2s linear;
+  &:before {
+    color: #DFDFE4;
+    @include font-rem(50px);
+  }
+  &:not(:last-child) {
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 10px;
+      top: calc(50% + 2px);
+      right: -10px;
+      transform: translateY(-50%);
+      border: 1px dashed #B2BCCA;
+    }
+  }
+  &.active {
+    height: 90px;
+    width: 2.1rem;
+    &:before {
+      content: '';
+      width: 30px;
+      height: 70px;
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      background-size: cover;
+      background-image: url('#{$img-path}/icon-lata.svg');
+    }
+  }
+  &.done {
+    &:before {
+      color: $c-primary;
+    }
+    &:after {
+      border-color: $c-primary;
+    }
+  }
+  @include media-query(medium) {
+    width: 2rem;
+    height: 76px;
+    margin: 0 10px;
+    &:before {
+      @include font-rem(56px);
+    }
+    &.active {
+      &:before {
+        width: 47px;
+        height: 80px;
+      }
+    }
+    &:not(:last-child) {
+      &:after {
+        right: -23px;
+        width: 20px;
+      }
+    }
+  }
+  @include media-query(big) {
+    &:before {
+      @include font-rem(66px);
+    }
+    &.active {
+      &:before {
+        color: $c-primary;
+        @include font-rem(76px);
+      }
+    }
+  }
+}
+
+.cc-trivia__txt {
+  display: block;
+  padding: 0 30px 1rem;
+  margin: 0;
+  font-family: 'intensaposter';
+  text-align: center;
+  color: $c-neutro;
+  text-transform: uppercase;
+  @include font-rem(22px);
+  @include media-query(medium) {
+    @include font-rem(30px);
+  }
+  @include media-query(big) {
+    @include font-rem(40px);
+    padding: 0 30px 1rem;
+  }
+}
+
+.cc-trivia__timer {
+  position: relative;
+  display: block;
+  width: 200px;
+  padding: 1rem;
+  margin: 0 auto 1rem;
+  border-radius: 25px;
+  color: $c-brand;
+  text-align: center;
+  background-color: $c-primary;
+  box-shadow: inset 2px 2px 4px rgba(216, 216, 216, 0.25);
+  @include media-query(medium) {
+    width: 200px;
+  }
+}
+
+.cc-trivia__clock-rest {
+  @include font-rem(16px);
+  margin: 0;
+  padding-bottom: 6px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.cc-trivia__clock {
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  @include font-rem(16px);
+  margin: 0;
+  line-height: 1;
+  vertical-align: middle;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: $f-bold;
+  text-transform: uppercase;
+  &:before {
+    margin-right: 6px;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  @include media-query(medium) {
+    @include font-rem(18px);
+  }
+  @include media-query(big) {
+    @include font-rem(22px);
+  }
+}
+
+.cc-trivia__title {
+  display: block;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: $c-primary;
+  @include font-rem(16px);
+  padding-bottom: 10px;
+  @include media-query(medium) {
+    @include font-rem(20px);
+  }
+  @include media-query(big) {
+    @include font-rem(30px);
+  }
+}
+
+.cc-trivia__ask {
+  display: block;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: $f-bold;
+  text-shadow: 2px 3px 5px $c-brand;
+  color: $c-neutro;
+  margin: 0 0 1rem;
+  @include font-rem(16px);
+  @include media-query(medium) {
+    @include font-rem(18px);
+  }
+  @include media-query(big) {
+    @include font-rem(20px);
+  }
+}
+
+.cc-trivia__ask-list {
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
+  list-style-type: none;
+  text-align: left;
+  counter-reset: alphabeticList;
+}
+
+.cc-trivia__wrap {
+  width: 90%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.cc-trivia__ask-item {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.cc-trivia__ask-btn {
+  width: auto;
+  max-width: 100%;
+  display: block;
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+  min-height: 3rem;
+  padding: 0.6rem 1rem 0.6rem 2rem;
+  background-color: $c-neutro;
+  border-radius: 10px;
+  text-align: center;
+  margin: 6px 0;
+  cursor: pointer;
+  color: $c-dark;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: $f-regular;
+  -webkit-box-shadow:  0px 0px 9px 1px rgba($c-brand, 0.4);
+  -moz-box-shadow:  0px 0px 9px 1px rgba($c-brand, 0.4);
+  box-shadow:  0px 0px 9px 1px rgba($c-brand, 0.4);
+  transition: all .3s linear;
+  counter-increment: alphabeticList;
+  &:before {
+    content: counter(alphabeticList, lower-alpha) ")";
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    color: $c-dark;
+    display: block;
+    line-height: 1;
+    @include font-rem(20px);
+    transform: translateY(-50%);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: $f-bold;
+    transition: all .3s linear;
+  }
+  &:hover,
+  &:focus {
+    color: $c-brand;
+    -webkit-box-shadow:  0px 0px 9px 1px rgba($c-brand, 0.8);
+    -moz-box-shadow:  0px 0px 9px 1px rgba($c-brand, 0.8);
+    box-shadow:  0px 0px 9px 1px rgba($c-brand, 0.8);
+    &:before {
+      color: $c-brand;
+    }
+  }
+  @include media-query(medium) {
+    @include font-rem(18px);
+    // padding: 1.5rem 10px 1.5rem 30px;
+    &:before {
+      @include font-rem(18px);
+    }
+  }
+}
+
+.cc-trivia__footer {
+  padding: 20px 0 0;
+  .cc-btn {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+    @include media-query(medium) {
+      width: 100%;
+    }
+  }
+}
+
+.cc-trivia__ask-input {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  &:checked+.cc-trivia__ask-btn {
+    color: $c-neutro;
+    background-color: $c-primary;
+    &:before {
+      color: $c-neutro;
+    }
+  }
+}
+
+.cc-trivia__timer-tiempo {
+  font-family: 'intensaposter';
+  text-align: center;
+  color: $c-neutro;
+  text-transform: uppercase;
+  @include font-rem(16px);
+  margin: 0;
+  padding-bottom: 1rem;
+}

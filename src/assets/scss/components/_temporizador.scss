@@ -1,0 +1,51 @@
+.cc-temporizador {
+  padding: 26px 0 46px;
+  font-family: 'nunito_sansbold';
+  text-align: center;
+  margin-bottom: -1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: auto;
+  // background-image: url('#{$img-path}/bg-contador.png');
+}
+
+.cc-temporizador__title {
+  padding: 0 0 4px;
+  margin: 0;
+  color: $c-neutro;
+  width: 90%;
+  max-width: 340px;
+  margin: 0 auto;
+  @include font-rem(16px);
+  color: $c-neutro;
+  display: block;
+  text-transform: uppercase;
+}
+
+.cc-temporizador {
+  .vuejs-countdown {
+    li {
+      margin: 0 6px;
+      .digit {
+        @include font-rem(38px);
+        color: $c-primary;
+      }
+      &:after {
+        color: $c-primary;
+        top: 8px;
+      }
+      .text {
+        animation-name: opacityText;
+        animation-duration: .5s;
+        text-transform: capitalize;
+        color: $c-neutro;
+        @include font-rem(11px);
+      }
+    }
+  }
+}
+
+@keyframes opacityText {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

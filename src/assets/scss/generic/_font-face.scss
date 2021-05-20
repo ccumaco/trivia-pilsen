@@ -1,0 +1,146 @@
+/*------------------------------------*\
+    #font-family Akrobat
+\*------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/*------------------------------------*\
+    #font-family Ico: Porvenir
+\*------------------------------------*/
+
+@font-face {
+  font-family: '#{$ico-font-family}';
+  src: url('#{$font-path}/#{$ico-font-family}.eot?owmbll');
+  src: url('#{$font-path}/#{$ico-font-family}.eot?owmbll#iefix') format('embedded-opentype'),
+  url('#{$font-path}/#{$ico-font-family}.ttf?owmbll') format('truetype'),
+  url('#{$font-path}/#{$ico-font-family}.woff?owmbll') format('woff'),
+  url('#{$font-path}/#{$ico-font-family}.svg?owmbll##{$ico-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// @font-face {
+//   font-family: 'coronastandard_regular';
+//   src: url('#{$font-path}/coronastandard-regular-font.eot');
+//   src: url('#{$font-path}/coronastandard-regular-font.eot?#iefix') format('embedded-opentype'),
+//        url('#{$font-path}/coronastandard-regular-font.woff2') format('woff2'),
+//        url('#{$font-path}/coronastandard-regular-font.woff') format('woff'),
+//        url('#{$font-path}/coronastandard-regular-font.ttf') format('truetype'),
+//        url('#{$font-path}/coronastandard-regular-font.svg#coronastandard_regular') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+@font-face {
+  font-family: 'intensaposter';
+  src: url('#{$font-path}/intensa-poster-font.eot');
+  src: url('#{$font-path}/intensa-poster-font.eot?#iefix') format('embedded-opentype'),
+       url('#{$font-path}/intensa-poster-font.woff2') format('woff2'),
+       url('#{$font-path}/intensa-poster-font.woff') format('woff'),
+       url('#{$font-path}/intensa-poster-font.ttf') format('truetype'),
+       url('#{$font-path}/intensa-poster-font.svg#intensaposter') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+.i-,
+[class^="i-"],
+[class*=" i-"] {
+  &:before {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: $ico-font-family !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  &:after {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: '#{$ico-font-family}' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.i-check {
+  &:before {
+    content: $i-check; 
+  }
+}
+
+.i-instagram {
+  &:before {
+    content: $i-instagram; 
+  }
+}
+.i-facebook {
+  &:before {
+    content: $i-facebook; 
+  }
+}
+.i-twitter {
+  &:before {
+    content: $i-twitter; 
+  }
+}
+.i-youtube {
+  &:before {
+    content: $i-youtube; 
+  }
+}
+.i-arrow {
+  &:before {
+    content: $i-arrow; 
+  }
+}
+.i-arrow-after {
+  &:after {
+    content: $i-arrow; 
+  }
+}
+.i-brand-lata {
+  &:before {
+    content: $i-brand-lata; 
+  }
+}
+.i-close {
+  &:before {
+    content: $i-close; 
+  }
+}
+.i-dot-ranking {
+  &:before {
+    content: $i-dot-ranking; 
+  }
+}
+.i-menu {
+  &:before {
+    content: $i-menu; 
+  }
+}
+.i-scroll {
+  &:before {
+    content: $i-scroll; 
+  }
+}
+.i-select {
+  &:before {
+    content: $i-select; 
+  }
+}

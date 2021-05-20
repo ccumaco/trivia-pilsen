@@ -1,0 +1,93 @@
+
+.cc-404 {
+  @include flexbox;
+  @include align-items(center);
+  @include flex-direction(column);
+  min-height: calc(100vh - 90px);
+  background-color: $c-bg-general;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 80%;
+  background-image: url('#{$img-path}/bg-404.jpg');
+  @include media-query(medium) {
+    min-height: calc(100vh - 50px);
+    @include flex-direction(row);
+    background-size: 50%;
+  }
+}
+
+.cc-404__header {
+  width: 90%;
+  @include media-query(medium) {
+    width: 50%;
+  }
+}
+
+.cc-404__btn {
+  margin: 0 auto 20px;
+  @include media-query(wide) {
+    margin-bottom: 0;
+  }
+}
+
+.cc-404__img {
+  display: inline-block;
+  padding-bottom: 40px;
+  max-width: 280px;
+  @include media-query(wide) {
+    max-width: initial;
+  }
+}
+
+.cc-404__title {
+  font-family: 'intensaposter';
+  color: $c-primary;
+  @include font-rem(80px);
+  line-height: 1;
+  padding-bottom: 1rem;
+  &:after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: $c-brand-2;
+    margin: .6rem auto 0;
+  }
+  @include media-query(medium) {
+    @include font-rem(120px);
+  }
+  @include media-query(big) {
+    @include font-rem(150px);
+  }
+  @include media-query(large) {
+    @include font-rem(170px);
+  }
+}
+
+.cc-404__lead {
+  display: block;
+  color: $c-brand;
+  @include font-rem(40px);
+  @include media-query(medium) {
+    @include font-rem(50px);
+  }
+  @include media-query(big) {
+    @include font-rem(60px);
+  }
+  @include media-query(large) {
+    @include font-rem(70px);
+  }
+}
+
+.cc-404__txt {
+  display: block;
+  width: 90%;
+  max-width: 23rem;
+  margin: 0 auto;
+  color: $c-brand;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  @include media-query(medium) {
+    text-align: left;
+  }
+}

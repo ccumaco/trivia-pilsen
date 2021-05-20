@@ -1,0 +1,112 @@
+/*------------------------------------*\
+  Transversal Elements
+  #Styles for layout
+\*------------------------------------*/
+
+.inner {
+  width: 94%;
+  max-width: 1172px;
+  margin: 0 auto;
+  @include media-query(full) {
+    width: 90%;
+  }
+}
+
+.layout-general {
+  width: 94%;
+  margin: 0 auto;
+  min-height: calc(100vh - 90px);
+}
+
+.cc-bg-head {
+  background-color: $c-brand;
+}
+
+.cc-code {
+  padding-bottom: 140px;
+}
+
+.cc-intro {
+  margin-top: -140px;
+}
+
+.cc-ranking {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom right;
+  background-image: url('#{$img-path}/bg-ranking-mobile.jpg');
+  .layout-general {
+    @media only screen and (max-height: 824px) and (max-width: 767px)  {
+      min-height: calc(100vh - 15.8rem);
+    }
+    @media only screen and (max-height: 737px) and (max-width: 767px) {
+      min-height: calc(100vh - 10.8rem);
+    }
+    @media only screen and (max-height: 668px) and (max-width: 767px) {
+      min-height: calc(100vh - 5.8rem);
+    }
+    @media only screen and (max-height: 568px) and (max-width: 767px) {
+      min-height: calc(100vh - 1.8rem);
+    }
+  }  
+  @include media-query(medium) {
+    background-position: center right;
+    background-image: url('#{$img-path}/bg-ranking-desk.jpg');
+  }
+ }
+
+.cc-message {
+  background-color: $c-bg-general;
+  @include media-query(wide) {
+    background-image: none;
+  }
+}
+
+.cc-trivia {
+  padding-bottom: 7rem;
+  position: relative;
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: cover;
+  background-image: url('#{$img-path}/bg-trivia-desk.jpg');
+  &:before {
+    content: '';
+    display: block;
+    width: 300px; 
+    height: 270px;
+    position: absolute;
+    bottom: 0;
+    left: -2.5rem;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: auto 100%;
+    background-image: url('#{$img-path}/gato-trivia.png');
+  }
+  @include media-query(medium) {
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 100%;
+    background-image: url('#{$img-path}/bg-trivia-desk.jpg');
+    padding-bottom: 0;
+    &:before {
+      width: 400px;
+      height: 460px;
+      left: 0;
+    }
+  }
+}
+
+.cc-registro {
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  background-image: url('#{$img-path}/bg-registro.jpg');
+}
+
+.cc-without-time {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url('#{$img-path}/bg-trivia-desk.jpg');
+}

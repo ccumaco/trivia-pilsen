@@ -1,0 +1,44 @@
+.cc-modal-code {
+  display: block;
+  background-color: $c-neutro;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.425);
+}
+
+.cc-modal-code__card {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  padding: 20px;
+  background-color: $c-neutro;
+  pointer-events: all;
+  .cc-form__btn {
+    max-width: 80%;
+    margin: 0 auto 20px;
+    display: block;
+  }
+}
+
+.cc-modal-code__title {
+  display: block;
+  text-align: center;
+  font-family: "helveticaneue-condensed_bold";
+  font-size: 28px;
+  font-size: 1.75rem;
+  color: $c-primary;
+}
+
+.cc-modal-code__txt {
+  font-family: "helveticaneue-condensed_bold";
+  @include font-rem(16px);
+  padding-bottom: 20px;
+}
