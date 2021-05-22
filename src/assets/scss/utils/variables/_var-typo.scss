@@ -2,6 +2,10 @@
 // Variables Typo font
 //*------------------------------------*/
 
+@font-face {
+    font-family: 'DIN Next LT Pro';
+    src: url('~@/assets/fonts/pilsen/DINNextRoundedLTPro-Regular.ttf');
+}
 $font-path: "~@/assets/fonts" !default;
 
 $f-bold         : 700;

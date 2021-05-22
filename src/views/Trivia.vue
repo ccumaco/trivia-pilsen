@@ -5,9 +5,9 @@
         p.cc-trivia__txt Pregunta {{ askActive }}
         p.cc-trivia__timer-tiempo Tiempo restante
         .cc-trivia__timer
-          p#countdown.cc-trivia__clock.i-time {{ '0' + countdown + ':00' }}
+          p#countdown.cc-trivia__clock.i-time {{ countdown + ':00' }}
         transition(name="fade")
-          Loader(v-if="isLoader", :full="true")
+          //- Loader(v-if="isLoader", :full="true")
         .algo(v-if="start")
           Loader(v-if="isLoaderUni", :full="false")
           .cc-trivia__c(v-else)
@@ -52,7 +52,7 @@ export default {
       triviaListLength: 8,
       askActive: 1,
       time: 'September 4, 2020, 15:15',
-      countdown: 5,
+      countdown: 60,
       withoutTime: false,
       output: '',
       outputQ: '',

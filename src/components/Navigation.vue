@@ -4,7 +4,7 @@
       ul.cc-nav__list(:class="{ 'menuOpen': isOpen}")
         li.cc-nav__list-brand
           router-link(:to="'/'")
-            img.cc-nav__brand-logo(alt="Logo Becker" src="../assets/img/logo.png")
+            img.cc-nav__brand-logo(alt="Logo Becker" src="../assets/img/pilsen/logo-blanco.png")
         li.cc-nav__action
           button.cc-nav__action-btn(type="button", v-on:click="isOpen = !isOpen")
             span.cc-nav__action-icon
@@ -16,6 +16,11 @@
             router-link(:to="'/#tips-consumo-responsable'" v-scroll-to="'#tips-consumo-responsable'" @click.native="toggleMenu")#comoParticipar.cc-nav__list-link Tips de consumo responsable
             router-link(:to="'/ranking'" @click.native="toggleMenu")#rankingPosiciones.cc-nav__list-link Ranking de posiciones
             a.cc-footer__nav-link(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf")#terminosCondiciones.cc-nav__list-link Términos y condiciones
+            a.cc-footer__nav-link(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf")#terminosCondiciones.cc-nav__list-link <i class="fab fa-instagram"></i>
+            a.cc-footer__nav-link(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf")#terminosCondiciones.cc-nav__list-link <i class="fab fa-twitter"></i>
+            a.cc-footer__nav-link(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf")#terminosCondiciones.cc-nav__list-link <i class="fab fa-facebook-f"></i>
+            a.cc-footer__nav-link(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf")#terminosCondiciones.cc-nav__list-link <i class="fab fa-youtube"></i>
+            router-link(:to="'/registro'" @click.native="toggleMenu")#rankingPosiciones.cc-nav__list-link Registro
 </template>
 
 <script>

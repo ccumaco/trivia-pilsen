@@ -6,7 +6,7 @@
       .container-first
         h2.title-card Participa en nuestra Trivia y gana un <b>MEET & GREET </b> con Ivan Morales y Maxi Falcón
         p.text-card Lata edición especial - 30 años copa libertadores
-        .register-here REGISTRATE AQUÍ
+        .register-here PARTICIPA AQUÍ
       .contain-img
         .container-secont
         .container-tertiary
@@ -14,49 +14,19 @@
         .cc-modal-code(v-if='!continuePlay')
           .cc-modal-code__card
             p.cc-modal-code__title Ya ganaste no puedes seguir participando.
-    section.cc-home__learn#tips-consumo-responsable
-      .inner
-        //- header.cc-home__learn-header
-        //-   h3.cc-title-section Qué es el consumo responsable
-        //-   p.cc-text Una serie de acciones que hacen los humanes adultos para cuidar su cuerpa
-        //-   p.cc-text.cc-text_bold <strong>Conoce todos los tips de consumo responsable que tenemos para ti y participa en nuestra TRIVIA BECKER. Si no ganaste un día, puedes seguir participando. ¡Así que no bajes las patas! </strong>
-        //-   h3.cc-title-section.cc-title-section_final Tips de consumo responsable
-        .cc-learn__slider
-          carousel(:perPage="1", :centerMode="true", :autoplay="true" :autoplayTimeout="15000" :navigationEnabled="true", :paginationEnabled="false" :paginationColor="'#efefef'")
-            slide.cc-learn__slider__item.VueCarousel-slide-active
-              .cc-learn__slider-content
-                p.cc-learn__slider-txt Hacer una buena cerveza lleva tiempo así como a ti te ha llevado tiempo poder reconocer lo verdaderamente importante
-            slide.cc-learn__slider__item
-              .cc-learn__slider-content
-                p.cc-learn__slider-txt mayor tiempo de maduraciónen su elaboración, el cual le otorga un cuerpo y sabor únicos, superior a otras cervezas del mercado
-            slide.cc-learn__slider__item
-              .cc-learn__slider-content
-                p.cc-learn__slider-txt Pilsen del Sur es una cerveza elaboradacon 6 lúpulos, los cuales le dan el aroma y amargor justo
-            slide.cc-learn__slider__item
-              .cc-learn__slider-content
-                p.cc-learn__slider-txt El IBU (Unidad internacional de amargor) El IBU de Pilsen del Sur es de 19
-            slide.cc-learn__slider__item
-              .cc-learn__slider-content
-                p.cc-learn__slider-txt Debido a la malta y su tostado especial,se puede observar su increíble color dorado al servirla.
-            slide.cc-learn__slider__item
-              .cc-learn__slider-content
-                p.cc-learn__slider-txt Para aquellos amantes de las cervezas de alta calidad, Pilsen del Sur es una cerveza que fermenta a bajas temperaturas.
-            slide.cc-learn__slider__item
-              .cc-learn__slider-content
-                p.cc-learn__slider-txt pilsen del Sur es ligera y con una rica espuma, esto hace que sea una cerveza tipo lager, hecha a partir de sólo materias primas seleccionadas y 100% malta de cebada
-            slide.cc-learn__slider__item
-              .cc-learn__slider-content
-                p.cc-learn__slider-txt  Sabemos que quedar en la historia toma tiempo, al igual que elaborar un Pilsen del Sur.
-            slide.cc-learn__slider__item
-              .cc-learn__slider-content
-                p.cc-learn__slider-txt Desde el 2021 nace la unión entre Pilsen del Sur y el Colo Colo, un equipo con tradición y fiel representante del corazón chileno
-            slide.cc-learn__slider__item
-              .cc-learn__slider-content
-                p.cc-learn__slider-txt Pilsen del Sur realizó el lanzamientode una lata edición especial Campeones de América homenajeando a esa generación del 91 que supo darle alegría a un país entero.
-            slide.cc-learn__slider__item
-              .cc-learn__slider-content
-                p.cc-learn__slider-txt Si te estás bajando un pack u otro copete, ponte modo orilla de playa, ¡pero pah tomar agua! Si lo haces, es mucho menos probable que despiertes con esa sed maldita.
-
+    .container-bottle
+      .container
+        .width-bottle
+          ul
+            li(v-for="(item, index) of tamaños" :key="index" @click="nextImg(index)") {{item}}
+        .bottle
+          img(:src="imagen[indexImage].src", alt="alt")
+          button(@click="indexImage++")
+        .text-bottle
+          h2 {{imagen[indexImage].titleBottle}} <br> {{imagen[indexImage].tamaño}}
+          p {{imagen[indexImage].textBottle}}
+      .show-here
+        button.show-btn Comprar aquí
   </div>
 </template>
 
@@ -78,6 +48,7 @@ export default {
   },
   data () {
     return {
+      indexImage:0,
       isLogged: false,
       output: '',
       modalIsOpen: false,
@@ -85,6 +56,30 @@ export default {
       isLoader: false,
       continuePlay: true,
       isDisabled: true,
+      tamaños:['300 ml', '473 ml', '354 ml'],
+      imagen: [
+        {
+          src: require('./../assets/img/pilsen/bottle1.png'),
+          altImagen: 'nuestros productos',
+          titleBottle: 'nuestros productos',
+          tamaño: '300 ml',
+          textBottle: 'Pilsen del Sur se caracteriza por su mayor tiempo de maduración, el cual le da una cuerpo y sabor único. Es una cerveza tipo larger 100% malta, hecha con ingredientes finamente seleccionados y 6 lúpulos diferentes.'
+        },
+        {
+          src: require('./../assets/img/pilsen/bottle2.png'),
+          altImagen: 'nuestros productos',
+          titleBottle: 'nuestros productos',
+          tamaño:'473 ml',
+          textBottle: 'Pilsen del Sur se caracteriza por su mayor tiempo de maduración, el cual le da una cuerpo y sabor único. Es una cerveza tipo larger 100% malta, hecha con ingredientes finamente seleccionados y 6 lúpulos diferentes.'
+          },
+        {
+          src: require('./../assets/img/pilsen/bottle3.png'),
+          altImagen: 'nuestros productos',
+          titleBottle: 'nuestros productos',
+          tamaño:'354 ml',
+          textBottle: 'Pilsen del Sur se caracteriza por su mayor tiempo de maduración, el cual le da una cuerpo y sabor único. Es una cerveza tipo larger 100% malta, hecha con ingredientes finamente seleccionados y 6 lúpulos diferentes.'
+          }
+        ],
     }
   },
   watch: {
@@ -92,6 +87,12 @@ export default {
     },
     inputUser: function() {
       this.btnDisable()
+    },
+  },
+  computed: {
+    mostrarFuncion(){
+      let img = this.imagen[0]
+      return img
     },
   },
   created () {
@@ -120,6 +121,9 @@ export default {
       document.getElementById("linkCode").classList.remove("cc-nav__list-link_active");
       document.getElementById("linkIntro").classList.remove("cc-nav__list-link_active");
       document.getElementById("linkProducts").classList.remove("cc-nav__list-link_active");
+    },
+    nextImg(param){
+      this.indexImage = param
     },
     validateCode() {
       // this.$router.push({name: 'Registro'})

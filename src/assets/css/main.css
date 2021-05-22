@@ -904,7 +904,7 @@ h6 {
 }
 .cc-nav__list-link:hover:after {
   width: 100%;
-  background-color: #C3302C;
+  background-color: #C18E00;
 }
 .cc-nav__list-link:focus, .cc-nav__list-link:active {
   text-decoration: none;
@@ -2308,7 +2308,7 @@ input[type=number] {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100%;
-    background-image: url("../img/logo.png");
+    background-image: url("../img/pilsen/logo.png");
   }
 }
 @media only screen and (min-width: 992px) {

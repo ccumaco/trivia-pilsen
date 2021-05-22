@@ -1,0 +1,318 @@
+.cc-home__hero {
+    height: 70vh;
+    display: flex;
+    .container-first{
+      flex-basis: 25%;
+      background: url('#{$img-path}/pilsen/Rectangle-569.png') center no-repeat;
+      background-size: 120%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      padding: 60px;
+      .title-card{
+        font-family: 'DIN Next LT Pro';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 25px;
+        b{
+          color: #712325;
+        }
+      }
+      .register-here{
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        border: 2px solid #fff;
+        color: #fff;
+        background-color: #712325;
+        border-radius: 30px;
+        padding: 7px 20px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+    .contain-img{
+      flex-basis: 75%;
+      display: flex;
+      .container-secont{
+        background-image: url('#{$img-path}/pilsen/segundo-tab.png');
+        background-size: 100% 100%;
+        flex-basis: 30%
+      }
+      .container-tertiary{
+        flex-basis: 70%;
+        background-image: url('#{$img-path}/pilsen/jugadores.png');
+        background-size: 100% 100%;
+      }
+    }
+  }
+  .container-bottle{
+    background: url(#{$img-path}/pilsen/bg-new.png) center no-repeat;
+    background-size: 100% 100%;
+    min-height: 70vh;
+    padding-top: 100px;
+    .container{
+      min-height: 60vh;
+      vertical-align: middle;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .width-bottle{
+        flex-basis: 20%;
+        ul li{
+          list-style: none;
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: normal;
+          font-size: 17.3375px;
+          line-height: 16px;
+          margin: 20px 0;
+          color: #fff;
+          cursor: pointer;
+          text-align: right;
+        }
+      }
+      .bottle{
+        flex-basis: 10%;
+        margin: 0 50px;
+      }
+      .text-bottle{
+        flex-basis: 20%;
+        h2{
+          text-transform: uppercase;
+          font-family: 'DIN Next LT Pro';
+          font-style: normal;
+          font-weight: bold;
+          font-size: 34.3957px;
+          line-height: 32px;
+          color: #fff;
+        }
+        p{
+          color: #fff;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 18px;
+        }
+      }
+    }
+    .show-here{
+      text-align: center;
+      .show-btn{
+        margin-bottom: 10px;
+        padding: 5px 10px;
+        border-radius: 30px;
+        color: #fff;
+        background: $c-brand;
+        border: 2px solid #fff;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+  }
+  
+  .cc-hero__grid {
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+    @include media-query(medium) {
+      @include flex-direction(row);
+      @include justify-content(space-between);
+      width: 94%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @include media-query(full) {
+      max-width: 1320px;
+    }
+    .cc-form__label {
+      @include font-rem(16px);
+      text-align: center;
+      @include media-query(wide) {
+        @include font-rem(18px);
+      }
+    }
+  }
+  
+  .cc-home__header {
+    width: 100%;
+    padding: 0 1rem;
+    background-image: url('#{$img-path}/bg-home-mobile.jpg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: cover;
+    @media only screen and (max-height: 824px) and (max-width: 767px)  {
+      padding-top: 1rem;
+      min-height: calc(100vh - 15.8rem);
+    }
+    @media only screen and (max-height: 737px) and (max-width: 767px) {
+      padding-top: 1rem;
+      min-height: calc(100vh - 10.8rem);
+    }
+    @media only screen and (max-height: 668px) and (max-width: 767px) {
+      padding-top: 1rem;
+      min-height: calc(100vh - 5.8rem);
+    }
+    @media only screen and (max-height: 568px) and (max-width: 767px) {
+      padding-top: 1rem;
+      min-height: calc(100vh - 1.8rem);
+    }
+    @include media-query(medium) {
+      background-image: none;
+      max-width: 18rem;
+      width: initial;
+    }
+    @include media-query(wide) {
+      max-width: 24rem;
+    }
+  }
+  
+  .cc-title__logo {
+    display: block;
+    margin-top: .6rem;
+    @include font-rem(1px);
+    color: transparent;
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      max-width: 10rem;
+      height: 2rem;
+      margin: 0 auto;
+      background-image: url('#{$img-path}/logo-pedidos.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100%;
+    }
+    @include media-query(medium) {
+      &:before {
+        max-width: 12rem;
+        height: 3rem;
+      }
+    }
+    @include media-query(big) {
+      &:before {
+        max-width: 16rem;
+        height: 4rem;
+      }
+    }
+  }
+  
+  .cc-hero__steps {
+    color: $c-neutro;
+    @include media-query(medium-max) {
+      padding: 2rem;
+      background-color: $c-brand;
+    }
+    @include media-query(medium) {
+      max-width: 16rem;
+    }
+    @include media-query(wide) {
+      max-width: 20rem;
+    }
+    @include media-query(big) {
+      max-width: 24rem;
+    }
+  }
+  
+  .cc-hero__list {
+    padding: 0 0 0 2.2rem;
+    list-style: none;
+    counter-reset: section;
+    @include media-query(big) {
+      padding: 0 0 0 3.2rem;
+    }
+  }
+  
+  .cc-hero__list-item {
+    position: relative;
+    margin-bottom: 1.2rem;
+    @include font-rem(16px);
+    font-family: 'Open Sans', sans-serif;
+    &:before {
+      @include flexbox;
+      @include justify-content(center);
+      @include align-items(center);
+      position: absolute;
+      width: 2rem;
+      left: -2.4rem;
+      height: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      text-align: center;
+      counter-increment: section;
+      line-height: 1;
+      content: counter(section);
+      @include font-rem(20px);
+      color: $c-brand;
+      background-color: $c-neutro;
+      font-family: 'intensaposter';
+    }
+    a {
+      color: $c-primary;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    @include media-query(big) {
+      @include font-rem(18px);
+      margin-bottom: 1.5rem;
+      &:before {
+        width: 3rem;
+        height: 3rem;
+        left: -3.4rem;
+        @include font-rem(30px);
+      }
+    }
+  }
+  
+  .cc-home__cta-header {
+    text-align: center;
+    color: $c-brand;
+    background-color: $c-bg-general;
+    padding: 3rem 0;
+  }
+  
+  .cc-home__form {
+    max-width: 300px;
+    margin: 0 auto;
+    @include media-query(medium) {
+      max-width: initial;
+      margin: 0;
+    }
+  }
+  @media screen and (max-width:970px) {
+    .cc-age-gate__grid-wrapper{
+      overflow-x: scroll;
+    }
+    .cc-home__hero{
+      flex-direction: column;
+      .container-first{
+        padding: 0 40px;
+        flex-basis: 60%;
+      }
+      .contain-img{
+        display: flex !important;
+        flex-direction: row !important;
+        flex-basis: 40%;
+      }
+      .container-secont{
+        flex-basis: 40% !important;
+      }
+      .container-tertiary{
+        flex-basis: 60% !important;
+      }
+    }
+  }

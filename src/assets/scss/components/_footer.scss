@@ -1,7 +1,7 @@
 .cc-footer {
   padding: 1rem 0;
   text-align: center;
-  background-color: $c-dark;
+  background-color: $c-brand;
   color: $c-neutro;
   @include media-query(big) {
     @include flexbox;
@@ -22,7 +22,7 @@
 }
 
 .cc-footer__social {
-  border-top: 1px solid $c-primary;
+  // border-top: 1px solid $c-primary;
   padding-top: 1rem;
   @include media-query(wide) {
     border: none;
@@ -53,6 +53,11 @@
       top: 60px;
       left: 0;
     }
+  }
+}
+@media screen and (max-width:970px) {
+  .cc-footer__nav-item.logo-footer {
+    display: none;
   }
 }
 .cc-footer__nav-item {
@@ -112,7 +117,7 @@
 .cc-footer__social-txt {
   display: block;
   margin: 0;
-  padding-bottom: 14px;
+  padding-bottom: 34px;
   @include font-rem(14px);
   @include media-query(full) {
     @include font-rem(16px);
