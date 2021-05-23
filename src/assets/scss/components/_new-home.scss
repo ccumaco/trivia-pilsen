@@ -52,12 +52,19 @@
       }
     }
   }
+  
+  
   .container-bottle{
     background: url(#{$img-path}/pilsen/bg-new.png) center no-repeat;
     background-size: 100% 100%;
     min-height: 70vh;
     padding-top: 100px;
     .container{
+      .do-you-want{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
       min-height: 60vh;
       vertical-align: middle;
       display: flex;
@@ -65,7 +72,7 @@
       justify-content: center;
       align-items: center;
       .width-bottle{
-        flex-basis: 20%;
+        flex-basis: 50%;
         ul li{
           list-style: none;
           font-family: 'Open Sans';
@@ -313,6 +320,24 @@
       }
       .container-tertiary{
         flex-basis: 60% !important;
+      }
+    }
+  }
+  @media screen and (max-width: 970px) {
+    .container-bottle{
+      background: url(#{$img-path}/pilsen/bg-mobile.png) center no-repeat;
+      background-size: 100% 100%;
+      .container{
+        flex-direction: column;
+        .do-you-want{
+          order: 2;
+        }
+        .text-bottle{
+          order: 1;
+          padding: 0 20px ;
+          flex: 30%;
+          flex-basis: 100%;
+        }
       }
     }
   }

@@ -1,0 +1,162 @@
+
+.cc-login {
+    @include flexbox;
+    @include align-items(center);
+    @include flex-direction(column);
+    min-height: 50vh;
+    justify-content: center;
+    background-color: $c-bg-general;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 100% 100%;
+    background-image: url('#{$img-path}/pilsen/bg-login.png');
+    @include media-query(medium) {
+      min-height: 100vh;
+      @include flex-direction(row);
+      justify-content: center;
+      background-size: 100% 100%;
+    }
+    .container-login{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-basis: 30%;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid #EEB400;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(50px);
+    }
+  }
+  
+  .cc-login__header {
+    text-align: center;
+    width: 90%;
+    padding: 50px 0;
+    @include media-query(medium) {
+      width: 80%;
+    }
+    .cc-login__title-login{
+      font-family: 'DIN Next LT Pro';
+      font-style: normal;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 40px;
+      color: #fff;
+    }
+    form{
+      .cc-home__form-control-login{
+        width: 100%;
+        text-align: left;
+        .cc-form__label-login{
+          color: #fff;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 900;
+          font-size: 14px;
+          line-height: 16px;
+        }
+        .cc-form__input-login::placeholder{
+          font-family: 'Roboto';
+          color: #fff;
+        }
+        .cc-form__input-login{
+          margin-top: 10px;
+          width: 100%;
+          background-color: transparent;
+          color: #fff;
+          border: 0px;
+          border-bottom: 1px solid #fff;
+        }
+      }
+      .cc-form__footer-login{
+        .cc-form__login{
+          margin-top: 20px;
+          width: 100%;
+          padding: 5px 0;
+          background: #C18E00;
+          border: 1px solid #FFFFFF;
+          box-sizing: border-box;
+          box-shadow: 0px 3.45896px 3.45896px rgba(0, 0, 0, 0.25);
+          border-radius: 90px;
+          color: #fff;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 19px;
+        }
+      }
+    }
+  }
+  
+  .cc-login__btn {
+    margin: 0 auto 20px;
+    @include media-query(wide) {
+      margin-bottom: 0;
+    }
+  }
+  
+  .cc-login__img {
+    display: inline-block;
+    padding-bottom: 40px;
+    max-width: 280px;
+    @include media-query(wide) {
+      max-width: initial;
+    }
+  }
+  
+  .cc-login__title {
+    font-family: 'intensaposter';
+    color: #fff;
+    @include font-rem(25px);
+    line-height: 1;
+    padding-bottom: 1rem;
+    &:after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 4px;
+      background-color: $c-brand-2;
+      margin: .6rem auto 0;
+    }
+    @include media-query(medium) {
+      @include font-rem(25px);
+    }
+    @include media-query(big) {
+      @include font-rem(25px);
+    }
+    @include media-query(large) {
+      @include font-rem(25px);
+    }
+  }
+  
+  .cc-login__lead {
+    display: block;
+    color: $c-brand;
+    @include font-rem(40px);
+    @include media-query(medium) {
+      @include font-rem(50px);
+    }
+    @include media-query(big) {
+      @include font-rem(60px);
+    }
+    @include media-query(large) {
+      @include font-rem(70px);
+    }
+  }
+  
+  .cc-login__txt {
+    display: block;
+    width: 90%;
+    max-width: 23rem;
+    margin: 0 auto;
+    color: $c-brand;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    @include media-query(medium) {
+      text-align: left;
+    }
+  }
+  

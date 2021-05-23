@@ -6,6 +6,10 @@
     font-family: 'DIN Next LT Pro';
     src: url('~@/assets/fonts/pilsen/DINNextRoundedLTPro-Regular.ttf');
 }
+@font-face {
+    font-family: 'Roboto';
+    src: url('~@/assets/fonts/pilsen/Roboto-Regular.ttf');
+}
 $font-path: "~@/assets/fonts" !default;
 
 $f-bold         : 700;

@@ -133,7 +133,7 @@
   background-color: $c-primary;
   box-shadow: inset 2px 2px 4px rgba(216, 216, 216, 0.25);
   @include media-query(medium) {
-    width: 200px;
+    width: 400px;
   }
 }
 

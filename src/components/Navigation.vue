@@ -1,26 +1,29 @@
 <template lang="pug">
   nav.cc-nav
-    .inner
-      ul.cc-nav__list(:class="{ 'menuOpen': isOpen}")
-        li.cc-nav__list-brand
-          router-link(:to="'/'")
-            img.cc-nav__brand-logo(alt="Logo Becker" src="../assets/img/pilsen/logo-blanco.png")
-        li.cc-nav__action
-          button.cc-nav__action-btn(type="button", v-on:click="isOpen = !isOpen")
-            span.cc-nav__action-icon
-              small(v-if="!isOpen") Abrir Menú
-              small(v-else) Cerrar Menú
-        li.cc-nav__list-group
-          nav.cc-nav__nav
-            router-link(:to="'/#como-participar'" v-scroll-to="'#como-participar'" @click.native="toggleMenu")#comoParticipar.cc-nav__list-link Cómo participar
-            router-link(:to="'/#tips-consumo-responsable'" v-scroll-to="'#tips-consumo-responsable'" @click.native="toggleMenu")#comoParticipar.cc-nav__list-link Tips de consumo responsable
-            router-link(:to="'/ranking'" @click.native="toggleMenu")#rankingPosiciones.cc-nav__list-link Ranking de posiciones
-            a.cc-footer__nav-link(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf")#terminosCondiciones.cc-nav__list-link Términos y condiciones
-            a.cc-footer__nav-link(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf")#terminosCondiciones.cc-nav__list-link <i class="fab fa-instagram"></i>
-            a.cc-footer__nav-link(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf")#terminosCondiciones.cc-nav__list-link <i class="fab fa-twitter"></i>
-            a.cc-footer__nav-link(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf")#terminosCondiciones.cc-nav__list-link <i class="fab fa-facebook-f"></i>
-            a.cc-footer__nav-link(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf")#terminosCondiciones.cc-nav__list-link <i class="fab fa-youtube"></i>
-            router-link(:to="'/registro'" @click.native="toggleMenu")#rankingPosiciones.cc-nav__list-link Registro
+    .container-logo-header
+      img(src="./../assets/img/pilsen/logo-blanco.png", alt="alt")
+    ul
+      li.list-liks <router-link to="/"> HOME </router-link>
+      li.list-liks
+        select(name="CONCURSO") CONSURSO
+          option(value="Concurso1") CONCURSO
+          option(value="Concurso2") concurso2
+          option(value="Concurso3") concurso3
+          option(value="Concurso4") concurso4
+      li.list-liks <router-link to="/producto">PRODUCTO </router-link>
+      li.list-liks
+        select COPA AMERICA
+          option(value="Copa america1") COPA AMERICA
+          option(value="Copa america2") Copa america2
+          option(value="copa america3") copa america3
+          option(value="Copa america4") Copa america4
+    ul
+      li.links-rs <a href="#"><i class="fab fa-instagram"></i></a>
+      li.links-rs <a href="#"><i class="fab fa-twitter"></i></a>
+      li.links-rs <a href="#"><i class="fab fa-facebook-f"></i></a>
+      li.links-rs <a href="#"><i class="fab fa-youtube"></i></a>
+    .btn-register
+      button <router-link to="/registro"> REGISTRO</router-link>
 </template>
 
 <script>

@@ -16,12 +16,12 @@
             p.cc-modal-code__title Ya ganaste no puedes seguir participando.
     .container-bottle
       .container
-        .width-bottle
-          ul
-            li(v-for="(item, index) of tamaños" :key="index" @click="nextImg(index)") {{item}}
-        .bottle
-          img(:src="imagen[indexImage].src", alt="alt")
-          button(@click="indexImage++")
+        .do-you-want
+          .width-bottle
+            ul
+              li(v-for="(item, index) of tamaños" :key="index" @click="nextImg(index)") {{item}}
+          .bottle
+            img(:src="imagen[indexImage].src", alt="alt")
         .text-bottle
           h2 {{imagen[indexImage].titleBottle}} <br> {{imagen[indexImage].tamaño}}
           p {{imagen[indexImage].textBottle}}

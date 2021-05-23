@@ -3,16 +3,21 @@
   @include flexbox;
   @include align-items(center);
   @include flex-direction(column);
-  min-height: calc(100vh - 90px);
-  background-color: $c-bg-general;
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: 80%;
-  background-image: url('#{$img-path}/bg-404.jpg');
+  justify-content: center;
+  min-height: 90vh;
+  background-size: cover;
+  background: url('#{$img-path}/pilsen/bg-404.png') right no-repeat;
+  background-position-x: -500px;
   @include media-query(medium) {
-    min-height: calc(100vh - 50px);
+    min-height: 100vh;
     @include flex-direction(row);
-    background-size: 50%;
+    background-size: 100% 100%;
+  }
+  .container-404{
+    padding: 30px 0;
+    margin: 0 auto 200px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 0.57s
   }
 }
 
@@ -41,26 +46,21 @@
 
 .cc-404__title {
   font-family: 'intensaposter';
-  color: $c-primary;
-  @include font-rem(80px);
-  line-height: 1;
+  color: #D2A35D;
+  @include font-rem(98px);
+  font-family: 'DIN Next LT Pro';
+  font-style: normal;
+  font-weight: bold;
+  line-height: 118px;
   padding-bottom: 1rem;
-  &:after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 4px;
-    background-color: $c-brand-2;
-    margin: .6rem auto 0;
-  }
   @include media-query(medium) {
-    @include font-rem(120px);
+    @include font-rem(98px);
   }
   @include media-query(big) {
-    @include font-rem(150px);
+    @include font-rem(98px);
   }
   @include media-query(large) {
-    @include font-rem(170px);
+    @include font-rem(98px);
   }
 }
 
@@ -84,7 +84,7 @@
   width: 90%;
   max-width: 23rem;
   margin: 0 auto;
-  color: $c-brand;
+  color: #fff;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   @include media-query(medium) {

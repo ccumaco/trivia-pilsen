@@ -2,18 +2,17 @@
   <div class="cc-trivia cc-page ">
     .layout-general
       .cc-trivia__inner
-        p.cc-trivia__txt Pregunta {{ askActive }}
-        p.cc-trivia__timer-tiempo Tiempo restante
         .cc-trivia__timer
-          p#countdown.cc-trivia__clock.i-time {{ countdown + ':00' }}
-        transition(name="fade")
+          p#countdown.cc-trivia__clock.i-time Iniciar tiempo: {{ countdown + ':00' }}
+        p.cc-trivia__txt Pregunta {{ askActive }}
+        //- transition(name="fade")
           //- Loader(v-if="isLoader", :full="true")
-        .algo(v-if="start")
+        .algo
           Loader(v-if="isLoaderUni", :full="false")
           .cc-trivia__c(v-else)
             .cc-trivia__wrap
               .cc-trivia__item
-                p.cc-trivia__ask {{ statement }}
+                p.cc-trivia__ask {{ statement }}Pregunta desde back
               ul.cc-trivia__number-list
                 li.cc-trivia__number-item.i-brand-lata(v-for="(item, index) in triviaListLength" :class="{ 'active': askActive == item, 'done': item < askActive}")
               ul.cc-trivia__ask-list
