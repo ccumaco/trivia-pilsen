@@ -1,71 +1,68 @@
 <template lang="pug">
   <div class="cc-registro">
-    .inner
+    .container-register
       .cc-registro__grid
         header.cc-header
-          h1.cc-title RELLENA tus datos y afílate las garras para participar
-          p.cc-lead Pon bien tus datos, no vamos andar entre tejado y tejado buscándote.
+          h1.cc-title Si ya estás registrado
         .cc-registro__cta
-          p.cc-registro__cta-txt ¿Ya tienes un correo registrado?
-          router-link.cc-btn.cc-btn_secondary.i-arrow-after(:to="'/'") Volver al inicio
+          router-link.cc-btn.cc-btn_secondary.i-arrow-after(:to="'/login'") INICIAR SESIÓN
+      p.parrafor Ingresa  tus datos personales <br> para participar en la trivia
       form.cc-form.cc-form__grid(action="/trivia" method="get")
         .cc-form__group
           label.cc-form__label(for="ccName") Nombres <sup>*</sup>
           .cc-form__input-inner
-            input.cc-form__input#ccName(type="text" name="ccName" placeholder="Di la verdad Rosa" v-model="names")
+            input.cc-form__input#ccName(type="text" name="ccName" placeholder="Ingresa solo tu nombre" v-model="names")
         .cc-form__group
           label.cc-form__label(for="ccLastName") Apellidos <sup>*</sup>
           .cc-form__input-inner
-            input.cc-form__input#ccLastName(type="text" name="ccLastName" placeholder="Ingresar apellido" v-model="lastName")
+            input.cc-form__input#ccLastName(type="text" name="ccLastName" placeholder="Ingresa tu apellido" v-model="lastName")
+        .cc-form__group
+          label.cc-form__label(for="ccGender") Género <sup>*</sup> 
+          .cc-form__input-inner.i-select
+            select.cc-form__input.cc-form__input_select#ccGender(v-model="gender")
+              option(selected disabled value="" hidden) Escoje tu género
+              option(v-if="genders!==undefined" v-for="item in genders" :value="item.id") {{ item.name }}
         .cc-form__group
           label.cc-form__label(for="ccEmail") Tu mail <sup>*</sup>
           .cc-form__input-inner
-            input.cc-form__input#ccEmail(type="email" name="ccEmail" placeholder="Ingresa correo electrónico" v-model="ccemail" disabled value="ccemail")
-        .cc-form__group
-          label.cc-form__label(for="ccPhone") Número de teléfono <sup>*</sup>
-          .cc-form__input-inner
-            input.cc-form__input#ccPhone(type="text" name="ccPhone" maxlength="10" placeholder="000 000 0000" v-model="phone")
-        .cc-form__group
+            input.cc-form__input#ccEmail(type="email" name="ccEmail" placeholder="Ingresa correo electrónico" v-model="ccemail" value="ccemail")
+            .cc-form__group
           p.cc-form__label Cuando naciste <sup>*</sup>
           .cc-form__group_grid
             .cc-form__group
-              .cc-form__input-inner
-                input.cc-form__input#ccDateDay(type="number" name="ccDay" maxlength="2" min="1" max="31" placeholder="Día" v-model="birthDay")
-            .cc-form__group
               .cc-form__input-inner.i-select
                 select.cc-form__input.cc-form__input_select#ccDateDay(v-model="birthMonth")
-                  option(selected disabled value="" hidden) Mes
+                  option(selected disabled value="" hidden) DD
                   option(v-for="(item, key) in months" :value="key") {{ item }}
             .cc-form__group
               .cc-form__input-inner
-                input.cc-form__input#ccLastYear(type="number" name="ccYear" maxlength="4" min="1900" max="2002" placeholder="Año" v-model="birthYear")
-        .cc-form__group
-          label.cc-form__label(for="ccGender") Género <sup>*</sup>
-          .cc-form__input-inner.i-select
-            select.cc-form__input.cc-form__input_select#ccGender(v-model="gender")
-              option(selected disabled value="" hidden) Felino no se puede
-              option(v-if="genders!==undefined" v-for="item in genders" :value="item.id") {{ item.name }}
-        .cc-form__group
-          label.cc-form__label(for="ccCity") Ciudad <sup>*</sup>
-          .cc-form__input-inner.i-select
-            select.cc-form__input.cc-form__input_select#ccCity(v-model="city")
-              option(selected disabled value="" hidden) Selecciona ciudad
-              option(v-if="cities!==undefined" v-for="item in cities" :value="item.id") {{ item.name }}
+                input.cc-form__input#ccDateDay(type="number" name="ccDay" maxlength="2" min="1" max="31" placeholder="DD" v-model="birthDay")
+            .cc-form__group
+              .cc-form__input-inner
+                input.cc-form__input#ccLastYear(type="number" name="ccYear" maxlength="4" min="1900" max="2002" placeholder="AAAA" v-model="birthYear")
+        //- .cc-form__group
+        //-   label.cc-form__label(for="ccPhone") Número de teléfono <sup>*</sup>
+        //-   .cc-form__input-inner
+        //-     input.cc-form__input#ccPhone(type="text" name="ccPhone" maxlength="10" placeholder="000 000 0000" v-model="phone")
+        //- .cc-form__group
+        //-   label.cc-form__label(for="ccCity") Ciudad <sup>*</sup>
+        //-   .cc-form__input-inner.i-select
+        //-     select.cc-form__input.cc-form__input_select#ccCity(v-model="city")
+        //-       option(selected disabled value="" hidden) Selecciona ciudad
+        //-       option(v-if="cities!==undefined" v-for="item in cities" :value="item.id") {{ item.name }}
         .cc-form__footer
           .cc-form__terms
             .cc-form__terms-item
               input.cc-form__input-check(type="checkbox" id='ccTerms' v-model="terms")
               label.cc-form__label.cc-form__label_check.i-check(
-                for='ccTerms') Acepto 
-                  a(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf" target="_blank") términos y condiciones
-                  |  y 
-                  a(href="./documents/Politicas-de-Privacidad-Landing-BECKER.pdf" target="_blank") políticas de uso
+                for='ccTerms') He leído y aceptado 
+                  a(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf" target="_blank") términos y condiciones y  <a href="./documents/Politicas-de-Privacidad-Landing-BECKER.pdf" target="_blank"> política de protección de datos personales</a>
             .cc-form__terms-item
               input.cc-form__input-check(type="checkbox" id='ccMrk' v-model="mrk")
               label.cc-form__label.cc-form__label_check.i-check(
-                for='ccMrk') Quiero recibir novedades y promociones de Becker
+                for='ccMrk') Deseo recibir información comercial de Pilsen del Sur
             label
-          button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" @click="createUser()" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") Quiero ganar
+          button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" @click="createUser()") Quiero ganar
       transition(name='fade')
         .cc-modal-code(v-if='invalidCode')
           .cc-modal-code__card

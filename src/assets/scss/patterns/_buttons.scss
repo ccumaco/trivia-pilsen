@@ -65,6 +65,7 @@ button {
     padding: 1.2rem 2.2rem 1.2rem 1.5rem;
   }
   &.cc-btn_secondary {
+    width: 100%;
     color: $c-neutro;
     background-color: $c-primary;
     &:before {

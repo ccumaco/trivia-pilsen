@@ -10,8 +10,13 @@
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  ul{
-    li{
+
+  .icon-mobile {
+    display: none;
+  }
+
+  ul {
+    li {
       margin: 0 10px;
       list-style: none;
       display: inline-block;
@@ -21,11 +26,13 @@
       font-weight: bold;
       font-size: 16px;
       line-height: 19px;
-      a{
+
+      a {
         color: #fff;
         text-decoration: none;
       }
-      select{
+
+      select {
         font-family: 'DIN Next LT Pro';
         font-style: normal;
         font-weight: bold;
@@ -37,7 +44,8 @@
       }
     }
   }
-  .btn-register button{
+
+  .btn-register button {
     cursor: pointer;
     background-color: transparent;
     border: 1px solid #fff;
@@ -50,9 +58,217 @@
     font-size: 16.1596px;
     line-height: 19px;
     text-align: center;
-    a{
+
+    a {
       text-decoration: none;
       color: #fff;
+    }
+  }
+
+  .menu-lateral {
+    display: none;
+  }
+}
+
+.menu-desktop {
+  background-color: #701012;
+  margin-top: 2px solid #fff;
+  .container-menu-dektop {
+    display: flex;
+    padding: 50px 0;
+    ul {
+      margin-right: 1px solid #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+
+      li {
+        list-style: none;
+      }
+    }
+    .container-card{
+      display: flex;
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .menu-lateral {
+    position: fixed;
+    background-color: #701012;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+
+    ul li.card-product.list-mobile {
+      border-bottom: 0;
+      display: flex;
+
+      img {
+        object-fit: contain;
+      }
+
+      .container-text:last-child p {
+        font-family: 'DIN Next LT Pro';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px !important;
+        line-height: 18px;
+      }
+
+      .container-text {
+        padding: 20px 0;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        text-align: justify;
+
+        p:first-child {
+          font-family: 'DIN Next LT Pro';
+          font-style: normal;
+          color: #fff;
+          font-weight: bold;
+          font-size: 15px !important;
+        }
+
+        button {
+          width: 100%;
+          border: 1px solid #fff;
+          border-radius: 3px;
+          color: #fff;
+          font-family: 'DIN Next LT Pro';
+          font-style: normal;
+          font-weight: bold;
+          font-size: 13px;
+          background-color: transparent;
+        }
+      }
+    }
+
+    ul.new-list {
+      clear: both;
+      display: block;
+      width: 100%;
+
+      li.lista-none {
+        padding-left: 30px;
+        margin: 10px 0;
+        width: 100%;
+        font-family: 'DIN Next LT Pro';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #A0A0A0;
+
+        a {
+          text-decoration: none;
+          color: #A0A0A0;
+        }
+      }
+    }
+
+    ul li.list-mobile {
+      width: 100%;
+      border-bottom: 1px solid #686868;
+      padding: 10px 20px 10px 30px;
+      color: #fff;
+      font-family: 'DIN Next LT Pro';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 25px;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      select {
+        font-family: 'DIN Next LT Pro';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        color: #fff;
+        padding: 0;
+        margin: 0;
+        width: 95%;
+        background-color: transparent;
+        border: 0;
+
+        option {
+          width: 100%;
+          background-color: #701012;
+        }
+      }
+    }
+
+    .container-footer {
+      padding: 30px 0;
+      position: fixed;
+      bottom: 0;
+      border-top: 1px solid #686868;
+      width: 100%;
+
+      ul {
+        display: flex;
+        justify-content: space-around;
+
+        li {
+          font-family: 'Roboto';
+          font-style: normal;
+          color: #fff;
+          font-weight: normal;
+          font-size: 17px;
+          line-height: 12px;
+          list-style: none;
+
+          a {
+            font-size: 20px;
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .menu-open {
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+  }
+
+  .cc-nav {
+    justify-content: flex-end;
+
+    ul {
+      display: none;
+    }
+
+    .btn-register {
+      display: none;
+    }
+
+    .container-logo-header {
+      margin-left: 50px;
+      width: 55%;
+    }
+
+    .icon-mobile {
+      display: block;
+      padding-right: 20px;
+      width: 45%;
+      color: #fff;
+      font-size: 30px;
+      font-family: 'Roboto';
+    }
+
+    .container-logo-header,
+    .icon-mobile {
+      text-align: right;
     }
   }
 }
