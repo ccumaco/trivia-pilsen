@@ -19,19 +19,19 @@
     .menu-desktop(v-if="drawer")
       h2 CONCURSOS
       .container-menu-dektop
-        ul(v-if="true")
-          li.lista TRIVIA PILSEN DEL SUR
+        ul(v-if="drawer")
+          li.lista(@click="module2 = !module2") TRIVIA PILSEN DEL SUR
           li.lista CONCURSO - SKOL
           li.lista NOMINA UN BACÁN
-        ul(v-if="true")
-          li.lista CÓMO PARTICIPAR
+        ul(v-if="module2")
+          li.lista(@click="module3 = !module3") CÓMO PARTICIPAR
           li.lista RANKING DE POSICIONES
           li.lista BASES Y CONDICIONES DE LA TRIVIA
-        .container-card(v-if="true")
+        .container-card(v-if="module3 && module2")
           img(src="./../assets/img/pilsen/product-header.png", alt="alt")
           .container-text
             p Participa en nuestra Trivia y gana un MEET & GREET con Ivan Morales y Maxi Falcón
-            p Lata edición especial - 30 años copa libertadores 
+            p.text Lata edición especial - 30 años copa libertadores 
             button(@click="isOpen = !isOpen") PARTICIPAR
     .menu-lateral(v-if="isOpen")
       ul
@@ -68,7 +68,9 @@ export default {
       isOpen: false,
       trivia: false,
       showConcurso: false,
-      drawer: false
+      drawer: false,
+      module2: false,
+      module3: false
     }
   },
   methods: {

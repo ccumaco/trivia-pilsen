@@ -26,7 +26,7 @@
                   input.cc-trivia__ask-input(type="radio" name="answer" id="answerC" value="c" v-model="answerAR")
                   label.cc-trivia__ask-btn(for="answerC") {{ answerC }}
               .cc-trivia__footer
-                button.cc-btn.cc-btn__primary.cc-promotion__card-btn.i-arrow-after(v-if="askActive < 8" type="button" @click="AskQuestion" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") Voy
+                button.cc-btn.cc-btn__primary.cc-promotion__card-btn.i-arrow-after(v-if="askActive < 8" type="button" @click="AskQuestion" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") Siguiente
                 button.cc-btn.cc-btn__primary.cc-promotion__card-btn(v-else type="button" @click="AskQuestion" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") Enviar respuestas
   </div>
 </template>
@@ -48,7 +48,7 @@ export default {
       answerB : '',
       answerC : '',
       active : true,
-      triviaListLength: 8,
+      triviaListLength: 10,
       askActive: 1,
       time: 'September 4, 2020, 15:15',
       countdown: 60,

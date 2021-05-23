@@ -4,12 +4,20 @@
   width: 90%;
   max-width: 350px;
 }
+.line-style{
+  width: 100%;
+  height: 2px;
+  left: 723px;
+  background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  // transform: rotate(90deg);
+}
 .container-register{
   background: rgba(0, 0, 0, 0.5);
   border: 1px solid #EEB400;
   box-sizing: border-box;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(50px);
+  width: 35%;
 }
 
 .cc-form__group {
@@ -22,7 +30,7 @@
   margin: 0;
   padding-bottom: 6px;
   font-family: 'Open Sans', sans-serif;
-  font-weight: $f-regular;
+  font-weight: bold;
   color: $c-neutro;
   @include font-rem(16px);
   sup {
@@ -40,6 +48,7 @@
   padding: 0;
   border-bottom: 1px solid #fff;
   color: #fff;
+  padding-bottom: 5px;
   &::placeholder{
     color: #fff  !important;
     margin-bottom: 3px !important;
@@ -260,6 +269,18 @@ input[type=number] { -moz-appearance:textfield; }
 
 .cc-form__footer {
   text-align: center;
+  width: 100% !important;
+  max-width: 100% !important;
+  .cc-form__btn::after{
+    content: '';
+  }
+  .cc-form__btn{
+    max-width: 100%;
+  }
+  .cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after{
+    border: 2px solid #fff;
+    background-color: #C18E00;
+  }
 }
 
 //registro
@@ -290,14 +311,14 @@ input[type=number] { -moz-appearance:textfield; }
     font-size: 30px;
     color: #fff;
     padding: 0 5%;
-    text-align: left;
+    text-align: justify;
   }
 }
 
 .cc-registro__grid {
   @include flexbox;
   @include align-items(center);
-  @include justify-content(flex-end);
+  @include justify-content(center);
   @include flex-direction(column-reverse);
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -307,15 +328,16 @@ input[type=number] { -moz-appearance:textfield; }
     @include flex-direction(row);
     .cc-header {
       padding: 0;
-      width: 35%;
+      width: 50%;
       max-width: 350px;
       text-align: left;
     }
   }
   .cc-title {
     text-align: left;
+    padding-left: 20px;
     text-transform: uppercase;
-    padding-bottom: 1rem;
+    // padding-bottom: 1rem;
     font-family: 'DIN Next LT Pro';
     font-style: normal;
     font-weight: bold;
@@ -364,20 +386,24 @@ input[type=number] { -moz-appearance:textfield; }
     margin: .6rem auto 0;
   }
   @include media-query(medium) {
-    width: 65%;
+    width: 50%;
     max-width: 350px;
     &:after {
       display: none;
     }
+  }
+  .cc-btn::after {
+    display: none;
   }
   .cc-btn {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
+    border: 2px solid #fff;
     line-height: 19px;
     background-color: #C18E00;
     padding: 10px 50px;
-    margin: 0 auto;
+    margin: 0 20px 0 auto;
   }
 }

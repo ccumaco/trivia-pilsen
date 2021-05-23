@@ -6,6 +6,7 @@
           h1.cc-title Si ya estás registrado
         .cc-registro__cta
           router-link.cc-btn.cc-btn_secondary.i-arrow-after(:to="'/login'") INICIAR SESIÓN
+      .line-style
       p.parrafor Ingresa  tus datos personales <br> para participar en la trivia
       form.cc-form.cc-form__grid(action="/trivia" method="get")
         .cc-form__group
@@ -27,7 +28,8 @@
           .cc-form__input-inner
             input.cc-form__input#ccEmail(type="email" name="ccEmail" placeholder="Ingresa correo electrónico" v-model="ccemail" value="ccemail")
             .cc-form__group
-          p.cc-form__label Cuando naciste <sup>*</sup>
+          p.cc-form__label Ingresa tu fecha de Nacimiento 
+          //- <sup>*</sup>
           .cc-form__group_grid
             .cc-form__group
               .cc-form__input-inner.i-select
@@ -62,7 +64,7 @@
               label.cc-form__label.cc-form__label_check.i-check(
                 for='ccMrk') Deseo recibir información comercial de Pilsen del Sur
             label
-          button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" @click="createUser()") Quiero ganar
+          button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" @click="createUser()") Siguiente
       transition(name='fade')
         .cc-modal-code(v-if='invalidCode')
           .cc-modal-code__card
@@ -105,7 +107,7 @@ export default {
         11: 'NOV',
         12: 'DIC'
       },
-      genders: {},
+      genders: [{name:'Hombre', id:5},{name:'Mujer', id: 6},{name:'prefiero no decir', id: 7}],
       gender: '',
       city: '',
       phone: '',
@@ -131,7 +133,7 @@ export default {
     axios.get("https://api.trivia-becker.cl/ab/city").then((response) => {
       vm.cities = response.data;
     })
-    axios.get("https://api.trivia-becker.cl/ab/gender").then((response) => {
+    axios.get("https://dev-pilsendelsur.pantheonsite.io/ab/gender").then((response) => {
       vm.genders = response.data;
     })
     this.ccemail = this.$route.params.mail
@@ -149,7 +151,7 @@ export default {
     },
     createUser() {
       let self = this
-      if(!(self.names == '') && !(self.lastName == '') && !(self.birthYear == '') && !(self.birthMonth == '') && !(self.birthDay == '') && !(self.gender == '') && !(self.city == '') && !(self.phone == '') && (self.terms)) {
+      if(!(self.names == '') && !(self.lastName == '') && !(self.birthYear == '') && !(self.birthMonth == '') && !(self.birthDay == '') && !(self.gender == '') &&  (self.terms)) {
         this.getCookie('_td')
         self.isLoader = true
         const info = {
@@ -157,22 +159,23 @@ export default {
           last_name: self.lastName,
           birth: this.birthYear + '-' + this.birthMonth + '-' + this.birthDay,
           id_gender: this.gender,
-          id_city: this.city,
+          // id_city: this.city,
           mail: this.ccemail,
-          phone: this.phone,
+          // phone: this.phone,
           terms_acceptance: this.terms,
           allow_ads: this.mrk,
           td: this.td
         };
         axios({
           method: "post",
-          url: "https://api.trivia-becker.cl/ab/user/register?_format=json",
+          url: "https://dev-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
           data: info,
           headers: {
             "Content-Type": "application/json"
           }
         })
         .then((response) => {
+          console.log(info);
           self.output = response.data
           window.dataLayer.push({
             'event': 'trackEvent',
@@ -210,7 +213,7 @@ export default {
       return "";
     },
     btnDisable() {
-      if(((!this.names == '') && (!this.lastName == '') && (!this.ccemail == '') && (!this.phone == '') && (!this.gender == '') && (!this.city == '') && (!this.terms == ''))) {
+      if(((!this.names == '') && (!this.lastName == '') && (!this.ccemail == '') && (!this.gender == '') && (!this.terms == ''))) {
         
         if ((!this.birthDay == '') && (!this.birthMonth == '') && (!this.birthYear == '')) {
           if(this.birthYear < (this.fechaActualYear - 18)) {

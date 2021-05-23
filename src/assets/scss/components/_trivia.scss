@@ -1,9 +1,17 @@
 
+.cc-trivia{
+  border-bottom: 5px solid #C18E00;
+}
 .cc-trivia__inner {
   padding: 30px 0;
   min-height: 612px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #EEB400;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(50px);
   @include media-query(medium) {
-    width: 70%;
+    width: 45%;
     margin: 0 auto;
     padding: 30px 0 50px;
   }
@@ -57,9 +65,10 @@
       width: 30px;
       height: 70px;
       background-repeat: no-repeat;
-      background-position: bottom left;
-      background-size: cover;
-      background-image: url('#{$img-path}/icon-lata.svg');
+      background-position: right;
+      background-position-y: calc(100% - 10px);
+      background-size: 60%;
+      background-image: url('#{$img-path}/pilsen/lata-small.png');
     }
   }
   &.done {
@@ -107,13 +116,13 @@
   display: block;
   padding: 0 30px 1rem;
   margin: 0;
-  font-family: 'intensaposter';
+  font-family: 'Roboto';
   text-align: center;
-  color: $c-neutro;
+  color: #CFA052;
   text-transform: uppercase;
   @include font-rem(22px);
   @include media-query(medium) {
-    @include font-rem(30px);
+    @include font-rem(34px);
   }
   @include media-query(big) {
     @include font-rem(40px);
@@ -127,10 +136,11 @@
   width: 200px;
   padding: 1rem;
   margin: 0 auto 1rem;
-  border-radius: 25px;
-  color: $c-brand;
+  border-radius: 0px;
+  border: 1px solid #fff;
+  color: #fff;
   text-align: center;
-  background-color: $c-primary;
+  background-color: #C18E00;
   box-shadow: inset 2px 2px 4px rgba(216, 216, 216, 0.25);
   @include media-query(medium) {
     width: 400px;
@@ -186,9 +196,9 @@
 .cc-trivia__ask {
   display: block;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto';
   font-weight: $f-bold;
-  text-shadow: 2px 3px 5px $c-brand;
+  // text-shadow: 2px 3px 5px $c-brand;
   color: $c-neutro;
   margin: 0 0 1rem;
   @include font-rem(16px);
@@ -218,20 +228,20 @@
 .cc-trivia__ask-item {
   position: relative;
   width: 100%;
-  max-width: 300px;
+  max-width: 100%;
 }
 
 .cc-trivia__ask-btn {
-  width: auto;
+  width: 100%;
   max-width: 100%;
   display: block;
   @include flexbox;
   @include justify-content(center);
   @include align-items(center);
   min-height: 3rem;
-  padding: 0.6rem 1rem 0.6rem 2rem;
+  padding: 0.6rem 0 0.6rem 0;
   background-color: $c-neutro;
-  border-radius: 10px;
+  border-radius: 30px;
   text-align: center;
   margin: 6px 0;
   cursor: pointer;
@@ -279,6 +289,9 @@
 .cc-trivia__footer {
   padding: 20px 0 0;
   .cc-btn {
+    background-color:#C18E00;
+    color: #fff;
+    border: 1px solid #fff;
     display: block;
     max-width: 300px;
     margin: 0 auto;

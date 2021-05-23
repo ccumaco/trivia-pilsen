@@ -86,7 +86,7 @@
   @include media-query(medium) {
     background-repeat: no-repeat;
     background-position: bottom left;
-    background-size: 100%;
+    background-size: 100% 100%;
     background-image: url('#{$img-path}/pilsen/bg-trivia.png');
     padding-bottom: 0;
     &:before {
