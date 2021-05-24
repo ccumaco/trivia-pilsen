@@ -65,9 +65,9 @@
     }
   }
 
-  .menu-lateral {
-    display: none;
-  }
+}
+.menu-lateral {
+  display: none !important;
 }
 
 .menu-desktop {
@@ -146,12 +146,15 @@
 }
 
 @media screen and (max-width: 970px) {
+  .menu-desktop{
+    display: none;
+  }
   .menu-lateral {
-    position: fixed;
+    // position: fixed !important;
     background-color: #701012;
     width: 100vw;
     height: 100vh;
-    display: block;
+    display: block !important;
 
     ul li.card-product.list-mobile {
       border-bottom: 0;
