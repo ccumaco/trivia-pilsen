@@ -24,6 +24,13 @@
 .cc-footer__social {
   // border-top: 1px solid $c-primary;
   padding-top: 1rem;
+  .logo-footer{
+    list-style: none;
+    a img{
+      height: auto;
+      width: 100px;
+    }
+  }
   @include media-query(wide) {
     border: none;
   }

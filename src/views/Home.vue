@@ -28,7 +28,7 @@
                 p.cc-learn__slider-txt Hacer una buena cerveza lleva tiempo así como a ti te ha llevado tiempo poder reconocer lo verdaderamente importante
             slide.cc-learn__slider__item
               .cc-learn__slider-content
-                p.cc-learn__slider-txt mayor tiempo de maduraciónen su elaboración, el cual le otorga un cuerpo y sabor únicos, superior a otras cervezas del mercado
+                p.cc-learn__slider-txt mayor tiempo de maduraciónen su elaboración, el cual le otorga un cuerpo y sabor únicos. <br> superior a otras cervezas del mercado
             slide.cc-learn__slider__item
               .cc-learn__slider-content
                 p.cc-learn__slider-txt Pilsen del Sur es una cerveza elaboradacon 6 lúpulos, los cuales le dan el aroma y amargor justo

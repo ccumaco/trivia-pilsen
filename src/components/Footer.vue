@@ -21,6 +21,8 @@
             p.cc-footer__nav-txt <b>No compartas este contenido con menores de edad</b>
           li.cc-footer__nav-item
             p.cc-footer__nav-txt <b> Tomar bebidas con moderación</b>
+          li.cc-footer__nav-item
+            p.cc-footer__nav-txt <b> ¡SIGUENOS! </b>
     .cc-footer__social
       ul.cc-footer__social-list
         li.cc-footer__social-item

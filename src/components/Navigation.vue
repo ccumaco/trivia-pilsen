@@ -23,7 +23,7 @@
         ul(v-if="drawer")
           li.lista(@click="module2 = !module2") TRIVIA PILSEN DEL SUR
           //- li.lista <router-link to="/trivia">CONCURSO - SKOL</router-link>
-          li.lista NOMINA UN BACÁN
+          //- li.lista NOMINA UN BACÁN
         ul(v-if="module2")
           li.lista(@click="module3 = !module3") CÓMO PARTICIPAR
           li.lista RANKING DE POSICIONES
@@ -33,7 +33,7 @@
           .container-text
             p Participa en nuestra Trivia y gana un MEET & GREET con Ivan Morales y Maxi Falcón
             p.text Lata edición especial - 30 años copa libertadores 
-            button(@click="isOpen = !isOpen") <router-link to="/trivia"> PARTICIPAR</router-link>
+            button(@click="isOpen = !isOpen") <router-link to="/registro"> PARTICIPAR</router-link>
     .menu-lateral(v-if="isOpen")
       ul
         li.list-mobile(@click="isOpen = !isOpen") <router-link to="/"> HOME</router-link>
@@ -44,7 +44,7 @@
           .container-text
             p Participa en nuestra Trivia y gana un MEET & GREET con Ivan Morales y Maxi Falcón
             p Lata edición especial - 30 años copa libertadores 
-            button(@click="isOpen = !isOpen") <router-link to="/trivia">PARTICIPAR</router-link>
+            button(@click="isOpen = !isOpen") <router-link to="/registro">PARTICIPAR</router-link>
         ul.new-list(v-if="showConcurso")
           li.lista-none(@click="isOpen = !isOpen") <router-link to="/trivia"> CÓMO PARTICIPAR </router-link>
           li.lista-none(@click="isOpen = !isOpen") <router-link to="/ranking"> RANKING DE POSICIONES </router-link>

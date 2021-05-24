@@ -13,6 +13,7 @@
     text-align: left;
     padding: 60px;
     .title-card{
+      padding-right: 30px;
       font-family: 'DIN Next LT Pro';
       font-style: normal;
       font-weight: bold;
@@ -28,7 +29,7 @@
       color: #fff;
       background-color: #712325;
       border-radius: 30px;
-      padding: 7px 20px;
+      padding: 10px 20px;
       font-family: 'Roboto';
       font-style: normal;
       font-weight: bold;
@@ -237,7 +238,7 @@
   .cc-home__hero{
     flex-direction: column;
     .container-first{
-      padding: 0 40px;
+      padding: 0 35px;
       flex-basis: 60%;
     }
     .contain-img{

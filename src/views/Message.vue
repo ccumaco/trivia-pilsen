@@ -1,24 +1,26 @@
 <template lang="pug">
   <div class="cc-message cc-page">
-    transition(name="fade")
-      Loader(v-if="finalTime === '' || isLoader", :full="true")
-    .cc-message__grid(v-if="finalTime !== '' && isLoader === false")
+    //- transition(name="fade")
+    //-   Loader(v-if="finalTime === '' || isLoader", :full="true")
+    //- (v-if="finalTime !== '' && isLoader === false")
+    .cc-message__grid
       .cc-message__content
         header.cc-message__header
-          h1(v-if="!isChecked").cc-title.cc-title_brand Completa la trivia
-          p(v-if="!isChecked").cc-lead Tu tiempo fue de:
+          h1(v-if="!isChecked").cc-title.cc-title_brand ¡Terminaste!
+          p(v-if="!isChecked").cc-lead LA HICISTE EN:
           h1(v-if="isChecked").cc-title.cc-title_brand ¡Weeeena!
           p(v-if="isChecked").cc-lead La hiciste en:
           span.cc-lead__time {{ finalTime | filterName }}
-        p.cc-message__txt(v-if="!isChecked") 
-          small ¡Solo un paso más! Comprueba que no eres un robot y haz clic en "Terminar trivia"
-          br
-          br
-          vue-recaptcha(v-if="!isChecked" sitekey="6LfD_SUaAAAAAGZ02ji6sqqqJLDukJ71r-x6yYwh", loadRecaptchaScript=true @verify="onCaptchaVerified" @expired="onCaptchaExpired") 
-        p(v-if="isChecked").cc-message__txt Has completado tu trivia. El ganador se define todos los días a las 20:00 hrs.
+        //- p.cc-message__txt(v-if="!isChecked") 
+        //-   small ¡Solo un paso más! Comprueba que no eres un robot y haz clic en "Terminar trivia"
+        //-   br
+        //-   br
+          //- vue-recaptcha(v-if="!isChecked" sitekey="6LfD_SUaAAAAAGZ02ji6sqqqJLDukJ71r-x6yYwh", loadRecaptchaScript=true @verify="onCaptchaVerified" @expired="onCaptchaExpired") 
+          //- (v-if="isChecked")
+        p.cc-message__txt El ganador se define todos los días a las 20:00 hrs.
         .cc-message__grid-btn
           //- router-link(:to="'/#'").cc-btn.cc-message__btn Vuelve a participar
-          button(v-if="!isChecked").cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" @click="checkTrivia()" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") Terminar trivia
+          button(v-if="!isChecked").cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" @click="checkTrivia()" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") VER RANKING
           router-link(v-if="isChecked")(:to="'/ranking'").cc-btn.cc-btn_secondary.cc-message__btn.i-arrow-after Ver ranking
           
 
