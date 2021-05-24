@@ -33,7 +33,7 @@
           .container-text
             p Participa en nuestra Trivia y gana un MEET & GREET con Ivan Morales y Maxi Falcón
             p.text Lata edición especial - 30 años copa libertadores 
-            button(@click="isOpen = !isOpen") PARTICIPAR
+            button(@click="isOpen = !isOpen") <router-link to="/trivia"> PARTICIPAR</router-link>
     .menu-lateral(v-if="isOpen")
       ul
         li.list-mobile(@click="isOpen = !isOpen") <router-link to="/"> HOME</router-link>
