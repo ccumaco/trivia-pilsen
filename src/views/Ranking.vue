@@ -1,7 +1,7 @@
 <template lang="pug">
   .cc-page
     <div class="cc-ranking">
-      .layout-general
+      .layout-general.layaout-ranking
         .cc-ranking__inner
           header.cc-ranking__header.cc-header
             h1.cc-title RANKING TRIVIA PILSEN DEL SUR
@@ -29,16 +29,16 @@ export default {
       finalTime: '01:50:08',
       totalPoints: '5.000',
       rankingList: [
-        {time:30, name:'nombre1'},
-        {time:30, name:'nombre2'},
-        {time:30, name:'nombre3'},
-        {time:30, name:'nombre5'},
-        {time:30, name:'nombre6'},
-        {time:30, name:'nombre8'},
-        {time:30, name:'nombre9'},
-        {time:30, name:'nombre0'},
-        {time:30, name:'nombre1'},
-        {time:30, name:'nombre2'},
+        // {time:30, name:'nombre1'},
+        // {time:30, name:'nombre2'},
+        // {time:30, name:'nombre3'},
+        // {time:30, name:'nombre5'},
+        // {time:30, name:'nombre6'},
+        // {time:30, name:'nombre8'},
+        // {time:30, name:'nombre9'},
+        // {time:30, name:'nombre0'},
+        // {time:30, name:'nombre1'},
+        // {time:30, name:'nombre2'},
       ],
     }
   },

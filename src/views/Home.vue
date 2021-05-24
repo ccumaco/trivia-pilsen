@@ -130,7 +130,7 @@ export default {
       };
       axios({
         method: "post",
-        url: "https://api.trivia-becker.cl/ab/challenge/validate?_format=json",
+        url: "https://dev-pilsendelsur.pantheonsite.io/ab/challenge/validate?_format=json",
         data: info,
         headers: { "Content-Type": "application/json" }
       })

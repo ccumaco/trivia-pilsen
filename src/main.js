@@ -130,7 +130,7 @@ new Vue({
   },
   metaInfo: {
     // Children can override the title.
-    title: 'Cerveza Becker | Participa en la trivia Becker y gana premios',
+    title: 'Cerveza Pilsen | Participa en la trivia Pilsen y gana premios',
     // Define meta tags here.
     meta: [
       {'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8'},

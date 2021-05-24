@@ -22,7 +22,7 @@
       .container-menu-dektop
         ul(v-if="drawer")
           li.lista(@click="module2 = !module2") TRIVIA PILSEN DEL SUR
-          li.lista <router-link to="/trivia">CONCURSO - SKOL</router-link>
+          //- li.lista <router-link to="/trivia">CONCURSO - SKOL</router-link>
           li.lista NOMINA UN BACÁN
         ul(v-if="module2")
           li.lista(@click="module3 = !module3") CÓMO PARTICIPAR

@@ -130,7 +130,7 @@ export default {
   },
   created () {
     var vm = this
-    axios.get("https://api.trivia-becker.cl/ab/city").then((response) => {
+    axios.get("https://dev-pilsendelsur.pantheonsite.io/ab/city").then((response) => {
       vm.cities = response.data;
     })
     axios.get("https://dev-pilsendelsur.pantheonsite.io/ab/gender").then((response) => {
