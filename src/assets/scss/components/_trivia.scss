@@ -6,6 +6,11 @@
   min-height: 100%;
   background-color: transparent !important;
 }
+@media screen and (max-width: 970px) {
+  .layout-general.layout-trivia{
+    width: auto;
+  }
+}
 .cc-trivia{
   border-bottom: 5px solid #C18E00;
 }
