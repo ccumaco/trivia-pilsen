@@ -6,7 +6,7 @@
       .container-first
         h2.title-card Participa en nuestra Trivia y gana un <b>MEET & GREET </b> con Ivan Morales y Maxi Falcón
         p.text-card Lata edición especial - 30 años copa libertadores
-        .register-here REGISTRATE AQUÍ
+        router-link(to="/trivia").register-here PARTICIPA  AQUÍ
       .contain-img
         .container-secont
         .container-tertiary

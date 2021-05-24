@@ -4,19 +4,18 @@
       .layout-general
         .cc-ranking__inner
           header.cc-ranking__header.cc-header
-            h1.cc-title RANKING DIARIO TRIVIA BECKER
-            p.cc-ranking__header-txt Échale un ojo felino a la tabla de posiciones
+            h1.cc-title RANKING TRIVIA PILSEN DEL SUR
+            p.cc-ranking__header-txt Logra quedarte en la cima...  <br> ¡Los 15 mejores serán los ganadores! 
               small.cc-ranking__header-txt_small Posiciones del día
             //- router-link(:to="'/'").cc-btn.cc-promo__btn Batir mi record
           ul.cc-ranking__list
             li.cc-ranking__item(v-for="item in rankingList")
               p.cc-ranking__name.i-dot-ranking {{ item.name }}
               span.cc-ranking__points {{ item.time | filterName }}
-        p.cc-ranking__txt Todos los días regalaremos un premio de $10.000 en Pedidos Ya al primer lugar del Ranking.
+        p.cc-ranking__txt SI TE DIO SED
+        .container-btn
+          button.shop-here COMPRAR PILSEN AQUÍ
     </div>
-    .cc-promo
-      p.cc-promo__title Si te dio sed
-      a(href="https://www.casadelacerveza.cl/becker" target="_blank").cc-btn.cc-btn_secondary.cc-promo__btn.i-arrow-after Comprar becker aquí
 </template>
 
 <script>
@@ -29,11 +28,22 @@ export default {
     return {
       finalTime: '01:50:08',
       totalPoints: '5.000',
-      rankingList: [],
+      rankingList: [
+        {time:30, name:'nombre1'},
+        {time:30, name:'nombre2'},
+        {time:30, name:'nombre3'},
+        {time:30, name:'nombre5'},
+        {time:30, name:'nombre6'},
+        {time:30, name:'nombre8'},
+        {time:30, name:'nombre9'},
+        {time:30, name:'nombre0'},
+        {time:30, name:'nombre1'},
+        {time:30, name:'nombre2'},
+      ],
     }
   },
   created() {
-    this.generarRanking()
+    // this.generarRanking()
   },
   filters: {
     filterName(value) {
@@ -50,7 +60,7 @@ export default {
       let self = this
       axios({
         method: "get",
-        url: "https://api.trivia-becker.cl/ab/trivia/ranking?_format=json",
+        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/ranking?_format=json",
         headers: { "Content-Type": "application/json" }
       })
       .then((response) => {

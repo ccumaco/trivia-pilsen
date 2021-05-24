@@ -153,7 +153,7 @@ export default {
       let self = this
       if(!(self.names == '') && !(self.lastName == '') && !(self.birthYear == '') && !(self.birthMonth == '') && !(self.birthDay == '') && !(self.gender == '') &&  (self.terms)) {
         this.getCookie('_td')
-        self.isLoader = true
+        self.isLoader = false
         const info = {
           name: self.names,
           last_name: self.lastName,
@@ -175,7 +175,7 @@ export default {
           }
         })
         .then((response) => {
-          console.log(info);
+          console.log(info)+"esta es la info";
           self.output = response.data
           window.dataLayer.push({
             'event': 'trackEvent',
@@ -187,7 +187,7 @@ export default {
           self.$router.push({name: 'Trivia', params: {mail: self.$route.params.mail, attempts: 3}})
         }, (error) => {
           console.log(error);
-          console.log("prueba registro");
+          console.log("prueba fallo registro");
         });
       } else {
         console.log("no se puede registrar por x") 

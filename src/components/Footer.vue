@@ -1,11 +1,12 @@
 <template lang="pug">
   footer.cc-footer
+    .cc-footer__social
+      li.cc-footer__nav-item.logo-footer
+        router-link(:to="'/'")
+          img.cc-footer__brand-logo(alt="Logo Becker" src="../assets/img/pilsen/logo-blanco.png")
     .cc-footer__layout
       .inner
         ul.cc-footer__nav
-          li.cc-footer__nav-item.logo-footer
-            router-link(:to="'/'")
-              img.cc-footer__brand-logo(alt="Logo Becker" src="../assets/img/pilsen/logo-blanco.png")
           li.cc-footer__nav-item
             a.cc-footer__nav-link(href="https://www.ab-inbev.com" taget="_blank") <b>Anheuser-Busch InBev © 2020</b>
           li.cc-footer__nav-item
@@ -21,7 +22,6 @@
           li.cc-footer__nav-item
             p.cc-footer__nav-txt <b> Tomar bebidas con moderación</b>
     .cc-footer__social
-      p.cc-footer__social-txt <b> Síguenos </b>
       ul.cc-footer__social-list
         li.cc-footer__social-item
           a(href="https://www.instagram.com/cerveza_becker/" alt="Síguenos en Instagram").cc-footer__social-link.i-instagram

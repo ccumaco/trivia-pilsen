@@ -133,7 +133,7 @@
 .cc-trivia__timer {
   position: relative;
   display: block;
-  width: 200px;
+  width: 250px;
   padding: 1rem;
   margin: 0 auto 1rem;
   border-radius: 0px;
@@ -289,6 +289,8 @@
 .cc-trivia__footer {
   padding: 20px 0 0;
   .cc-btn {
+    font-family: 'Roboto';
+    padding: 1rem 3rem 1rem 3rem;;
     background-color:#C18E00;
     color: #fff;
     border: 1px solid #fff;
@@ -316,7 +318,7 @@
 }
 
 .cc-trivia__timer-tiempo {
-  font-family: 'intensaposter';
+  font-family: 'Roboto';
   text-align: center;
   color: $c-neutro;
   text-transform: uppercase;

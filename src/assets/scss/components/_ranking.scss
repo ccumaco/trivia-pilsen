@@ -1,5 +1,6 @@
 
 .cc-ranking {
+  min-height: 150vh;
   padding-bottom: 2rem;
   .cc-lead {
     padding: 30px 20px;
@@ -16,12 +17,15 @@
     padding-bottom: 3rem;
   }
   .cc-title {
-    font-family: 'intensaposter';
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
     @include font-rem(20px);
     padding-bottom: 10px;
-    color: $c-neutro;
+    color: #712325;
     @include media-query(medium) {
-      @include font-rem(30px);
+      @include font-rem(28px);
       padding-bottom: 20px;
     }
     @include media-query(big) {
@@ -58,23 +62,26 @@
 .cc-ranking__inner {
   margin: 0 auto;
   @include media-query(wide) {
-    width: 70%;
+    width: 100%;
   }
 }
 
 .cc-ranking__header {
   max-width: 260px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 10px 0 2rem;
   @include media-query(medium) {
     max-width: 450px;
   }
 }
 
 .cc-ranking__header-txt {
-  color: $c-neutro;
-  font-family: serif;
-  @include font-rem(16px);
+  color: #7B6744;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 23px;
+  @include font-rem(23px);
   max-width: 650px;
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
@@ -89,10 +96,13 @@
 
 .cc-ranking__header-txt_small {
   display: block;
-  padding-top: 2rem;
+  padding-top: 1rem;
   text-transform: uppercase;
-  font-family: 'intensaposter';
-  @include font-rem(24px);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  @include font-rem(20px);
 }
 
 .cc-ranking__list {
@@ -103,21 +113,8 @@
   background-color: $c-neutro;
   counter-reset: rankingList;
   border-radius: 10px;
-  overflow: scroll;
+  overflow: auto;
   max-height: 15.2rem;
-  &:before {
-    content: '';
-    display: block;
-    width: 90%;
-    height: 190px;
-    right: 0;
-    top: 0;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top right;
-    background-image: url('#{$img-path}/bg-list-ranking.svg');
-  }
   @include media-query(medium) {
     max-width: 480px;
     max-height: 42rem;
@@ -127,10 +124,23 @@
   }
 }
 
+.cc-ranking__item:nth-child(5) {
+  border-radius: 0 0 10px 10px;
+}
+.cc-ranking__item:nth-child(-n+5) {
+  background-color: #C18E00 ;
+  .cc-ranking__name,
+  .cc-ranking__points {
+    color: $c-neutro;
+    &:after {
+      color: $c-neutro;
+    }
+  }
+}
 .cc-ranking__item {
   @include flexbox;
   padding: .6rem .6rem;
-  margin: .4rem 0;
+  margin: .2rem 0;
   color: $c-brand;
   counter-increment: rankingList;
   background-color: $c-neutro;
@@ -145,17 +155,6 @@
   &:nth-child(1) {
     margin: 0;
     border-radius: 10px 10px 0px 0px;
-  }
-  &:nth-child(1) {
-    background-color: $c-primary;
-    box-shadow: 0px 10px 21px rgba(0, 0, 0, 0.1);
-    .cc-ranking__name,
-    .cc-ranking__points {
-      color: $c-neutro;
-      &:after {
-        color: $c-neutro;
-      }
-    }
   }
   &.active {
     position: relative;
@@ -175,16 +174,31 @@
 }
 
 .cc-ranking__txt {
-  display: block;
-  max-width: 400px;
-  margin: 0 auto;
-  padding-top: 2rem;
-  color: $c-neutro;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: $f-bold;
+  font-family: 'DIN Next LT Pro';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
   text-align: center;
-  @include font-rem(18px);
-  text-shadow: 2px 3px 5px $c-brand;
+  text-transform: uppercase;
+}
+.container-btn{
+  text-align: center;
+  .shop-here{
+    width: 70%;
+    padding: 10px 20px;
+    margin: 0 auto 2rem !important;
+    background: #C18E00;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 3.45896px 3.45896px rgba(0, 0, 0, 0.25);
+    border-radius: 90px;
+    color: #fff;
+    font-family: 'Roboto';
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+  }
 }
 
 @keyframes mymove {
