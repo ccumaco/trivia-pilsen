@@ -1,6 +1,9 @@
 
+.layout-general.layaout-ranking{
+  width: 40%;
+}
 .cc-ranking {
-  min-height: 150vh;
+  min-height: 1570px;
   padding-bottom: 2rem;
   .cc-lead {
     padding: 30px 20px;
@@ -33,6 +36,7 @@
       padding-bottom: 30px;
     }
   }
+
   // .cc-ranking .layout-general.layaout-ranking{
   //   width: 40% !important;
   // }
@@ -64,6 +68,14 @@
       margin-bottom: 30px;
     }
   
+  }
+}
+@media screen and (max-width: 970px) {
+  .layout-general.layaout-ranking{
+    width: 100%;
+  }
+  .cc-ranking {
+    min-height: 930px !important;
   }
 }
 
@@ -122,10 +134,10 @@
   counter-reset: rankingList;
   border-radius: 10px;
   overflow: auto;
-  max-height: 15.2rem;
+  // max-height: 15.2rem;
   @include media-query(medium) {
     max-width: 480px;
-    max-height: 42rem;
+    // max-height: 42rem;
     &:before {
       height: 290px;
     }

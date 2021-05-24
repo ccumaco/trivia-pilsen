@@ -38,9 +38,9 @@
 .cc-ranking {
   padding-top: 10px;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: bottom right;
-  background-image: url('#{$img-path}/bg-ranking-mobile.jpg');
+  background-size: cover;
+  background-position: bottom left;
+  background-image: url('#{$img-path}/pilsen/bg-ranking.png');
   .layout-general {
     @media only screen and (max-height: 824px) and (max-width: 767px)  {
       min-height: calc(100vh - 15.8rem);

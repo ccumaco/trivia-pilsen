@@ -1,6 +1,6 @@
 <template lang="pug">
   <div class="cc-trivia cc-page ">
-    .layout-general
+    .layout-general.layout-trivia
       .cc-trivia__inner
         .cc-trivia__timer
           p#countdown.cc-trivia__clock.i-time Iniciar tiempo: {{ countdown + ':00' }}
