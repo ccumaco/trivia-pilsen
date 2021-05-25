@@ -131,15 +131,15 @@ router.beforeEach((to, from, next) => {
       next({ name: 'AgeGate', query: { fbclid: sessionStorage.utmFb}})
     } else {
       if(sessionStorage.v4 == ''){
-        next({ name: 'AgeGate', query: { utm_source: sessionStorage.v1, utm_medium: sessionStorage.v2, utm_campaign: sessionStorage.v3 }})
+        next()
          //{ name: 'AgeGate', query: { utm_source: sessionStorage.v1, utm_medium: sessionStorage.v2, utm_campaign: sessionStorage.v3 }}
       } else {
          //{ name: 'AgeGate', query: { utm_source: sessionStorage.v1, utm_medium: sessionStorage.v2, utm_campaign: sessionStorage.v3, utm_content: sessionStorage.v4 }}
-        next({ name: 'AgeGate', query: { utm_source: sessionStorage.v1, utm_medium: sessionStorage.v2, utm_campaign: sessionStorage.v3, utm_content: sessionStorage.v4 }})
+        next()
       }
     }
   } else if (((to.name == 'Trivia') || (to.name == 'Message') || (to.name == 'Registro') || (to.name == 'WithoutTime')) && (to.params.mail === undefined)) {
-      next({ name: 'Home' })
+      next()
       // { name: 'Home' }
   } else {
     if(window.location.search!=='') {
