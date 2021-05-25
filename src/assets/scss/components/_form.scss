@@ -19,6 +19,11 @@
   backdrop-filter: blur(50px);
   width: 35%;
 }
+@media screen and (max-width: 970px) {
+  .container-register{
+    width: 100%;
+  }
+}
 
 .cc-form__group {
   padding-bottom: 20px;
@@ -200,6 +205,7 @@ input[type=number] { -moz-appearance:textfield; }
   text-align: left;
   cursor: pointer;
   color: $c-neutro;
+  font-family: 'DIN Next LT Pro' !important;
   @include font-rem(16px);
   
   &:before {
@@ -214,6 +220,7 @@ input[type=number] { -moz-appearance:textfield; }
     }
   }
   &:after {
+    font-family: 'Roboto' !important;
     content: '';
     position: absolute;
     left: 0;
@@ -222,15 +229,17 @@ input[type=number] { -moz-appearance:textfield; }
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    border: 2px solid $c-primary;
+    border: 2px solid #fff;
     border-radius: 4px;
     background-color: transparent;
     transition: all .3s linear;
   }
   a {
+    font-weight: bold;
+    font-family: 'Roboto' !important;
     color: $c-neutro;
     &:hover {
-      color: $c-primary;
+      color: #fff;
     }
   }
 }
@@ -245,18 +254,18 @@ input[type=number] { -moz-appearance:textfield; }
       opacity: 1;
       z-index: 2;
       top: 50%;
-      color: #CFA052;
+      color: #fff;
       transform: translateY(-50%);
     }
     &:after {
-      border-color: $c-primary;
+      border-color: #fff;
     }
   }
   &:focus+.cc-form__label_check {
     &:after {
-      -webkit-box-shadow:  0px 0px 9px 1px rgba($c-primary, 0.8);
-      -moz-box-shadow:  0px 0px 9px 1px rgba($c-primary, 0.8);
-      box-shadow:  0px 0px 9px 1px rgba($c-primary, 0.8);
+      -webkit-box-shadow:  0px 0px 9px 1px rgba(#fff, 0.8);
+      -moz-box-shadow:  0px 0px 9px 1px rgba(#fff, 0.8);
+      box-shadow:  0px 0px 9px 1px rgba(#fff, 0.8);
     }
   }
 }
@@ -319,7 +328,7 @@ input[type=number] { -moz-appearance:textfield; }
   @include flexbox;
   @include align-items(center);
   @include justify-content(center);
-  @include flex-direction(column-reverse);
+  @include flex-direction(row);
   padding-top: 1rem;
   padding-bottom: 1rem;
   @include media-query(medium) {
@@ -373,18 +382,6 @@ input[type=number] { -moz-appearance:textfield; }
 .cc-registro__cta {
   position: relative;
   text-align: center;
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: -2rem;
-    width: 40px;
-    height: 4px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: $c-brand-2;
-    margin: .6rem auto 0;
-  }
   @include media-query(medium) {
     width: 50%;
     max-width: 350px;
