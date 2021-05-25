@@ -133,7 +133,7 @@ export default {
     axios.get("https://dev-pilsendelsur.pantheonsite.io/ab/gender").then((response) => {
       vm.genders = response.data;
     })
-    this.ccemail = this.$route.params.mail
+    this.$route.params.mail = this.ccemail
 
     var f = new Date();
     this.fechaActualDay = f.getDate()
