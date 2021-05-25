@@ -18,16 +18,28 @@ export default {
   name: 'Login',
   data () {
     return {
-      inputLogin: ''
+      inputLogin: '',
     }
   },
   methods: {
-    validarLogin() {
-      if (this.inputLogin == "dpxmTriviaBecker") {
-        localStorage.ingresar = true
-        this.$router.push({name: 'Home', params: { login:true}})
+    async validarLogin() { 
+      const axios = require('axios') 
+      const sha256 = require('js-sha256').sha256
+      let emailhash = sha256(this.inputLogin)    
+      let info = { login_mail: this.inputLogin }
+      let res = await axios.post('https://dev-pilsendelsur.pantheonsite.io/ab/user/prevalidate-register', info)
+      this.respuesta = res.data
+      if (this.respuesta.existe) {
+        window.dataLayer.push({
+            'event': 'trackEvent',
+            'eventCategory': 'Pilsen del Sur', // Categoría del evento (String). Requerido.
+            'eventAction': 'Inicio Sesión Trivia', // Acción o subcategoría del evento (String).
+            'eventLabel': emailhash, // Etiqueta de descripción del evento (String).
+            'eventValue': '' // Valor o peso (importancia) del evento (String).
+          });
+        this.$router.push({name: 'Trivia'})
       } else {
-        console.log("login incorrecto")
+        this.$router.push({name: 'Registro'})
       }
     }
   }
