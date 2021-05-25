@@ -37,7 +37,8 @@ export default {
             'eventLabel': emailhash, // Etiqueta de descripción del evento (String).
             'eventValue': '' // Valor o peso (importancia) del evento (String).
           });
-        this.$router.push({name: 'Trivia'})
+        this.$route.params.mail = this.inputLogin
+        this.$router.push({name: 'Trivia', params: {mail: this.inputLogin, attempts: 3}})
       } else {
         this.$router.push({name: 'Registro'})
       }
