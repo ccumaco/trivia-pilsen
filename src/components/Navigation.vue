@@ -78,7 +78,7 @@ export default {
     if(this.$route.name == 'AgeGate'){
       document.getElementById('header-id').style.display = 'none'
     } else {
-      document.getElementById('header-id').style.display = 'flex'
+      document.getElementById('header-id').style.display = 'block'
     }
   },
   methods: {
