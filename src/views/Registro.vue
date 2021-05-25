@@ -107,7 +107,7 @@ export default {
         11: 'NOV',
         12: 'DIC'
       },
-      genders: [{name:'Hombre', id:5},{name:'Mujer', id: 6},{name:'prefiero no decir', id: 7}],
+      genders: {},
       gender: '',
       city: '',
       phone: '',
@@ -130,9 +130,6 @@ export default {
   },
   created () {
     var vm = this
-    axios.get("https://dev-pilsendelsur.pantheonsite.io/ab/city").then((response) => {
-      vm.cities = response.data;
-    })
     axios.get("https://dev-pilsendelsur.pantheonsite.io/ab/gender").then((response) => {
       vm.genders = response.data;
     })
@@ -175,13 +172,15 @@ export default {
           }
         })
         .then((response) => {
-          console.log(info)+"esta es la info";
+          var sha256 = require('js-sha256').sha256;
+          var emailhash = sha256(this.ccemail)
+          console.log(emailhash)+"esta es la info";
           self.output = response.data
           window.dataLayer.push({
             'event': 'trackEvent',
-            'eventCategory': 'Registro', // Categoría del evento (String). Requerido.
-            'eventAction': 'Clic', // Acción o subcategoría del evento (String).
-            'eventLabel': 'Quiero ganar', // Etiqueta de descripción del evento (String).
+            'eventCategory': 'Pilsen del Sur', // Categoría del evento (String). Requerido.
+            'eventAction': 'Registro Trivia', // Acción o subcategoría del evento (String).
+            'eventLabel': emailhash, // Etiqueta de descripción del evento (String).
             'eventValue': '' // Valor o peso (importancia) del evento (String).
           });
           self.$router.push({name: 'Trivia', params: {mail: self.$route.params.mail, attempts: 3}})
