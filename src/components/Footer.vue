@@ -26,13 +26,13 @@
     .cc-footer__social
       ul.cc-footer__social-list
         li.cc-footer__social-item
-          a(href="https://www.instagram.com/cerveza_becker/" alt="Síguenos en Instagram").cc-footer__social-link.i-instagram
+          a(href="https://www.instagram.com/pilsendelsur/" alt="Síguenos en Instagram").cc-footer__social-link <i class="fab fa-instagram"></i>
         li.cc-footer__social-item
-          a(href="https://www.facebook.com/becker.cl" alt="Síguenos en Facebook").cc-footer__social-link.i-facebook
+          a(href="https://www.facebook.com/Pilsendelsur" alt="Síguenos en Facebook").cc-footer__social-link <i class="fab fa-facebook-f"></i>
         li.cc-footer__social-item
-          a(href="https://www.youtube.com/user/cervezabecker" alt="Síguenos en Youtube").cc-footer__social-link.i-youtube
+          a(href="https://www.youtube.com/channel/UC61vjd4wvg0BUr77G7ygo5Q" alt="Síguenos en Youtube").cc-footer__social-link <i class="fab fa-youtube"></i>
         li.cc-footer__social-item
-          a(href="https://twitter.com/cerveza_becker" alt="Síguenos en Twitter").cc-footer__social-link.i-twitter
+          a(href="https://mobile.twitter.com/pilsendelsurcl?lang=en" alt="Síguenos en Twitter").cc-footer__social-link <i class="fab fa-twitter"></i>
 
 </template>
 

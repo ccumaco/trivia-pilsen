@@ -1,5 +1,5 @@
 <template lang="pug">
-  .container-all( :class="isOpen == true ? 'menu-open' : '.container-all'")
+  .container-all( :class="isOpen == true ? 'menu-open' : '.container-all'" id="header-id")
     .cc-nav
       .container-logo-header
         router-link(to="/")
@@ -11,29 +11,29 @@
         li.list-liks <router-link to="/"> HOME </router-link>
         li.list-liks( @click="drawer = !drawer") CONSURSO
       ul
-        li.links-rs <a href="#"><i class="fab fa-instagram"></i></a>
-        li.links-rs <a href="#"><i class="fab fa-twitter"></i></a>
-        li.links-rs <a href="#"><i class="fab fa-facebook-f"></i></a>
-        li.links-rs <a href="#"><i class="fab fa-youtube"></i></a>
+        li.links-rs <a href="https://www.instagram.com/pilsendelsur/"><i class="fab fa-instagram"></i></a>
+        li.links-rs <a href="https://mobile.twitter.com/pilsendelsurcl?lang=en"><i class="fab fa-twitter"></i></a>
+        li.links-rs <a href="https://www.facebook.com/Pilsendelsur"><i class="fab fa-facebook-f"></i></a>
+        li.links-rs <a href="https://www.youtube.com/channel/UC61vjd4wvg0BUr77G7ygo5Q"><i class="fab fa-youtube"></i></a>
       .btn-register
-        button <router-link to="/registro"> REGISTRO</router-link>
+        button( @click="drawer = false") <router-link to="/registro"> REGISTRO</router-link>
     .menu-desktop(v-if="drawer")
       h2 CONCURSOS
       .container-menu-dektop
         ul(v-if="drawer")
-          li.lista(@click="module2 = !module2") TRIVIA PILSEN DEL SUR
+          li.lista(@click="module2 = !module2;") TRIVIA PILSEN DEL SUR
           //- li.lista <router-link to="/trivia">CONCURSO - SKOL</router-link>
           //- li.lista NOMINA UN BACÁN
         ul(v-if="module2")
           li.lista(@click="module3 = !module3") CÓMO PARTICIPAR
-          li.lista RANKING DE POSICIONES
+          li.lista( @click="drawer = !drawer") <router-link to="/ranking"> RANKING DE POSICIONES </router-link>
           li.lista BASES Y CONDICIONES DE LA TRIVIA
         .container-card(v-if="module3 && module2")
           img(src="./../assets/img/pilsen/product-header.png", alt="alt")
           .container-text
             p Participa en nuestra Trivia y gana un MEET & GREET con Ivan Morales y Maxi Falcón
             p.text Lata edición especial - 30 años copa libertadores 
-            button(@click="isOpen = !isOpen") <router-link to="/registro"> PARTICIPAR</router-link>
+            button(@click="isOpen = !isOpen;  drawer = !drawer") <router-link to="/registro"> PARTICIPAR</router-link>
     .menu-lateral(v-if="isOpen")
       ul
         li.list-mobile(@click="isOpen = !isOpen") <router-link to="/"> HOME</router-link>
@@ -72,6 +72,13 @@ export default {
       drawer: false,
       module2: false,
       module3: false
+    }
+  },
+  mounted(){
+    if(this.$route.name == 'AgeGate'){
+      document.getElementById('header-id').style.display = 'none'
+    } else {
+      document.getElementById('header-id').style.display = 'flex'
     }
   },
   methods: {

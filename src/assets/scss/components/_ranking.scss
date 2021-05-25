@@ -104,13 +104,21 @@
   @include font-rem(23px);
   max-width: 650px;
   margin: 0 auto;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto';
   font-weight: $f-bold;
   @include media-query(medium) {
     @include font-rem(20px);
   }
   @include media-query(big) {
     @include font-rem(20px);
+  }
+}
+@media screen and (max-width: 970px) {
+  .cc-ranking__header-txt {
+    font-size: 13px;
+  }
+  .cc-ranking__header-txt_small {
+    font-size: 14px !important;
   }
 }
 
@@ -120,7 +128,7 @@
   text-transform: uppercase;
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 20px;
   @include font-rem(20px);
 }

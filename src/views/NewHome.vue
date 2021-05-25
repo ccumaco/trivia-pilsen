@@ -25,8 +25,9 @@
         .text-bottle
           h2 {{imagen[indexImage].titleBottle}} <br> {{imagen[indexImage].tamaño}}
           p {{imagen[indexImage].textBottle}}
+          p {{imagen[indexImage].textBottle2}}
       .show-here
-        button.show-btn Comprar aquí
+        button.show-btn COMPRAR AQUÍ
   </div>
 </template>
 
@@ -63,21 +64,24 @@ export default {
           altImagen: 'nuestros productos',
           titleBottle: 'nuestros productos',
           tamaño: '300 ml',
-          textBottle: 'Pilsen del Sur se caracteriza por su mayor tiempo de maduración, el cual le da una cuerpo y sabor único. Es una cerveza tipo larger 100% malta, hecha con ingredientes finamente seleccionados y 6 lúpulos diferentes.'
+          textBottle: 'Pilsen del Sur se caracteriza por su mayor tiempo de maduración, el cual le da una cuerpo y sabor único.',
+          textBottle2: 'Es una cerveza tipo larger 100% malta, hecha con ingredientes finamente seleccionados y 6 lúpulos diferentes.'
         },
         {
           src: require('./../assets/img/pilsen/bottle2.png'),
           altImagen: 'nuestros productos',
           titleBottle: 'nuestros productos',
           tamaño:'473 ml',
-          textBottle: 'Pilsen del Sur se caracteriza por su mayor tiempo de maduración, el cual le da una cuerpo y sabor único. Es una cerveza tipo larger 100% malta, hecha con ingredientes finamente seleccionados y 6 lúpulos diferentes.'
+          textBottle: 'Pilsen del Sur se caracteriza por su mayor tiempo de maduración, el cual le da una cuerpo y sabor único.',
+          textBottle2: 'Es una cerveza tipo larger 100% malta, hecha con ingredientes finamente seleccionados y 6 lúpulos diferentes.'
           },
         {
           src: require('./../assets/img/pilsen/bottle3.png'),
           altImagen: 'nuestros productos',
           titleBottle: 'nuestros productos',
           tamaño:'354 ml',
-          textBottle: 'Pilsen del Sur se caracteriza por su mayor tiempo de maduración, el cual le da una cuerpo y sabor único. Es una cerveza tipo larger 100% malta, hecha con ingredientes finamente seleccionados y 6 lúpulos diferentes.'
+          textBottle: 'Pilsen del Sur se caracteriza por su mayor tiempo de maduración, el cual le da una cuerpo y sabor único.',
+          textBottle2: 'Es una cerveza tipo larger 100% malta, hecha con ingredientes finamente seleccionados y 6 lúpulos diferentes.'
           }
         ],
     }

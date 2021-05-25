@@ -26,8 +26,8 @@
             label.cc-form__label.cc-form__label_check.i-checked(for='ccTerms') Recordar mis datos *No selecciones esta opción si compartes este computador con menores de edad
             //- small.cc-form__label.cc-form__label_small *No selecciones esta opción si compartes este computador con menores de edad. 
             small.cc-form__label.cc-form__label_small Este sitio web utiliza cookies que se quedarán almacenadas en el computador con el fin de mejorar su experiencia. Al proporcionar su fecha de nacimiento, también se acepta el uso de cookies. Más información haga <a class="cc-link" href="./documents/Politicas-de-Privacidad-Landing-BECKER.pdf">clic aquí</a>.
-          a#acepted.cc-btn.cc-btn__primary.i-arrow-after(href="https://www.tapintoyourbeer.com" v-if="isDisabled" data-qadp="button_enter_agegate") Ingresar
-          button.cc-btn.cc-btn__primary.i-arrow-after(type="button" v-else :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled" @click="persist" data-qadp="button_enter_agegate") Ingresar
+          //- a#acepted.cc-btn.cc-btn__primary.i-arrow-after(href="https://www.tapintoyourbeer.com" v-if="isDisabled" data-qadp="button_enter_agegate") Ingresar
+          //- button.cc-btn.cc-btn__primary.i-arrow-after(type="button" v-else :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled" @click="persist" data-qadp="button_enter_agegate") Ingresar
   </div>
 </template>
 
@@ -61,6 +61,7 @@ export default {
       this.btnDisable()
       if(this.inputDay2.length == 1){
         this.doScroll(3)
+        
       }
     },
     inputMonth1: function() {
@@ -84,6 +85,7 @@ export default {
     inputYear4: function() {
       if(this.inputYear4.length == 1){
         this.doScroll(1)
+        this.validarEdad()
       }
       this.btnDisable()
     },
@@ -102,12 +104,25 @@ export default {
     if(sessionStorage.name) this.ageX = sessionStorage.ageX;
   },
   methods: {
+    validarEdad(){
+      let edad = this.inputYear1.toString() + this.inputYear3.toString() +this.inputYear3.toString() +this.inputYear4.toString()
+      let parceado = parseInt(edad)
+      console.log(edad, 'edad');
+      console.log(parseInt(edad), 'parceado');
+      if( parceado<= 2003){
+        this.persist()
+        console.log('entro');
+        } else {
+        location.href = 'https://www.tapintoyourbeer.com'
+      }
+    },
     persist() {
+
       sessionStorage.ageX = this.ageX;
       document.querySelector("body").classList.remove("cc-body-agegate");
 
       var destino = '';
-      if((sessionStorage.toNameDestino == '' ) || (sessionStorage.toNameDestino == null)) {
+      if((sessionStorage.toNameDestino == '' ) || (sessionStorage.toNameDestino == null )) {
         destino = 'Home';
         console.log("entre a persist")
       } else {
@@ -138,21 +153,20 @@ export default {
       if(param == 1){
         setTimeout(() => {
             document.getElementById('scrollAgegate').scrollLeft = mes
-        }, 1000);
+        }, 100);
       }
       if(param == 2) {
         setTimeout(() => {
             document.getElementById('scrollAgegate').scrollLeft = dia +mes
-        }, 1000);
+        }, 100);
       }
       if(param == 3) {
         setTimeout(() => {
             document.getElementById('scrollAgegate').scrollLeft = 0
-        }, 1000);
+        }, 100);
       }
     },
     btnDisable() {
-      
       if ((!this.inputDay == '') || (!this.inputDay2 == '') && (!this.inputMonth1 || !this.inputMonth2 == '') && (!this.inputYear1 == '') && (!this.inputYear2 == '') && (!this.inputYear3 == '') && (!this.inputYear4 == '') && (this.inputDay || this.inputDay2<= 31) && (this.inputDay || this.inputDay2 > 0) && (this.inputMonth1 || this.inputMonth2 <= 12) && (this.inputMonth1 || this.inputMonth2 > 0) && ((this.inputYear1 || this.inputYear2 || this.inputYear3 || this.inputYear4) > 0) && ((this.inputYear1 || this.inputYear2 || this.inputYear3 || this.inputYear4) >= 1920)) {
         if((this.inputYear1 || this.inputYear2 || this.inputYear3 || this.inputYear4) < (this.fechaActualYear - 18)) {
               this.isDisabled = false
