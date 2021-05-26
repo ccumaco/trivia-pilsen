@@ -6,7 +6,7 @@
       .container-first.participa2
         h2.title-card Participa en nuestra Trivia y gana un <b>MEET & GREET </b> con Ivan Morales y Maxi Falcón
         p.text-card Lata edición especial - <br>30 años Campeones de America
-        router-link(to="/registro").register-here.participa PARTICIPA AQUÍ
+        router-link(to="/home").register-here.participa PARTICIPA AQUÍ
         
       .contain-img
         //- .container-secont

@@ -6,6 +6,7 @@
 .cc-nav {
   height: 70px;
   background-color: #701012;
+  border-bottom: 2px solid #fff;
   display: flex;
   width: 100%;
   justify-content: space-around;
@@ -21,7 +22,13 @@
         cursor: pointer;
       }
       &:last-child::after{
-        content: '▼';
+        content: " ";
+        background: url('#{$img-path}/pilsen/Vector.svg') center no-repeat;
+        float: right;
+        height: 18px;
+        width: 16px;
+        margin-left: 10px;
+        background-size: contain;
       }
       &:hover{
         font-size: 17px;
@@ -94,6 +101,17 @@
     font-weight: bold;
     color: #fff;
     font-size: 24px;
+    display: inline-block;
+  }
+  p{
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'DIN Next LT Pro';
+    padding-right: 20px;
+    color: #fff;
+    float: right;
+    margin-right: 0;
+    display: inline-block;
   }
   .container-menu-dektop {
     display: flex;
@@ -245,6 +263,24 @@
       }
     }
 
+    ul li.list-mobile:nth-child(3) {
+      &::after{
+        content: "+";
+        font-size: 50px;
+        float: right;
+        margin-top: -15px;
+      }
+    }
+    ul li.list-mobile:nth-child(2) {
+      &::after{
+        content: " ";
+        background: url('#{$img-path}/pilsen/Vector.svg') center no-repeat;
+        float: right;
+        height: 30px;
+        width: 30px;
+        background-size: contain;
+      }
+    }
     ul li.list-mobile {
       width: 100%;
       border-bottom: 1px solid #686868;
