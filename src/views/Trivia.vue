@@ -1,5 +1,5 @@
 <template lang="pug">
-  <div class="cc-trivia cc-page ">
+  <div class="cc-trivia cc-page" id="id-trivia">
     .layout-general.layout-trivia
       .cc-trivia__inner
         .cc-trivia__timer
@@ -28,6 +28,8 @@
               .cc-trivia__footer
                 button.cc-btn.cc-btn__primary.cc-promotion__card-btn.i-arrow-after(v-if="askActive < 8" type="button" @click="AskQuestion" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") Siguiente
                 button.cc-btn.cc-btn__primary.cc-promotion__card-btn(v-else type="button" @click="AskQuestion" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") Enviar respuestas
+      .container-img
+        img(:src="imagen[askActive-1].src", alt="imagen[askActive-1].src")
   </div>
 </template>
 
@@ -42,6 +44,36 @@ export default {
   },
   data () {
     return {
+      imagen: [
+        {
+          src: require('./../assets/img/pilsen/ask1-bg.png'),
+          src2: require('./../assets/img/pilsen/bg-trivia.png'),
+        },
+        {
+          src: require('./../assets/img/pilsen/ask2-bg.png'),
+          src2: require('./../assets/img/pilsen/112A7454.png'),
+        },
+        {
+          src: require('./../assets/img/pilsen/ask3-bg.png'),
+          src2: require('./../assets/img/pilsen/112A7392.png'),
+        },
+        {
+          src: require('./../assets/img/pilsen/ask4-bg.png'),
+          src2: require('./../assets/img/pilsen/112A7477.png'),
+        },
+        {
+          src: require('./../assets/img/pilsen/ask5-bg.png'),
+          src2: require('./../assets/img/pilsen/112A7364.png'),
+        },
+        {
+          src: require('./../assets/img/pilsen/ask6-bg.png'),
+          src2: require('./../assets/img/pilsen/112A7481.png'),
+        },
+        {
+          src: require('./../assets/img/pilsen/ask7-bg.png'),
+          src2: require('./../assets/img/pilsen/112A7413.png'),
+        },
+      ],
       round: 1,
       statement : '',
       answerA : '',
@@ -49,7 +81,7 @@ export default {
       answerC : '',
       active : true,
       triviaListLength: 10,
-      askActive: 1,
+      askActive: 3,
       time: 'September 4, 2020, 15:15',
       countdown: 60,
       withoutTime: false,
@@ -79,6 +111,11 @@ export default {
       this.btnDisable()
     },
   },
+  mounted(){
+    let elemento = document.getElementById('id-trivia')
+    elemento.setAttribute('style', `background-image: url(${this.imagen[this.askActive-1].src2});`)
+    console.log('cargo el mounted', elemento);
+  },
   methods:{
     btnDisable() {
       if(this.answerAR != null) {
@@ -90,7 +127,7 @@ export default {
     startTrivia() {
       let self = this
       const info = this.$_encry({
-        username: this.$route.params.mail
+        username: 'mail@mail.com'
       });
       axios({
         method: "post",
@@ -102,6 +139,7 @@ export default {
         }
       })
       .then((response) => {
+        console.log(response, 'response');
         self.output = response.data
         self.triviaId = self.output.triviaId
         this.nextQuestion();
@@ -180,8 +218,9 @@ export default {
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
+        if(display){
+          display.textContent = minutes + ":" + seconds;
+        }
         if(self.timeTotal) {
           clearInterval(interval)          
         }
@@ -204,7 +243,7 @@ export default {
       this.askActive += 1
     },
     startCountdown() {
-        var display = document.querySelector('#countdown');
+        var display = document.getElementById('#countdown');
         var duration = this.countdown * 60; 
         this.callFunction(duration, display)
         if (this.withoutTime && localStorage.fisishTrivia) {

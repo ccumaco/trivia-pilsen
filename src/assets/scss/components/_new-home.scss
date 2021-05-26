@@ -1,17 +1,17 @@
 .cc-home__hero {
-    height: 70vh;
+    height: auto;
     display: flex;
     .container-first{
-      flex-basis: 25%;
+      flex-basis: 30%;
       // background: url('#{$img-path}/pilsen/Rectangle-569.png') center no-repeat;
       background-color: #e3e3e3;
       background-size: 120%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       text-align: left;
-      padding: 60px;
+      padding: 60px 60px 20px;
       .title-card{
         font-family: 'DIN Next LT Pro';
         font-style: normal;
@@ -37,8 +37,10 @@
         font-size: 16px;
         text-transform: uppercase;
         line-height: 19px;
+        margin-top: 20px;
       }
       .text-card{
+        margin: 20px auto 0px 0px;
         font-family: 'Roboto';
         font-style: normal;
         font-weight: normal;
@@ -47,17 +49,21 @@
       }
     }
     .contain-img{
-      flex-basis: 75%;
+      flex-basis: 70%;
       display: flex;
-      .container-secont{
-        background-image: url('#{$img-path}/pilsen/segundo-tab.png');
-        background-size: 100% 100%;
-        flex-basis: 30%
-      }
+      // .container-secont{
+      //   background-image: url('#{$img-path}/pilsen/segundo-tab.png');
+      //   background-size: 100% 100%;
+      //   flex-basis: 30%
+      // }
       .container-tertiary{
-        flex-basis: 70%;
-        background-image: url('#{$img-path}/pilsen/jugadores.png');
-        background-size: 100% 100%;
+        flex-basis: 100%;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+        // background-image: url('#{$img-path}/pilsen/jugadores.png');
+        // background-size: 100% 100%;
       }
     }
   }
@@ -87,6 +93,7 @@
           font-weight: bold;
         }
         ul li{
+          text-decoration: underline;
           list-style: none;
           font-family: 'Open Sans';
           font-style: normal;
@@ -320,8 +327,9 @@
     .cc-home__hero{
       flex-direction: column;
       .container-first{
-        padding: 0 40px;
+        padding: 20px 40px;
         flex-basis: 60%;
+        justify-content: flex-start;
       }
       .contain-img{
         display: flex !important;
@@ -332,7 +340,7 @@
         flex-basis: 40% !important;
       }
       .container-tertiary{
-        flex-basis: 60% !important;
+        flex-basis: 100% !important;
       }
     }
   }

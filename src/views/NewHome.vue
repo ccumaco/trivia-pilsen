@@ -5,11 +5,12 @@
     .cc-home__hero#como-participar
       .container-first
         h2.title-card Participa en nuestra Trivia y gana un <b>MEET & GREET </b> con Ivan Morales y Maxi Falcón
-        p.text-card Lata edición especial - 30 años copa libertadores
+        p.text-card Lata edición especial - <br>30 años Campeones de America
         .register-here PARTICIPA AQUÍ
       .contain-img
-        .container-secont
+        //- .container-secont
         .container-tertiary
+          img(src="./../assets/img/pilsen/jugadores.png", alt="alt")
       transition(name='fade')
         .cc-modal-code(v-if='!continuePlay')
           .cc-modal-code__card
@@ -20,6 +21,8 @@
           .width-bottle
             ul
               li(v-for="(item, index) of tamaños" :key="index" @click="nextImg(index)") {{item}}
+              li.btn-before-img
+                img(src="./../assets/img/pilsen/come-back.png", alt="alt" @click="nextImg(-1)")
           .bottle
             img(:src="imagen[indexImage].src", alt="alt")
         .text-bottle
@@ -127,7 +130,14 @@ export default {
       document.getElementById("linkProducts").classList.remove("cc-nav__list-link_active");
     },
     nextImg(param){
-      this.indexImage = param
+      if (param == -1 ) {
+        this.indexImage = this.indexImage + 1
+        if(this.indexImage == 3){
+          this.indexImage = 0
+        }
+      } else {
+        this.indexImage = param
+      }
     },
     validateCode() {
       // this.$router.push({name: 'Registro'})

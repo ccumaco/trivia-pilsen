@@ -289,6 +289,10 @@ input[type=number] { -moz-appearance:textfield; }
   .cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after{
     border: 2px solid #fff;
     background-color: #C18E00;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
   }
 }
 
@@ -321,6 +325,25 @@ input[type=number] { -moz-appearance:textfield; }
     color: #fff;
     padding: 0 5%;
     text-align: justify;
+  }
+}
+@media screen and (max-width:970px) {
+  .cc-registro {
+    .parrafor{
+      font-size: 22px;
+    }
+    .cc-registro__grid{
+      .cc-header{
+        padding: 30px 0 24px;
+        width: 40%;
+      }
+      .cc-registro__cta{
+        .cc-btn{
+          margin: 0 0 0 20px;
+          padding: 10px 22px;
+        }
+      }
+    }
   }
 }
 

@@ -3,13 +3,13 @@
     .cc-nav
       .container-logo-header
         router-link(to="/")
-          img(src="./../assets/img/pilsen/logo-blanco.png", alt="alt")
+          img(src="./../assets/img/pilsen/logo-blanco.png", alt="alt" @click="drawer = false")
       .icon-mobile(v-if="isOpen == false" @click="isOpen = !isOpen")
         img(src="./../assets/img/pilsen/icon-menu.png", alt="icon mobile")
       .icon-mobile(v-else @click="isOpen = !isOpen") X
       ul
         li.list-liks <router-link to="/"> HOME </router-link>
-        li.list-liks( @click="drawer = !drawer") CONSURSO
+        li.list-liks( @click="drawer = !drawer") CONCURSO
       ul
         li.links-rs <a href="https://www.instagram.com/pilsendelsur/"><i class="fab fa-instagram"></i></a>
         li.links-rs <a href="https://mobile.twitter.com/pilsendelsurcl?lang=en"><i class="fab fa-twitter"></i></a>

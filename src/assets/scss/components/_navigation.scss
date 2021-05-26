@@ -16,6 +16,14 @@
   }
 
   ul {
+    li.list-liks{
+      &:last-child{
+        cursor: pointer;
+      }
+      &:last-child::after{
+        content: '▼';
+      }
+    }
     li {
       margin: 0 10px;
       list-style: none;

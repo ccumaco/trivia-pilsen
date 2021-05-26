@@ -5,13 +5,43 @@
     padding-bottom: 90px;
   }
 }
+
+.cc-terms__content{
+  p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3C3C3C;
+    text-align: justify;
+    margin: 10px 0;
+  }
+  h6{
+    font-weight: bold;
+    font-family: 'DIN Next LT Pro';
+  }
+}
+.cc-terms__header.cc-header{
+  h1{
+    font-family: DIN Next LT Pro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    color: #36354C;
+    line-height: 49px;
+  }
+}
 .cc-terms__header {
   max-width: 800px;
   margin: 0 auto;
 }
 .cc-terms__content {
   width: 80%;
-  max-width: 500px;
+  max-width: 80vw;
+  max-height: 60vh;
+  overflow-y: scroll;
+  overflow-x: auto;
   margin: 0 auto;
   font-family: 'nunito_sansregular';
   strong {

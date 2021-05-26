@@ -5,10 +5,16 @@
 .layout-general.layout-trivia{
   min-height: 100%;
   background-color: transparent !important;
+  .container-img{
+    display: none !important;
+  }
 }
 @media screen and (max-width: 970px) {
   .layout-general.layout-trivia{
     width: auto;
+    .container-img{
+      display: block !important;
+    }
   }
 }
 .cc-trivia{
@@ -16,7 +22,7 @@
 }
 .cc-trivia__inner {
   padding: 30px 0;
-  min-height: 612px;
+  min-height: 550px;
   background: rgba(0, 0, 0, 0.5) !important;
   border: 1px solid #EEB400;
   box-sizing: border-box;
@@ -47,7 +53,9 @@
     padding-bottom: 1.6rem;
   }
 }
-
+.done.cc-trivia__number-item.i-brand-lata::before{
+  content: url('#{$img-path}/pilsen/lata-small.png');
+}
 .cc-trivia__number-item {
   position: relative;
   text-align: center;
@@ -87,13 +95,14 @@
       background-repeat: no-repeat;
       background-position: right;
       background-position-y: calc(100% - 10px);
-      background-size: 60%;
-      background-image: url('#{$img-path}/pilsen/lata-small.png');
+      // background-size: 60%;
+      background-image: url('#{$img-path}/pilsen/big-lata.png');
     }
   }
   &.done {
     &:before {
       color: $c-primary;
+      // background-image: url('#{$img-path}/pilsen/lata-small.png');
     }
     &:after {
       border-color: $c-primary;
