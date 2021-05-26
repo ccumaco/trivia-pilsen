@@ -12,9 +12,9 @@
           li.cc-footer__nav-item
             a.cc-footer__nav-link(href="https://www.tapintoyourbeer.com/" taget="_blank") Tap into your beer
           li.cc-footer__nav-item
-            a.cc-footer__nav-link(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf") Términos y condiciones
+            router-link(to="/terminos-condiciones").cc-footer__nav-link Términos y condiciones
           li.cc-footer__nav-item
-            a.cc-footer__nav-link(href="./documents/Politicas-de-Privacidad-Landing-BECKER.pdf" target="_blank") Aviso de privacidad y política de uso
+            router-link(to="/politicas").cc-footer__nav-link Aviso de privacidad y política de uso
           li.cc-footer__nav-item
             a.cc-footer__nav-link(href="https://www.facebook.com/messages/t/becker.cl" taget="_blank") Contáctenos
           li.cc-footer__nav-item
