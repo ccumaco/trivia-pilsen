@@ -3,7 +3,7 @@
     .cc-nav
       .container-logo-header
         router-link(to="/")
-          img(src="./../assets/img/pilsen/logo-blanco.png", alt="alt" @click="drawer = false")
+          img(src="./../assets/img/pilsen/logo-blanco.png", alt="Pilsen del sur" @click="drawer = false")
       .icon-mobile(v-if="isOpen == false" @click="isOpen = !isOpen")
         img(src="./../assets/img/pilsen/icon-menu.png", alt="icon mobile")
       .icon-mobile(v-else @click="isOpen = !isOpen") X

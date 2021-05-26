@@ -180,7 +180,7 @@
   @include font-rem(16px);
   margin: 0;
   padding-bottom: 6px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto';
 }
 
 .cc-trivia__clock {
@@ -191,7 +191,7 @@
   margin: 0;
   line-height: 1;
   vertical-align: middle;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto';
   font-weight: $f-bold;
   text-transform: uppercase;
   &:before {
@@ -210,7 +210,7 @@
 .cc-trivia__title {
   display: block;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto';
   color: $c-primary;
   @include font-rem(16px);
   padding-bottom: 10px;
@@ -275,7 +275,7 @@
   margin: 6px 0;
   cursor: pointer;
   color: $c-dark;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto';
   font-weight: $f-regular;
   -webkit-box-shadow:  0px 0px 9px 1px rgba($c-brand, 0.4);
   -moz-box-shadow:  0px 0px 9px 1px rgba($c-brand, 0.4);
@@ -292,7 +292,7 @@
     line-height: 1;
     @include font-rem(20px);
     transform: translateY(-50%);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto';
     font-weight: $f-bold;
     transition: all .3s linear;
   }

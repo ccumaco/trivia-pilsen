@@ -34,7 +34,7 @@ h6 {
 .cc-title {
   display: block;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto';
   @include font-rem(24px);
   line-height: 1.2;
   color: $c-neutro;
@@ -100,7 +100,7 @@ h6 {
 }
 
 .cc-text {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto';
   font-weight: $f-regular;
   @include font-rem(16px);
   @include media-query(medium) {
@@ -110,7 +110,7 @@ h6 {
     @include font-rem(20px);
   }
   strong {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto';
     font-weight: $f-bold;
     display: block;
     margin-bottom: 1rem;

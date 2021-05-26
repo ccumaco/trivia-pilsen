@@ -43,7 +43,7 @@ export default {
     }
   },
   created() {
-    this.generarRanking()
+    // this.generarRanking()
   },
   filters: {
     filterName(value) {

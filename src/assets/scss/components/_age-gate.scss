@@ -32,7 +32,7 @@
     text-transform: initial;
     text-align: center;
     padding: 1rem 2rem;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto';
     font-weight: normal;
   }
 
@@ -95,11 +95,11 @@
     text-align: center;
   }
   .cc-form__label {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto';
     &.cc-form__label_small {
       padding: 10px 0 0 28px;
       color: $c-bg-general;
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Roboto';
     }
   }
   .cc-form__terms-item {
@@ -307,7 +307,7 @@
     .cc-form__label_check{
       color: #000;
       font-weight: 400;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto";
     font-size: 12px;
     }
     .cc-form__label_check:after{

@@ -46,7 +46,7 @@
   //   }
   // }
   .cc-title_brand {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto';
     color: $c-neutro;
     @include font-rem(20px);
     padding-bottom: 10px;
@@ -255,7 +255,7 @@
   margin: 0;
   line-height: 1.2;
   padding: .3rem .6rem .3rem 3.2rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto';
   font-weight: $f-regular;
   color: $c-neutro;
   border-right: 2px solid $c-brand;
@@ -306,7 +306,7 @@
 .cc-ranking__points {
   width: 50%;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto';
   font-weight: $f-regular;
   color: $c-primary;
   padding: .3rem 0;

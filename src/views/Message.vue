@@ -6,16 +6,16 @@
     .cc-message__grid
       .cc-message__content
         header.cc-message__header
-          h1(v-if="!isChecked").cc-title.cc-title_brand ¡Terminaste!
+          h2(v-if="!isChecked").cc-title.cc-title_brand ¡Terminaste!
           p(v-if="!isChecked").cc-lead LA HICISTE EN:
           h1(v-if="isChecked").cc-title.cc-title_brand ¡Weeeena!
           p(v-if="isChecked").cc-lead La hiciste en:
           span.cc-lead__time {{ finalTime | filterName }}
-        //- p.cc-message__txt(v-if="!isChecked") 
-        //-   small ¡Solo un paso más! Comprueba que no eres un robot y haz clic en "Terminar trivia"
-        //-   br
-        //-   br
-          //- vue-recaptcha(v-if="!isChecked" sitekey="6LfD_SUaAAAAAGZ02ji6sqqqJLDukJ71r-x6yYwh", loadRecaptchaScript=true @verify="onCaptchaVerified" @expired="onCaptchaExpired") 
+        p.cc-message__txt(v-if="!isChecked") 
+          //- small ¡Solo un paso más! Comprueba que no eres un robot y haz clic en "Terminar trivia"
+          //- br
+          //- br
+          vue-recaptcha(v-if="!isChecked" sitekey="6LfD_SUaAAAAAGZ02ji6sqqqJLDukJ71r-x6yYwh", loadRecaptchaScript=true @verify="onCaptchaVerified" @expired="onCaptchaExpired") 
           //- (v-if="isChecked")
         p.cc-message__txt El ganador se define todos los días a las 20:00 hrs.
         .cc-message__grid-btn

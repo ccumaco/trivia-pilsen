@@ -14,7 +14,7 @@
       .contain-img
         //- .container-secont
         .container-tertiary
-          img(src="./../assets/img/pilsen/jugadores2.png", alt="alt")
+          img(src="./../assets/img/pilsen/jugadores2.png", alt="colo-colo pilsen del sur")
       transition(name='fade')
         .cc-modal-code(v-if='!continuePlay')
           .cc-modal-code__card
