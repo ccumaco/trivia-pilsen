@@ -32,13 +32,13 @@
           //- <sup>*</sup>
           .cc-form__group_grid
             .cc-form__group
-              .cc-form__input-inner.i-select
-                select.cc-form__input.cc-form__input_select#ccDateDay(v-model="birthMonth")
-                  option(selected disabled value="" hidden) DD
-                  option(v-for="(item, key) in months" :value="key") {{ item }}
-            .cc-form__group
               .cc-form__input-inner
                 input.cc-form__input#ccDateDay(type="number" name="ccDay" maxlength="2" min="1" max="31" placeholder="DD" v-model="birthDay")
+            .cc-form__group
+              .cc-form__input-inner.i-select
+                select.cc-form__input.cc-form__input_select#ccDateDay(v-model="birthMonth")
+                  option(selected disabled value="" hidden) MM
+                  option(v-for="(item, key) in months" :value="key") {{ item }}
             .cc-form__group
               .cc-form__input-inner
                 input.cc-form__input#ccLastYear(type="number" name="ccYear" maxlength="4" min="1900" max="2002" placeholder="AAAA" v-model="birthYear")
