@@ -8,7 +8,7 @@
         img(src="./../assets/img/pilsen/icon-menu.png", alt="icon mobile")
       .icon-mobile(v-else @click="isOpen = !isOpen") X
       ul
-        li.list-liks <router-link to="/"> HOME </router-link>
+        li.list-liks <router-link to="/home"> HOME </router-link>
         li.list-liks( @click="drawer = !drawer") CONCURSO
       ul
         li.links-rs <a href="https://www.instagram.com/pilsendelsur/"><i class="fab fa-instagram"></i></a>
@@ -16,7 +16,7 @@
         li.links-rs <a href="https://www.facebook.com/Pilsendelsur"><i class="fab fa-facebook-f"></i></a>
         li.links-rs <a href="https://www.youtube.com/channel/UC61vjd4wvg0BUr77G7ygo5Q"><i class="fab fa-youtube"></i></a>
       .btn-register
-        button( @click="drawer = false") <router-link to="/registro"> REGISTRO</router-link>
+        button( @click="drawer = false") <router-link to="/home"> REGISTRO</router-link>
     .menu-desktop(v-if="drawer")
       h2 CONCURSOS
       .container-menu-dektop

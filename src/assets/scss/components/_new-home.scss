@@ -1,6 +1,9 @@
 .cc-home__hero {
     height: auto;
     display: flex;
+    .container-first.participa2{
+      justify-content: center;
+    }
     .container-first{
       flex-basis: 30%;
       // background: url('#{$img-path}/pilsen/Rectangle-569.png') center no-repeat;
@@ -13,6 +16,7 @@
       text-align: left;
       padding: 60px 60px 20px;
       .title-card{
+        color: #484647;
         font-family: 'DIN Next LT Pro';
         font-style: normal;
         font-weight: bold;
@@ -22,6 +26,7 @@
           color: #712325;
         }
       }
+      
       .register-here{
         width: 100%;
         text-align: center;
@@ -30,7 +35,7 @@
         color: #fff;
         background-color: #712325;
         border-radius: 30px;
-        padding: 15px 20px;
+        padding: 8px 20px;
         font-family: 'Roboto';
         font-style: normal;
         font-weight: bold;
@@ -38,6 +43,13 @@
         text-transform: uppercase;
         line-height: 19px;
         margin-top: 20px;
+        a{
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+      .register-here.participa{
+        margin-top: 40px;
       }
       .text-card{
         margin: 20px auto 0px 0px;

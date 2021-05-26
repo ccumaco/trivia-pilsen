@@ -23,6 +23,10 @@
       &:last-child::after{
         content: '▼';
       }
+      &:hover{
+        font-size: 17px;
+        text-shadow: 2px 2px 2px #000;
+      }
     }
     li {
       margin: 0 10px;

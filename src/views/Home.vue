@@ -6,7 +6,7 @@
       .container-first
         h2.title-card Participa en nuestra Trivia y gana un <b>MEET & GREET </b> con Ivan Morales y Maxi Falcón
         //- p.text-card Lata edición especial - 30 años copa libertadores
-        router-link(to="/trivia").register-here COMENZAR TRIVIA
+        router-link(to="/registro").register-here COMENZAR TRIVIA
         h3.how-participate ¿Cómo participar?
         .first-step <div>1</div> <p>Estudia estos tips sobre Pilsen del Sur</p>
         .second-step <div>2</div> <p>Regístrate y juega<br> <span>*Una vez al día</span></p> 

@@ -13,6 +13,7 @@
     text-align: left;
     padding: 60px 60px 20px;
     .title-card{
+      color: #484647;
       padding-right: 30px;
       font-family: 'DIN Next LT Pro';
       font-style: normal;
@@ -30,12 +31,16 @@
       color: #fff;
       background-color: #712325;
       border-radius: 30px;
-      padding: 10px 20px;
+      padding: 8px 20px;
       font-family: 'Roboto';
       font-style: normal;
       font-weight: bold;
       font-size: 16px;
       line-height: 19px;
+      a{
+        color: #fff;
+        text-decoration: none;
+      }
     }
     .text-card{
       font-family: 'Roboto';

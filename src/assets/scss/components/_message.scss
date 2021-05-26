@@ -51,6 +51,7 @@
     }
   }
   .cc-lead {
+    font-family: 'DIN Next LT Pro' !important;
     @include font-rem(24px);
     color: #712325;
     margin: 0;
@@ -64,6 +65,8 @@
     }
   }
   .cc-lead__time {
+    font-weight: bold;
+    font-family: 'DIN Next LT Pro' !important;
     @include font-rem(50px);
     color: #C18E00;
     margin: 0;
@@ -91,9 +94,13 @@
     transform: translateX(0);
   }
 }
-
+.cc-btn.cc-btn_secondary{
+  font-family: 'DIN Next LT Pro';
+  font-weight: bold;
+}
 .cc-message__content {
   background: #e9e9e7;
+  font-family: 'DIN Next LT Pro';
   border: 1px solid #EEB400;
   box-sizing: border-box;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
