@@ -12,6 +12,11 @@
 }
 
 .cc-age-gate {
+  display: flex;
+  min-height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  position: relative;
   margin-top: -92px;
   background-repeat: no-repeat;
   background-position: center top;
@@ -28,22 +33,27 @@
     // padding-top: 267px;
   }
   .cc-title {
+    color: #4E4E4E;
     @include font-rem(16px);
     text-transform: initial;
     text-align: center;
-    padding: 1rem 2rem;
+    padding: 1rem 0rem;
     font-family: 'Roboto';
     font-weight: normal;
   }
 
   .cc-form__label_check {
-    padding-bottom: 0;
+    color: #4E4E4E;
+    margin: 0 50px;
+    font-weight: normal;
     &:after {
       border-radius: 50%;
       background-color: $c-neutro;
       border-color: transparent;
+      top: 10px;
     }
     &:before {
+      top: 10px !important;
       content: '';
       display: block;
       width: 0.6rem;
@@ -54,8 +64,9 @@
     }
   }
   .cc-form__terms {
-    width: 90%;
-    margin: 0 auto  ;
+    color: #4E4E4E;
+    width: 100%;
+    margin: 0 ;
   }
   .cc-age-gate__input#ageGateYear,.cc-age-gate__input#ageGateMonth,.cc-age-gate__input#ageGateDay {
     width: 60px;
@@ -97,9 +108,17 @@
   .cc-form__label {
     font-family: 'Roboto';
     &.cc-form__label_small {
-      padding: 10px 0 0 28px;
-      color: $c-bg-general;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      margin-top: 20px;
+      // padding: 10px 0 0 28px;
+      color: #4E4E4E;
       font-family: 'Roboto';
+      font-weight: normal;
+      a{
+        color: #4E4E4E;
+      }
     }
   }
   .cc-form__terms-item {
@@ -141,24 +160,24 @@
   }
   .layout-general {
     @media only screen and (max-height: 823px) and (max-width: 767px)  {
-      min-height: calc(100vh - 11.2rem);
+      min-height: calc(80vh - 11.2rem);
     }
     @media only screen and (max-height: 812px) and (max-width: 767px)  {
       min-height: calc(94vh - 9.2rem);
     }
     @media only screen and (max-height: 737px) and (max-width: 767px) {
-      min-height: calc(100vh - 6.2rem);
+      min-height: calc(80vh - 6.2rem);
     }
     @media only screen and (max-height: 668px) and (max-width: 767px) {
-      min-height: calc(100vh + 0.6rem);
+      min-height: calc(80vh + 0.6rem);
     }
     @media only screen and (max-height: 568px) and (max-width: 767px) {
-      min-height: calc(100vh + 2.2rem);
+      min-height: calc(80vh + 2.2rem);
     }
   }
   @include media-query(big) {
     .layout-general {
-      min-height: 100vh;
+      min-height: auto;
     }
     .cc-title {
       @include font-rem(20px);
@@ -181,7 +200,8 @@
   width: 100%;
   height: 100%;
   padding: 0 !important;
-  background-color: #BDA38A;
+  background: rgba(189, 163, 138, 0.98);
+  margin: 0 auto !important;
   background-size: 100% 100%;
   @include media-query(medium) {
     margin: 100px auto;
@@ -193,8 +213,8 @@
     top: 0;
     bottom: 0;
     left: 50%;
-    width: 50%;
-    min-width: 370px;
+    width: 80%;
+    min-width: 80%;
     &:before {
       content: '';
       display: block;
@@ -229,7 +249,15 @@
 }
 @media screen and (max-width:970px) {
   .cc-age-gate__grid-wrapper{
-    width: 77%;
+    width: 90%;
+    height: 120px;
+    padding: 0;
+  }
+  .cc-age-gate .layout-general{
+    padding: 0 10px !important;
+  }
+  .cc-age-gate .layout-general{
+    width: 98vw;
   }
 }
 
@@ -277,6 +305,7 @@
     display: none;
   }
   .cc-age-gate__wrapper{
+    height: auto;
     width: 100%;
     background: #fff;
   }
@@ -298,17 +327,41 @@
     }
     .cc-age-gate__input#ageGateYear, .cc-age-gate .cc-age-gate__input#ageGateMonth, .cc-age-gate .cc-age-gate__input#ageGateDay{
       width: 50px;
-      height: 60px;
+      height: 80px !important;
       margin: 0 5px;
     }
     .cc-form__label.cc-form__label_small{
       color: #000;
+      padding: 0 40px;
+      font-size: 12px;
     }
     .cc-form__label_check{
+      margin: 0;
+      margin-left: 10px;
       color: #000;
       font-weight: 400;
-    font-family: "Roboto";
-    font-size: 12px;
+      font-family: "Roboto";
+      font-size: 12px;
+    }
+    .cc-age-gate .cc-form__label{
+      color: #000 !important;
+    }
+    .cc-age-gate .cc-age-gate__input{
+      height: 50px !important;
+      width: 40px !important;
+    }
+    .cc-age-gate .cc-age-gate__input#ageGateYear, .cc-age-gate .cc-age-gate__input#ageGateMonth, .cc-age-gate .cc-age-gate__input#ageGateDay{
+      height: 50px !important;
+      width: 40px !important;
+    }
+    .cc-form__label {
+        font-family: 'Roboto';
+        &.cc-form__label_small {
+        padding-top: 5px !important;
+        margin-top: 0 !important;
+        color: #000;
+        font-size: 10px;
+      }
     }
     .cc-form__label_check:after{
       background-color: grey;

@@ -32,7 +32,7 @@
                 button.cc-btn.cc-btn__primary.cc-promotion__card-btn.i-arrow-after(v-if="askActive < 8" type="button" @click="AskQuestion" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") Siguiente
                 button.cc-btn.cc-btn__primary.cc-promotion__card-btn(v-else type="button" @click="AskQuestion" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") Enviar respuestas
       .container-img
-        img(:src="imagen[askActive-1].src", alt="imagen[askActive-1].src")
+        img(:src="imagen[numberImg].src", :alt="imagen[numberImg].src")
   </div>
 </template>
 
@@ -47,6 +47,7 @@ export default {
   },
   data () {
     return {
+      numberImg: -1,
       imagen: [
         {
           src: require('./../assets/img/pilsen/ask1-bg.png'),
@@ -117,7 +118,7 @@ export default {
   },
   mounted(){
     let elemento = document.getElementById('id-trivia')
-    elemento.setAttribute('style', `background-image: url(${this.imagen[this.askActive-1].src2});`)
+    elemento.setAttribute('style', `background-image: url(${this.imagen[this.numberImg].src2});`)
     console.log('cargo el mounted', elemento);
   },
   methods:{
@@ -143,7 +144,6 @@ export default {
         }
       })
       .then((response) => {
-        console.log(response, 'response');
         self.output = response.data
         self.triviaId = self.output.triviaId
         this.nextQuestion();
@@ -179,6 +179,10 @@ export default {
         self.questionId = self.outputQ.questionId
         self.start = true
         self.isLoaderUni = false
+        let elemento = document.getElementById('id-trivia')
+        this.numberImg ++
+        elemento.setAttribute('style', `background-image: url(${this.imagen[this.numberImg].src2});`)
+        console.log(elemento, 'elemento');
       }, (error) => {
         console.log(error);
       });

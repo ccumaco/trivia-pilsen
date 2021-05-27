@@ -21,7 +21,7 @@
         .cc-message__grid-btn
           //- router-link(:to="'/#'").cc-btn.cc-message__btn Vuelve a participar
           button(v-if="!isChecked").cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" @click="checkTrivia()" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") VER RANKING
-          router-link(v-if="isChecked")(:to="'/ranking'").cc-btn.cc-btn_secondary.cc-message__btn.i-arrow-after Ver ranking
+          router-link(v-if="isChecked")(:to="'/ranking'")(@click="dataLayer()").cc-btn.cc-btn_secondary.cc-message__btn.i-arrow-after Ver ranking
           
 
   </div>
@@ -73,6 +73,15 @@ export default {
     }
   },
   methods: {
+    dataLayer(){
+      window.dataLayer.push({
+        'event': 'trackEvent',
+        'eventCategory': 'Pilsen del Sur', // Categoría del evento (String). Requerido.
+        'eventAction': 'Vista Ranking', // Acción o subcategoría del evento (String).
+        'eventLabel': '', // Etiqueta de descripción del evento (String).
+        'eventValue': '' // Valor o peso (importancia) del evento (String).
+      });
+    },
     triviaResults() {
       let self = this
       const info = {

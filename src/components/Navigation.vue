@@ -76,11 +76,11 @@ export default {
     }
   },
   mounted(){
-    if(this.$route.name == 'AgeGate'){
-      document.getElementById('header-id').style.display = 'none'
-    } else {
-      document.getElementById('header-id').style.display = 'block'
-    }
+    // if(this.$route.name == 'AgeGate'){
+    //   document.getElementById('header-id').style.display = 'none'
+    // } else {
+    //   document.getElementById('header-id').style.display = 'block'
+    // }
   },
   methods: {
     toggleMenu() {

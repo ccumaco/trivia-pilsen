@@ -137,10 +137,10 @@ router.beforeEach((to, from, next) => {
     } else {
       if(sessionStorage.v4 == ''){
         next()
-         //{ name: 'AgeGate', query: { utm_source: sessionStorage.v1, utm_medium: sessionStorage.v2, utm_campaign: sessionStorage.v3 }}
-      } else {
-         //{ name: 'AgeGate', query: { utm_source: sessionStorage.v1, utm_medium: sessionStorage.v2, utm_campaign: sessionStorage.v3, utm_content: sessionStorage.v4 }}
+        // { name: 'AgeGate', query: { utm_source: sessionStorage.v1, utm_medium: sessionStorage.v2, utm_campaign: sessionStorage.v3 }}      } else {
+         //
         next()
+        // { name: 'AgeGate', query: { utm_source: sessionStorage.v1, utm_medium: sessionStorage.v2, utm_campaign: sessionStorage.v3, utm_content: sessionStorage.v4 }}
       }
     }
   } else if (((to.name == 'Trivia') || (to.name == 'Message') || (to.name == 'Registro') || (to.name == 'WithoutTime')) && (to.params.mail === undefined)) {

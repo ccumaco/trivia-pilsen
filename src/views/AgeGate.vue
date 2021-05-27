@@ -2,7 +2,7 @@
   <div class="cc-age-gate cc-page ">
     .layout-general
       .cc-age-gate__wrapper
-        p.cc-title Debes ser mayor de edad para ingresar <br> Ingresa tu año de nacimiento
+        p.cc-title Para continuar debes ser mayor de edad <br> Ingresa tu año de nacimiento.
         .cc-age-gate__grid-wrapper#scrollAgegate
             .cc-age-gate__control.cc-age-gate__control_year
               .border-contain
@@ -23,7 +23,7 @@
         .cc-form__terms
           .cc-form__terms-item
             input.cc-form__input-check(type="checkbox" id='ccTerms' @click="setPrice")
-            label.cc-form__label.cc-form__label_check.i-checked(for='ccTerms') Recordar mis datos *No selecciones esta opción si compartes este computador con menores de edad
+            label.cc-form__label.cc-form__label_check.i-checked(for='ccTerms') <b>Recordar mis datos</b><br> *No selecciones esta opción si compartes este computador con menores de edad
             //- small.cc-form__label.cc-form__label_small *No selecciones esta opción si compartes este computador con menores de edad. 
             small.cc-form__label.cc-form__label_small Este sitio web utiliza cookies que se quedarán almacenadas en el computador con el fin de mejorar su experiencia. Al proporcionar su fecha de nacimiento, también se acepta el uso de cookies. Más información haga <a class="cc-link" href="./documents/Politicas-de-Privacidad-Landing-BECKER.pdf">clic aquí</a>.
           //- a#acepted.cc-btn.cc-btn__primary.i-arrow-after(href="https://www.tapintoyourbeer.com" v-if="isDisabled" data-qadp="button_enter_agegate") Ingresar
