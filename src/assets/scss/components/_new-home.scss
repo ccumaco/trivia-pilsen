@@ -120,8 +120,11 @@
       }
       .bottle{
         flex-basis: 20%;
-        min-width: 23%;
-        margin: 0 50px;
+        min-width: 44%;
+        margin: 0 -80px 0 20px;
+        img{
+          width: 80%;
+        }
       }
       .text-bottle{
         flex-basis: 20%;
@@ -362,7 +365,13 @@
     .container-bottle .container .bottle{
       flex-basis: 100%;
       min-width: 37%;
+      width: 100%;
       margin: 0 5px;
+      img{
+        height: auto;
+        max-height: 300px;
+        object-fit: contain;
+      }
     }
     .container-bottle{
       background: url(#{$img-path}/pilsen/bg-mobile.png) center no-repeat;

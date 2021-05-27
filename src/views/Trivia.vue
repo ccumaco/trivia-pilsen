@@ -5,8 +5,8 @@
         .cc-trivia__timer
           p#countdown.cc-trivia__clock.i-time Iniciar tiempo: {{ countdown + ':00' }}
         p.cc-trivia__txt Pregunta {{ askActive }}
-        //- transition(name="fade")
-          //- Loader(v-if="isLoader", :full="true")
+        transition(name="fade")
+          Loader(v-if="isLoader", :full="true")
         .algo
           Loader(v-if="isLoaderUni", :full="false")
           .cc-trivia__c(v-else)
@@ -85,7 +85,7 @@ export default {
       answerC : '',
       answerD : '',
       active : true,
-      triviaListLength: 10,
+      triviaListLength: 7,
       askActive: 3,
       time: 'September 4, 2020, 15:15',
       countdown: 60,
@@ -117,9 +117,6 @@ export default {
     },
   },
   mounted(){
-    let elemento = document.getElementById('id-trivia')
-    elemento.setAttribute('style', `background-image: url(${this.imagen[this.numberImg].src2});`)
-    console.log('cargo el mounted', elemento);
   },
   methods:{
     btnDisable() {
@@ -181,7 +178,7 @@ export default {
         self.isLoaderUni = false
         let elemento = document.getElementById('id-trivia')
         this.numberImg ++
-        elemento.setAttribute('style', `background-image: url(${this.imagen[this.numberImg].src2});`)
+        elemento.setAttribute('style', `padding-top: 70px; background-image: url(${this.imagen[this.numberImg].src2});`)
         console.log(elemento, 'elemento');
       }, (error) => {
         console.log(error);
@@ -218,7 +215,7 @@ export default {
         console.log(error);
       });
     },
-    callFunction: function (duration, display) {
+    callFunction: function (duration) {
       var timer = duration, minutes, seconds;
       var self = this
       var interval = setInterval(function () {
@@ -227,9 +224,9 @@ export default {
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-        if(display){
-          display.textContent = minutes + ":" + seconds;
-        }
+        // if(display){
+          document.getElementById('countdown').textContent = minutes + ":" + seconds;
+        // }
         if(self.timeTotal) {
           clearInterval(interval)          
         }
@@ -252,7 +249,7 @@ export default {
       this.askActive += 1
     },
     startCountdown() {
-        var display = document.getElementById('#countdown');
+        var display = document.getElementById('countdown');
         var duration = this.countdown * 60; 
         this.callFunction(duration, display)
         if (this.withoutTime && localStorage.fisishTrivia) {

@@ -4,6 +4,7 @@
 \*------------------------------------*/
 
 .cc-nav {
+  z-index: 10;
   position: fixed;
   height: 70px;
   background-color: #701012;
@@ -98,6 +99,10 @@
 }
 
 .menu-desktop {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  margin-top: 70px;
   background-color: #701012;
   margin-top: 2px solid #fff;
   h2{

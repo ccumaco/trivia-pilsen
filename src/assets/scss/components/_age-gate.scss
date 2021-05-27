@@ -33,7 +33,7 @@
     // padding-top: 267px;
   }
   .cc-title {
-    color: #4E4E4E;
+    color: #000;
     @include font-rem(16px);
     text-transform: initial;
     text-align: center;
@@ -43,8 +43,8 @@
   }
 
   .cc-form__label_check {
-    color: #4E4E4E;
-    margin: 0 50px;
+    color: #000;
+    margin: 0 0px;
     font-weight: normal;
     &:after {
       border-radius: 50%;
@@ -64,12 +64,12 @@
     }
   }
   .cc-form__terms {
-    color: #4E4E4E;
+    color: #000;
     width: 100%;
     margin: 0 ;
   }
   .cc-age-gate__input#ageGateYear,.cc-age-gate__input#ageGateMonth,.cc-age-gate__input#ageGateDay {
-    width: 60px;
+    width: 70px;
     margin: 0 10px;
   }
   .cc-age-gate__input {
@@ -81,7 +81,7 @@
     // border: 2px solid rgba(0, 0, 0, 0.6) blur(4px);
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
-    font-size: 30px;
+    font-size: 100%;
     color: #fff;
     &:focus,
     &:active {
@@ -106,18 +106,23 @@
     text-align: center;
   }
   .cc-form__label {
-    font-family: 'Roboto';
+    color: #000;
+    font-family: "Roboto";
+    font-weight: normal;
+    font-size: 12px;
+    font-size: 0.75rem;
     &.cc-form__label_small {
       width: 100%;
       padding: 0;
       margin: 0;
-      margin-top: 20px;
+      padding: 0 38px;
+      // margin-top: 20px;
       // padding: 10px 0 0 28px;
-      color: #4E4E4E;
+      color: #000;
       font-family: 'Roboto';
       font-weight: normal;
       a{
-        color: #4E4E4E;
+        color: #000;
       }
     }
   }
@@ -143,7 +148,8 @@
     background-image: url('#{$img-path}/pilsen/112A7757.png');
     background-position: center bottom;
     .layout-general {
-      background-color: #BDA38A;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
       @include flex-direction(row);
       @include justify-content(flex-end);
       @include align-items(stretch);
@@ -200,7 +206,7 @@
   width: 100%;
   height: 100%;
   padding: 0 !important;
-  background: rgba(189, 163, 138, 0.98);
+  // background: rgba(189, 163, 138, 0.98);
   margin: 0 auto !important;
   background-size: 100% 100%;
   @include media-query(medium) {
@@ -231,6 +237,9 @@
   }
   @include media-query(wide) {
     padding: 40px;
+  }
+  .title-agegate{
+    font-family: 'DIN Next LT Pro' ;
   }
 }
 
@@ -353,6 +362,9 @@
     .cc-age-gate .cc-age-gate__input#ageGateYear, .cc-age-gate .cc-age-gate__input#ageGateMonth, .cc-age-gate .cc-age-gate__input#ageGateDay{
       height: 50px !important;
       width: 40px !important;
+      &::placeholder{
+        margin-left: 10px;
+      }
     }
     .cc-form__label {
         font-family: 'Roboto';

@@ -25,7 +25,7 @@
               li.btn-before-img
                 img(src="./../assets/img/pilsen/come-back.png", alt="alt" @click="nextImg(-1)")
           .bottle
-            img(:src="imagen[indexImage].src", alt="alt")
+            img(:src="imagen[indexImage].src", :alt="imagen[indexImage].altImagen")
         .text-bottle
           h2 {{imagen[indexImage].titleBottle}} <br> {{imagen[indexImage].tamaño}}
           p {{imagen[indexImage].textBottle}}

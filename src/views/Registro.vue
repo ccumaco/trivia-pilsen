@@ -1,6 +1,18 @@
 <template lang="pug">
   <div class="cc-registro">
     .container-register
+      .container-yes
+        p.text-yes Podrías decirme si probaste Pilsen Sur
+        .cc-form__terms-item
+          input.cc-form__input-check(type="checkbox" id='ccMrk' v-model="probado")
+          label.cc-form__label.cc-form__label_check.i-check(
+            for='ccMrk') Sí
+          //- .container-test-yes(v-if="probado")
+        .cc-form__terms-item
+          input.cc-form__input-check(type="checkbox" id='ccMrk' v-model="noProbado")
+          label.cc-form__label.cc-form__label_check.i-check(
+            for='ccMrk') No
+        button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="submit") Siguiente
       .cc-registro__grid
         header.cc-header
           h1.cc-title Si ya estás registrado
@@ -8,40 +20,40 @@
           router-link.cc-btn.cc-btn_secondary.i-arrow-after(:to="'/login'") INICIAR SESIÓN
       .line-style
       p.parrafor Ingresa  tus datos personales <br> para participar en la trivia
-      form.cc-form.cc-form__grid(action="/trivia" method="get")
+      form.cc-form.cc-form__grid(action="/trivia" method="get" id="id-form")
         .cc-form__group
           label.cc-form__label(for="ccName") Nombres <sup>*</sup>
           .cc-form__input-inner
-            input.cc-form__input#ccName(type="text" name="ccName" placeholder="Ingresa solo tu nombre" v-model="names")
+            input.cc-form__input#ccName(type="text" name="ccName" placeholder="Ingresa solo tu nombre" v-model="names" required)
         .cc-form__group
           label.cc-form__label(for="ccLastName") Apellidos <sup>*</sup>
           .cc-form__input-inner
-            input.cc-form__input#ccLastName(type="text" name="ccLastName" placeholder="Ingresa tu apellido" v-model="lastName")
+            input.cc-form__input#ccLastName(type="text" name="ccLastName" placeholder="Ingresa tu apellido" v-model="lastName" required)
         .cc-form__group
           label.cc-form__label(for="ccGender") Género <sup>*</sup> 
           .cc-form__input-inner.i-select
-            select.cc-form__input.cc-form__input_select#ccGender(v-model="gender")
+            select.cc-form__input.cc-form__input_select#ccGender(v-model="gender" required)
               option(selected disabled value="" hidden) Escoje tu género
               option(v-if="genders!==undefined" v-for="item in genders" :value="item.id") {{ item.name }}
         .cc-form__group
           label.cc-form__label(for="ccEmail") Tu mail <sup>*</sup>
           .cc-form__input-inner
-            input.cc-form__input#ccEmail(type="email" name="ccEmail" placeholder="Ingresa correo electrónico" v-model="ccemail" value="ccemail")
+            input.cc-form__input#ccEmail(type="email" name="ccEmail" placeholder="Ingresa correo electrónico" v-model="ccemail" value="ccemail" required)
             .cc-form__group
           p.cc-form__label Ingresa tu fecha de Nacimiento 
           //- <sup>*</sup>
           .cc-form__group_grid
             .cc-form__group
               .cc-form__input-inner
-                input.cc-form__input#ccDateDay(type="number" name="ccDay" maxlength="2" min="1" max="31" placeholder="DD" v-model="birthDay")
+                input.cc-form__input#ccDateDay(type="number" name="ccDay" maxlength="2" min="1" max="31" placeholder="DD" v-model="birthDay" required)
             .cc-form__group
               .cc-form__input-inner.i-select
-                select.cc-form__input.cc-form__input_select#ccDateDay(v-model="birthMonth")
+                select.cc-form__input.cc-form__input_select#ccDateDay(v-model="birthMonth" required)
                   option(selected disabled value="" hidden) MM
                   option(v-for="(item, key) in months" :value="key") {{ item }}
             .cc-form__group
               .cc-form__input-inner
-                input.cc-form__input#ccLastYear(type="number" name="ccYear" maxlength="4" min="1900" max="2002" placeholder="AAAA" v-model="birthYear")
+                input.cc-form__input#ccLastYear(type="number" name="ccYear" maxlength="4" min="1900" max="2003" placeholder="AAAA" v-model="birthYear" required)
         //- .cc-form__group
         //-   label.cc-form__label(for="ccPhone") Número de teléfono <sup>*</sup>
         //-   .cc-form__input-inner
@@ -55,15 +67,16 @@
         .cc-form__footer
           .cc-form__terms
             .cc-form__terms-item
-              input.cc-form__input-check(type="checkbox" id='ccTerms' v-model="terms")
+              input.cc-form__input-check(type="checkbox" id='ccTerms' v-model="terms" required)
               label.cc-form__label.cc-form__label_check.i-check(
-                for='ccTerms') He leído y aceptado 
-                  a(href="./documents/Terminos-y-Condiciones-para-BECKER.pdf" target="_blank") términos y condiciones y  <a href="./documents/Politicas-de-Privacidad-Landing-BECKER.pdf" target="_blank"> política de protección de datos personales</a>
+                for='ccTerms') He leído, entendido y aceptado los <a href="./documents/Terminos-y-Condiciones-para-BECKER.pdf" target="_blank">Términos y Condiciones</a> y la <a href="./documents/Politicas-de-Privacidad-Landing-BECKER.pdf" target="_blank"> política de protección de datos personales</a>, en particular el procesamiento de mi información personal por parte de Cervecería de Chile. con las finalidades y usos requeridos por ésta descritos en la mencionada política
+                  
             .cc-form__terms-item
               input.cc-form__input-check(type="checkbox" id='ccMrk' v-model="mrk")
               label.cc-form__label.cc-form__label_check.i-check(
                 for='ccMrk') Deseo recibir información comercial de Pilsen del Sur
             label
+            //- button(style="display:none" type="submit" id="btn-submit")
           button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" @click="createUser()") Siguiente
       transition(name='fade')
         .cc-modal-code(v-if='invalidCode')
@@ -93,6 +106,8 @@ export default {
       birthDay: '',
       birthMonth: '',
       birthYear: '',
+      probado: false,
+      noOrobado: false,
       months: {
         1: 'ENE',
         2: 'FEB',
@@ -148,6 +163,7 @@ export default {
     },
     createUser() {
       let self = this
+      // document.getElementById('btn-submit').click().preventDefault()
       if(!(self.names == '') && !(self.lastName == '') && !(self.birthYear == '') && !(self.birthMonth == '') && !(self.birthDay == '') && !(self.gender == '') &&  (self.terms)) {
         this.getCookie('_td')
         self.isLoader = false
@@ -174,7 +190,6 @@ export default {
         .then((response) => {
           var sha256 = require('js-sha256').sha256;
           var emailhash = sha256(this.ccemail)
-          console.log(emailhash)+"esta es la info";
           self.output = response.data
           window.dataLayer.push({
             'event': 'trackEvent',
@@ -183,13 +198,41 @@ export default {
             'eventLabel': emailhash, // Etiqueta de descripción del evento (String).
             'eventValue': '' // Valor o peso (importancia) del evento (String).
           });
-          self.$router.push({name: 'Trivia', params: {mail: self.$route.params.mail, attempts: 3}})
+          document.getElementById('id-form').style.display = 'none'
+          document.getElementsByClassName('cc-registro__grid')[0].style.display = 'none'
+          document.getElementsByClassName('parrafor')[0].style.display = 'none'
+          document.getElementsByClassName('line-style')[0].style.display = 'none'
+          document.getElementsByClassName('container-yes')[0].style.display = 'block'
+          // self.$router.push({name: 'Trivia', params: {mail: self.$route.params.mail, attempts: 3}})
         }, (error) => {
           console.log(error);
           console.log("prueba fallo registro");
         });
       } else {
-        console.log("no se puede registrar por x") 
+        if(this.names == ""){
+          alert('nombre es requerido')
+        }
+        if(this.lastName == ""){
+          alert('Apellido es requerido')
+        }
+        if(this.gender == ""){
+          alert('Género es requerido')
+        }
+        if(this.ccemail == ""){
+          alert('E-Mail es requerido')
+        }
+        if(this.birthDay == ""){
+          alert('Dia es requerido')
+        }
+        if(this.birthDay == ""){
+          alert('Mes es requerido')
+        }
+        if(this.birthYear == ""){
+          alert('Año es requerido')
+        }
+        if(this.terms == ""){
+          alert('Terminos es requerido')
+        }
       }
     },
     validRegister() {
@@ -252,6 +295,14 @@ export default {
     ccemail: function() {
       this.btnDisable()
     },
+    noProbado: function() {
+      this.btnDisable()
+    },
+    // probado: function() {
+    //   if (this.probado) {
+        
+    //   }
+    // },
     phone: function() {
       this.btnDisable()
     },
