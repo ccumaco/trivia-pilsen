@@ -5,7 +5,7 @@
     //-   router-link(to="/about") About
     //- </div>
     Navigation
-    <router-view/>
+    <router-view style="padding-top: 70px"/>
     Footer
   </div>
 </template>

@@ -6,7 +6,7 @@
     .cc-message__grid
       .cc-message__content
         header.cc-message__header
-          h2(v-if="!isChecked").cc-title.cc-title_brand ¡Terminaste!
+          h2(v-if="!isChecked").cc-title.cc-title_brand ¡TERMINASTE!
           p(v-if="!isChecked").cc-lead LA HICISTE EN:
           h1(v-if="isChecked").cc-title.cc-title_brand ¡Weeeena!
           p(v-if="isChecked").cc-lead La hiciste en:

@@ -4,18 +4,25 @@
 \*------------------------------------*/
 
 .cc-nav {
+  position: fixed;
   height: 70px;
   background-color: #701012;
   border-bottom: 2px solid #fff;
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 
   .icon-mobile {
     display: none;
   }
 
+  ul.ul-izquierda{
+    margin-left: 0%;
+  }
+  ul.ul-derecha{
+    margin-left: 20%;
+  }
   ul {
     li.list-liks{
       &:last-child{
@@ -65,15 +72,16 @@
   }
 
   .btn-register button {
+    margin-left: -10%;
     cursor: pointer;
     background-color: transparent;
     border: 1px solid #fff;
     color: #fff;
     border-radius: 30px;
-    padding: 5px 30px;
+    padding: 8px 30px 5px;
     font-family: 'DIN Next LT Pro';
     font-style: normal;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 16.1596px;
     line-height: 19px;
     text-align: center;

@@ -3,14 +3,14 @@
     .cc-nav
       .container-logo-header
         router-link(to="/")
-          img(src="./../assets/img/pilsen/logo-blanco.png", alt="Pilsen del sur" @click="drawer = false")
+          img(src="./../assets/img/pilsen/logo-blanco.svg", alt="Pilsen del sur" @click="drawer = false")
       .icon-mobile(v-if="isOpen == false" @click="isOpen = !isOpen")
         img(src="./../assets/img/pilsen/icon-menu.png", alt="icon mobile")
       .icon-mobile(v-else @click="isOpen = !isOpen") X
-      ul
+      ul.ul-izquierda
         li.list-liks <router-link to="/home"> HOME </router-link>
         li.list-liks( @click="drawer = !drawer") CONCURSO
-      ul
+      ul.ul-derecha
         li.links-rs <a href="https://www.instagram.com/pilsendelsur/"><i class="fab fa-instagram"></i></a>
         li.links-rs <a href="https://mobile.twitter.com/pilsendelsurcl?lang=en"><i class="fab fa-twitter"></i></a>
         li.links-rs <a href="https://www.facebook.com/Pilsendelsur"><i class="fab fa-facebook-f"></i></a>
@@ -73,6 +73,19 @@ export default {
       drawer: false,
       module2: false,
       module3: false
+    }
+  },
+  watch: {
+    $route(){
+      document.getElementsByClassName('list-liks')[0].setAttribute('style', 'border-bottom: 2px solid transparent')
+      document.getElementsByClassName('list-liks')[1].setAttribute('style', 'border-bottom: 2px solid transparent')
+      if( this.$route.path == '/'){
+        let home = document.getElementsByClassName('list-liks')[0]
+        home.setAttribute('style', 'border-bottom: 2px solid #C18E00')
+      } else {
+        let home = document.getElementsByClassName('list-liks')[1]
+        home.setAttribute('style', 'border-bottom: 2px solid #C18E00')
+      }
     }
   },
   mounted(){

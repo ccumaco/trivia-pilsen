@@ -21,7 +21,7 @@
         .do-you-want
           .width-bottle
             ul
-              li(v-for="(item, index) of tamaños" :key="index" @click="nextImg(index)") {{item}}
+              li(v-for="(item, index) of tamaños" :key="index" @click="nextImg(index)" class="lista-bold") {{item}}
               li.btn-before-img
                 img(src="./../assets/img/pilsen/come-back.png", alt="alt" @click="nextImg(-1)")
           .bottle
@@ -31,7 +31,8 @@
           p {{imagen[indexImage].textBottle}}
           p {{imagen[indexImage].textBottle2}}
       .show-here
-        button.show-btn COMPRAR AQUÍ
+        a(href="https://www.casadelacerveza.cl/Pilsen%20del%20sur")
+          button.show-btn COMPRAR AQUÍ
   </div>
 </template>
 
@@ -106,6 +107,11 @@ export default {
   created () {
     document.querySelector("body").classList.remove("cc-body-agegate");
   },
+  mounted(){
+    let elemento = document.getElementsByClassName('lista-bold')[0]
+    console.log(elemento);
+    elemento.setAttribute('style', 'font-weight: bold;');
+  },
   methods: {
     btnDisable() {
       if((!this.inputUser == '')) {
@@ -131,12 +137,20 @@ export default {
       document.getElementById("linkProducts").classList.remove("cc-nav__list-link_active");
     },
     nextImg(param){
+      let elemento = document.getElementsByClassName('lista-bold')[this.indexImage]
+      elemento.setAttribute('style', 'font-weight: normal;');
       if (param == -1 ) {
         this.indexImage = this.indexImage + 1
         if(this.indexImage == 3){
           this.indexImage = 0
+          let elemento = document.getElementsByClassName('lista-bold')[this.indexImage]
+          elemento.setAttribute('style', 'font-weight: bold;');
         }
+        let elemento = document.getElementsByClassName('lista-bold')[this.indexImage]
+        elemento.setAttribute('style', 'font-weight: bold;');
       } else {
+        let elemento = document.getElementsByClassName('lista-bold')[param]
+        elemento.setAttribute('style', 'font-weight: bold;');
         this.indexImage = param
       }
     },

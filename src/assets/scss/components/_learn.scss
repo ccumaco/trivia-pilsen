@@ -231,21 +231,25 @@
 }
 
 .cc-learn__slider-txt {
-  font-family: DIN Next LT Pro;
-  @include font-rem(28px);
+  text-align: right;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'DIN Next LT Pro';
+  @include font-rem(38px);
   @include media-query(wide) {
-    @include font-rem(28px);
+    @include font-rem(38px);
   }
   @include media-query(big) {
-    @include font-rem(28px);
+    @include font-rem(38px);
   }
   @include media-query(full) {
-    @include font-rem(28px);
+    @include font-rem(38px);
   }
 }
 
 .VueCarousel{
-  height: 425px;
+  height: 75vh;
 }
 .VueCarousel-inner{
   height: 100% !important;
@@ -311,11 +315,13 @@
       margin: 0;
       padding: 0;
       text-align: right;
-      padding-left: 30%;
-      padding-right: 20px;
+      padding-left: 6%;
+      padding-right: 15px;
       padding-bottom: 40px;
       .cc-learn__slider-txt{
-        font-size: 17px;
+        font-size: 15px;
+        line-height: 15px;
+        font-weight: normal;
       }
     }
     .cc-learn__slider__item{

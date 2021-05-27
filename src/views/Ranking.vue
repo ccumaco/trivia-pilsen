@@ -14,7 +14,8 @@
               span.cc-ranking__points {{ item.time | filterName }}
         p.cc-ranking__txt SI TE DIO SED
         .container-btn
-          button.shop-here COMPRAR PILSEN AQUÍ
+          a(href="https://www.casadelacerveza.cl/Pilsen%20del%20sur")
+            button.shop-here COMPRAR PILSEN AQUÍ
     </div>
 </template>
 
