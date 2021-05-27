@@ -106,7 +106,8 @@ export default {
         headers: { "Content-Type": "application/json" }
       })
       .then((response) => {
-        self.rankingList = response.data
+        self.rankingList = response.data      
+        
       }, (error) => {
         console.log(error);
       });
@@ -133,14 +134,19 @@ export default {
         let output = response.data
         if(!output.has_error){
             self.isChecked = true
+            window.dataLayer.push({
+              'event': 'trackEvent',
+              'eventCategory': 'Pilsen del Sur', // Categoría del evento (String). Requerido.
+              'eventAction': 'Vista Ranking', // Acción o subcategoría del evento (String).
+              'eventLabel': '', // Etiqueta de descripción del evento (String).
+              'eventValue': '' // Valor o peso (importancia) del evento (String).
+            });
         } else {
           alert("Ups! parece que no se comprobó que eres un humano. Intenta de nuevo.")
 
           self.isChecked = false
           self.isDisabled = true
-        }
-        
-        
+        }  
         self.isLoader = false
       }, (error) => {
         console.log(error);
@@ -169,7 +175,7 @@ export default {
       .then((response) => {
         self.position = response.data
         let getPosition = self.position
-        let listRankingLocal = self.rankingList
+        let listRankingLocal = self.rankingList    
 
         for(var item of listRankingLocal){
           if (item.customerId == getPosition.customerId) {

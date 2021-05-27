@@ -12,7 +12,7 @@
           .cc-trivia__c(v-else)
             .cc-trivia__wrap
               .cc-trivia__item
-                p.cc-trivia__ask {{ statement }}Pregunta desde back
+                p.cc-trivia__ask {{ statement }}
               ul.cc-trivia__number-list
                 li.cc-trivia__number-item.i-brand-lata(v-for="(item, index) in triviaListLength" :class="{ 'active': askActive == item, 'done': item < askActive}")
               ul.cc-trivia__ask-list
