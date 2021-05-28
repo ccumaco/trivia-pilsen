@@ -109,6 +109,7 @@
             required
           )
           span.error-input(v-if="ccemail.length == 0") Debe ingresar su correo
+          span.error-input.user-login(v-if="respuesta.existe") El correo ya se encuentra registrado, inicia sesión.
           .cc-form__group
         p.cc-form__label Ingresa tu fecha de Nacimiento
         //- <sup>*</sup>
@@ -182,7 +183,10 @@
         .cc-modal-code__card
           p.cc-modal-code__title Todos los dátos son requeridos
           p.cc-modal-code__txt Ingresa todos los datos, por favor
-          button.cc-form__btn.cc-btn(type="button", @click="invalidCode = false") Aceptar
+          button.cc-form__btn.cc-btn(
+            type="button",
+            @click="invalidCode = false"
+          ) Aceptar
     transition(name="fade")
       Loader(v-if="isLoader", :full="true")
 </div>
@@ -263,6 +267,7 @@ export default {
       fechaActualDay: "",
       fechaActualMonth: "",
       fechaActualYear: "",
+      respuesta: ''
     };
   },
   created() {
@@ -302,7 +307,12 @@ export default {
         element.style.display = "block";
       }
     },
-    createUser() {
+    async createUser() {
+      const axios = require('axios') 
+      let info = { login_mail: this.ccemail }
+      let res = await axios.post('https://triviareplicas.azurewebsites.net/ab/user/prevalidate-register', info)
+      this.respuesta = res.data
+      if (!this.respuesta.existe) {
       this.validarForm()
       let self = this;
       // document.getElementById('btn-submit').click().preventDefault()
@@ -372,6 +382,9 @@ export default {
       } else {
         document.getElementsByClassName('menor-edad')[0].style.display = 'block'
       }
+    } else{
+      document.getElementsByClassName("user-login")[0].style.display = "block";
+    }
     },
     validRegister() {
       this.invalidCode = true;
