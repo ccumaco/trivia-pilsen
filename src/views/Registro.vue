@@ -15,11 +15,11 @@
         button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="submit") Siguiente
       .cc-registro__grid
         header.cc-header
-          h1.cc-title Si ya estás registrado
+          h2.cc-title Si ya estás registrado
         .cc-registro__cta
           router-link.cc-btn.cc-btn_secondary.i-arrow-after(:to="'/login'") INICIAR SESIÓN
       .line-style
-      p.parrafor Ingresa  tus datos personales <br> para participar en la trivia
+      h1.parrafor Ingresa  tus datos personales <br> para participar en la trivia
       form.cc-form.cc-form__grid(action="/trivia" method="get" id="id-form")
         .cc-form__group
           label.cc-form__label(for="ccName") Nombres <sup>*</sup>
@@ -69,7 +69,7 @@
             .cc-form__terms-item
               input.cc-form__input-check(type="checkbox" id='ccTerms' v-model="terms" required)
               label.cc-form__label.cc-form__label_check.i-check(
-                for='ccTerms') He leído, entendido y aceptado los <a href="./documents/Terminos-y-Condiciones-para-BECKER.pdf" target="_blank">Términos y Condiciones</a> y la <a href="./documents/Politicas-de-Privacidad-Landing-BECKER.pdf" target="_blank"> política de protección de datos personales</a>, en particular el procesamiento de mi información personal por parte de Cervecería de Chile. con las finalidades y usos requeridos por ésta descritos en la mencionada política
+                for='ccTerms') He leído, entendido y aceptado los <router-link to="/terminos-condiciones">Términos y Condiciones</router-link> y la <router-link to="/politicas"> política de protección de datos personales</router-link>, en particular el procesamiento de mi información personal por parte de Cervecería de Chile. con las finalidades y usos requeridos por ésta descritos en la mencionada política
                   
             .cc-form__terms-item
               input.cc-form__input-check(type="checkbox" id='ccMrk' v-model="mrk")
@@ -203,7 +203,7 @@ export default {
           document.getElementsByClassName('parrafor')[0].style.display = 'none'
           document.getElementsByClassName('line-style')[0].style.display = 'none'
           document.getElementsByClassName('container-yes')[0].style.display = 'block'
-          // self.$router.push({name: 'Trivia', params: {mail: self.$route.params.mail, attempts: 3}})
+          self.$router.push({name: 'Trivia', params: {mail: this.ccemail, attempts: 3}})
         }, (error) => {
           console.log(error);
           console.log("prueba fallo registro");

@@ -4,6 +4,7 @@
     //-   Loader(v-if="isLoader", :full="true")
     .cc-home__hero#como-participar
       .container-first
+        h1(style="display:none") Cerveza pilsen del sur
         h2.title-card Participa en nuestra Trivia y gana un <b>MEET & GREET </b> con Ivan Morales y Maxi Falcón
         //- p.text-card Lata edición especial - 30 años copa libertadores
         router-link(to="/registro").register-here COMENZAR TRIVIA

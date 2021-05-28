@@ -24,7 +24,7 @@ Vue.use(VueRouter)
     component: AgeGate
   },
   {
-    path: '/Bases',
+    path: '/bases',
     name: 'Bases',
     component: () => import(/* webpackChunkName: "about" */ '../views/Bases-Condiciones.vue')
   },

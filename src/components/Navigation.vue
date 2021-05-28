@@ -28,7 +28,7 @@
         ul(v-if="module2")
           li.lista(@click="module3 = !module3") CÓMO PARTICIPAR
           li.lista( @click="drawer = !drawer") <router-link to="/ranking"> RANKING DE POSICIONES </router-link>
-          li.lista BASES Y CONDICIONES DE LA TRIVIA
+          li.lista(@click="drawer = !drawer") <router-link to="/bases">BASES Y CONDICIONES DE LA TRIVIA</router-link>
         .container-card(v-if="module3 && module2")
           img(src="./../assets/img/pilsen/product-header.png", alt="alt")
           .container-text

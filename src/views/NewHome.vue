@@ -2,6 +2,7 @@
   .cc-home.cc-page(:class="{ 'cc-home_awards': modalIsOpen}")
     transition(name="fade")
       Loader(v-if="isLoader", :full="true")
+      h1(style="display:none") Cerveza pilsen del sur
     .cc-home__hero#como-participar
       .container-first.participa2
         h2.title-card Participa en nuestra Trivia y gana un <b>MEET & GREET </b> con Ivan Morales y Maxi Falcón
@@ -66,7 +67,7 @@ export default {
       imagen: [
         {
           src: require('./../assets/img/pilsen/bottle1.png'),
-          altImagen: 'nuestros productos',
+          altImagen: 'Botella pilsen del sur',
           titleBottle: 'Botella pilsen del sur',
           tamaño: '300 ml',
           textBottle: 'Pilsen del Sur se caracteriza por su mayor tiempo de maduración, el cual le da una cuerpo y sabor único.',
@@ -74,7 +75,7 @@ export default {
         },
         {
           src: require('./../assets/img/pilsen/bottle2.png'),
-          altImagen: 'nuestros productos',
+          altImagen: 'Lata pilsen de sur 354ml',
           titleBottle: 'Lata pilsen de sur 354ml',
           tamaño:'473 ml',
           textBottle: 'Pilsen del Sur se caracteriza por su mayor tiempo de maduración, el cual le da una cuerpo y sabor único.',
@@ -83,7 +84,7 @@ export default {
         {
           src: require('./../assets/img/pilsen/bottle3.png'),
           altImagen: 'Lata pilsen de sur 473ml',
-          titleBottle: 'nuestros productos',
+          titleBottle: 'Lata pilsen de sur 473ml',
           tamaño:'354 ml',
           textBottle: 'Pilsen del Sur se caracteriza por su mayor tiempo de maduración, el cual le da una cuerpo y sabor único.',
           textBottle2: 'Es una cerveza tipo larger 100% malta, hecha con ingredientes finamente seleccionados y 6 lúpulos diferentes.'

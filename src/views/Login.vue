@@ -2,7 +2,7 @@
   <div class="cc-login cc-page">
     .container-login
       header.cc-login__header
-        h1.cc-login__title-login INICIA SESIÓN
+        h2.cc-login__title-login INICIA SESIÓN
         form.cc-home__form-login(action="post" v-on:submit.prevent="validarLogin")
           .cc-home__form-control-login
             label.cc-form__label-login(for="login-mail") E-mail
