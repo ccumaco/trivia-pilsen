@@ -85,7 +85,7 @@ export default {
     triviaResults() {
       let self = this
       const info = {
-        "triviaId": this.$route.params.triviaId
+        triviaId : this.$route.params.triviaId
       };
       axios({
         method: "post",
@@ -171,11 +171,11 @@ export default {
     generarPersonalRanking() {
       let self = this
       const info = {
-        "username": this.$route.params.user
+        username: this.$route.params.user
       };
       axios({
         method: "post",
-        url: "https://triviareplicas.azurewebsites.net/ab/trivia/ranking?_format=json",
+        url: "https://triviareplicas.azurewebsites.net/ab/trivia/ranking/customer?_format=json",
         data: info,
         headers: {
           "Content-Type": "application/json"

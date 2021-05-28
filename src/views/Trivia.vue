@@ -129,7 +129,7 @@ export default {
     startTrivia() {
       let self = this
       const info = this.$_encry({
-        username: this.$route.params.mail
+        username: self.$route.params.mail
       });
       axios({
         method: "post",
