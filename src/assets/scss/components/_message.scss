@@ -129,6 +129,9 @@
   padding: 100px 0;
 }
 @media screen and (max-width: 970px) {
+  .container-botle-mensaje{
+    display: none;
+  }
   .cc-message__content{
     width: 90%;
     padding: 50px 10px;
