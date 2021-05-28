@@ -145,7 +145,7 @@ export default {
   },
   created () {
     var vm = this
-    axios.get("https://dev-pilsendelsur.pantheonsite.io/ab/gender").then((response) => {
+    axios.get("http://triviareplicas.azurewebsites.net/ab/gender").then((response) => {
       vm.genders = response.data;
     })
     this.$route.params.mail = this.ccemail
@@ -181,7 +181,7 @@ export default {
         };
         axios({
           method: "post",
-          url: "https://dev-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
+          url: "http://triviareplicas.azurewebsites.net/ab/user/register?_format=json",
           data: info,
           headers: {
             "Content-Type": "application/json"

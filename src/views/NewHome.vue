@@ -164,7 +164,7 @@ export default {
       };
       axios({
         method: "post",
-        url: "https://dev-pilsendelsur.pantheonsite.io/ab/challenge/validate?_format=json",
+        url: "http://triviareplicas.azurewebsites.net/ab/challenge/validate?_format=json",
         data: info,
         headers: { "Content-Type": "application/json" }
       })

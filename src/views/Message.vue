@@ -89,7 +89,7 @@ export default {
       };
       axios({
         method: "post",
-        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/time?_format=json",
+        url: "http://triviareplicas.azurewebsites.net/ab/trivia/time?_format=json",
         data: info,
         headers: {
           "Content-Type": "application/json"
@@ -111,7 +111,7 @@ export default {
       let self = this
       axios({
         method: "get",
-        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/ranking?_format=json",
+        url: "http://triviareplicas.azurewebsites.net/ab/trivia/ranking?_format=json",
         headers: { "Content-Type": "application/json" }
       })
       .then((response) => {
@@ -135,7 +135,7 @@ export default {
       });
       axios({
         method: "post",
-        url: "https://dev-pilsendelsur.pantheonsite.io/ab/challenge/checkrobot?_format=json",
+        url: "http://triviareplicas.azurewebsites.net/ab/challenge/checkrobot?_format=json",
         data: info,
         headers: { "Content-Type": "application/json" }
       })
@@ -175,7 +175,7 @@ export default {
       };
       axios({
         method: "post",
-        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/ranking?_format=json",
+        url: "http://triviareplicas.azurewebsites.net/ab/trivia/ranking?_format=json",
         data: info,
         headers: {
           "Content-Type": "application/json"
