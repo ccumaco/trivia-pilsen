@@ -19,6 +19,7 @@
                 li.cc-trivia__ask-item
                   input.cc-trivia__ask-input(type="radio" name="answer" id="answerA" value="A" v-model="answerAR")
                   label.cc-trivia__ask-btn(for="answerA") {{ answerA }}
+                  span error
                 li.cc-trivia__ask-item
                   input.cc-trivia__ask-input(type="radio" name="answer" id="answerB" value="B" v-model="answerAR")
                   label.cc-trivia__ask-btn(for="answerB") {{ answerB }}
@@ -126,7 +127,7 @@ export default {
         this.isDisabled = true
       }
     },
-    startTrivia() {
+    async startTrivia() {
       let self = this
       const info = this.$_encry({
         username: self.$route.params.mail

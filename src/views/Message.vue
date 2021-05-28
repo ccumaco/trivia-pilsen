@@ -141,7 +141,8 @@ export default {
       })
       .then((response) => {
         let output = response.data
-        if(!output.has_error){
+        console.log(output.has_error);
+        if(output.has_error){
             self.isChecked = true
             window.dataLayer.push({
               'event': 'trackEvent',

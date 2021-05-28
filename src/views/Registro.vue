@@ -32,25 +32,29 @@
           router-link.cc-btn.cc-btn_secondary.i-arrow-after(:to="'/login'") INICIAR SESIÓN
       .line-style
       h1.parrafor Ingresa  tus datos personales <br> para participar en la trivia
-      form.cc-form.cc-form__grid(action="/trivia" method="get" @submit.prevent="createUser" id="id-form")
+      form.cc-form.cc-form__grid(action="/trivia" method="get" id="id-form")
         .cc-form__group
           label.cc-form__label(for="ccName") Nombres <sup>*</sup>
           .cc-form__input-inner
             input.cc-form__input#ccName(type="text" name="ccName" placeholder="Ingresa solo tu nombre" v-model="names" required)
+            span.error-input(v-if="names.length == 0") Debe ingresar su nombre
         .cc-form__group
           label.cc-form__label(for="ccLastName") Apellidos <sup>*</sup>
           .cc-form__input-inner
             input.cc-form__input#ccLastName(type="text" name="ccLastName" placeholder="Ingresa tu apellido" v-model="lastName" required)
+            span.error-input(v-if="lastName.length == 0") Debe ingresar su apellido
         .cc-form__group
           label.cc-form__label(for="ccGender") Género <sup>*</sup> 
           .cc-form__input-inner.i-select
             select.cc-form__input.cc-form__input_select#ccGender(v-model="gender" required)
               option(selected disabled value="" hidden) Escoje tu género
               option(v-if="genders!==undefined" v-for="item in genders" :value="item.id") {{ item.name }}
+            span.error-input(v-if="gender.length == 0") Debe ingresar su Género
         .cc-form__group
           label.cc-form__label(for="ccEmail") Tu mail <sup>*</sup>
           .cc-form__input-inner
             input.cc-form__input#ccEmail(type="email" name="ccEmail" placeholder="Ingresa correo electrónico" v-model="ccemail" value="ccemail" required)
+            span.error-input(v-if="ccemail.length == 0") Debe ingresar su correo
             .cc-form__group
           p.cc-form__label Ingresa tu fecha de Nacimiento 
           //- <sup>*</sup>
@@ -58,14 +62,17 @@
             .cc-form__group
               .cc-form__input-inner
                 input.cc-form__input#ccDateDay(type="number" name="ccDay" maxlength="2" min="1" max="31" placeholder="DD" v-model="birthDay" required)
+                span.error-input(v-if="birthDay.length == 0") Debe ingresar su dia de nacimiento
             .cc-form__group
               .cc-form__input-inner.i-select
                 select.cc-form__input.cc-form__input_select#ccDateDay(v-model="birthMonth" required)
                   option(selected disabled value="" hidden) MM
                   option(v-for="(item, key) in months" :value="key") {{ item }}
+                span.error-input(v-if="birthMonth.length == 0") Debe ingresar su mes de nacimiento
             .cc-form__group
               .cc-form__input-inner
                 input.cc-form__input#ccLastYear(type="number" name="ccYear" maxlength="4" min="1900" max="2003" placeholder="AAAA" v-model="birthYear" required)
+                span.error-input(v-if="birthYear.length == 0") Debe ingresar su año de nacimiento
         //- .cc-form__group
         //-   label.cc-form__label(for="ccPhone") Número de teléfono <sup>*</sup>
         //-   .cc-form__input-inner
@@ -82,14 +89,14 @@
               input.cc-form__input-check(type="checkbox" id='ccTerms' v-model="terms" required)
               label.cc-form__label.cc-form__label_check.i-check(
                 for='ccTerms') He leído, entendido y aceptado los <router-link to="/terminos-condiciones">Términos y Condiciones</router-link> y la <router-link to="/politicas"> política de protección de datos personales</router-link>, en particular el procesamiento de mi información personal por parte de Cervecería de Chile. con las finalidades y usos requeridos por ésta descritos en la mencionada política
-                  
+              span.error-input(v-if="!terms") Debe aceptar términos y condiciones
             .cc-form__terms-item
               input.cc-form__input-check(type="checkbox" id='ccMrk' v-model="mrk")
               label.cc-form__label.cc-form__label_check.i-check(
                 for='ccMrk') Deseo recibir información comercial de Pilsen del Sur
             label
             //- button(style="display:none" type="submit" id="btn-submit")
-          button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="submit" ) Siguiente
+      button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(@click="validarForm(), createUser()") Siguiente
       transition(name='fade')
         .cc-modal-code(v-if='invalidCode')
           .cc-modal-code__card
@@ -198,6 +205,14 @@ export default {
     },
     goToTrivia(){
       this.$router.push({name: 'Trivia', params: {mail: this.ccemail, attempts: 3}})
+    },
+    validarForm(){
+      console.log('enbtroooo');
+      for (let index = 0; index < document.getElementsByClassName('error-input').length; index++) {
+        const element = document.getElementsByClassName('error-input')[index];
+        element.style.display = 'block'
+      }
+      
     },
     createUser() {
       let self = this

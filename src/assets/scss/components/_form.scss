@@ -78,6 +78,16 @@
     color: #000;
   }
 }
+.cc-form__group_grid:nth-last-child(1) .cc-form__input-inner .error-input{
+  font-size: 10px;
+}
+.error-input{
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+  display: none;
+  font-family: 'Roboto';
+}
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
