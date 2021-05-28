@@ -273,7 +273,7 @@ export default {
   created() {
     var vm = this;
     axios
-      .get("https://triviareplicas.azurewebsites.net/ab/gender")
+      .get("https://live-pilsendelsur.pantheonsite.io/ab/gender")
       .then((response) => {
         vm.genders = response.data;
       });
@@ -310,7 +310,7 @@ export default {
     async createUser() {
       const axios = require('axios') 
       let info = { login_mail: this.ccemail }
-      let res = await axios.post('https://triviareplicas.azurewebsites.net/ab/user/prevalidate-register', info)
+      let res = await axios.post('https://live-pilsendelsur.pantheonsite.io/ab/user/prevalidate-register', info)
       this.respuesta = res.data
       if (!this.respuesta.existe) {
       this.validarForm()
@@ -343,7 +343,7 @@ export default {
           axios({
             method: "post",
             url:
-              "https://triviareplicas.azurewebsites.net/ab/user/register?_format=json",
+              "https://live-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
             data: info,
             headers: {
               "Content-Type": "application/json",
