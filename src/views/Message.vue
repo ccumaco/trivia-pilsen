@@ -130,8 +130,8 @@ export default {
       let ggt = self.recaptchaToken
       self.isLoader = true
       const info = self.$_encry({
-        "triviaId": self.$route.params.triviaId, 
-        "ggt": ggt
+        triviaId: self.$route.params.triviaId, 
+        ggt: ggt
       });
       axios({
         method: "post",
