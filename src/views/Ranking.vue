@@ -61,7 +61,7 @@ export default {
       let self = this
       axios({
         method: "get",
-        url: "http://triviareplicas.azurewebsites.net/ab/trivia/ranking?_format=json",
+        url: "https://triviareplicas.azurewebsites.net/ab/trivia/ranking?_format=json",
         headers: { "Content-Type": "application/json" }
       })
       .then((response) => {

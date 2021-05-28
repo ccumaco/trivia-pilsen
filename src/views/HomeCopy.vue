@@ -217,7 +217,7 @@ export default {
       };
       axios({
         method: "post",
-        url: "http://triviareplicas.azurewebsites.net/ab/challenge/validate?_format=json",
+        url: "https://triviareplicas.azurewebsites.net/ab/challenge/validate?_format=json",
         data: info,
         headers: { "Content-Type": "application/json" }
       })

@@ -133,7 +133,7 @@ export default {
       });
       axios({
         method: "post",
-        url: "http://triviareplicas.azurewebsites.net/ab/trivia/start?_format=json",
+        url: "https://triviareplicas.azurewebsites.net/ab/trivia/start?_format=json",
         data: info,
         headers: {
           "Content-Type": "application/json",
@@ -157,7 +157,7 @@ export default {
       }); 
       axios({
         method: "post",
-        url: "http://triviareplicas.azurewebsites.net/ab/trivia/q/next?_format=json",
+        url: "https://triviareplicas.azurewebsites.net/ab/trivia/q/next?_format=json",
         data: inf2,
         headers: {
           "Content-Type": "application/json",
@@ -193,7 +193,7 @@ export default {
       });
       axios({
         method: "post",
-        url: "http://triviareplicas.azurewebsites.net/ab/trivia/q/answer?_format=json",
+        url: "https://triviareplicas.azurewebsites.net/ab/trivia/q/answer?_format=json",
         data: inf3,
         headers: {
           "Content-Type": "application/json",
