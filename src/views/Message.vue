@@ -15,7 +15,7 @@
           //- small ¡Solo un paso más! Comprueba que no eres un robot y haz clic en "Terminar trivia"
           //- br
           //- br
-          vue-recaptcha(v-if="!isChecked" sitekey="6LfD_SUaAAAAAGZ02ji6sqqqJLDukJ71r-x6yYwh", loadRecaptchaScript=true @verify="onCaptchaVerified" @expired="onCaptchaExpired") 
+          vue-recaptcha(v-if="!isChecked" sitekey="6LcOTvkaAAAAACd8pcY6SFeBSDxVi8jnU7R2sOUu", loadRecaptchaScript=true @verify="onCaptchaVerified" @expired="onCaptchaExpired") 
           //- (v-if="isChecked")
         p.cc-message__txt El ganador se define todos los días a las 20:00 hrs.
         .cc-message__grid-btn
