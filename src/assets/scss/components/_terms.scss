@@ -28,7 +28,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
-    color: #36354C;
+    color: #701012;
     line-height: 49px;
   }
 }
@@ -43,7 +43,18 @@
   overflow-y: scroll;
   overflow-x: auto;
   margin: 0 auto;
+  padding-right: 5px;
   font-family: 'nunito_sansregular';
+  &::-webkit-scrollbar{
+    border-radius: 30px;
+    width: 8px;
+    background: #fff;
+    border: 1px solid #222549;
+  }
+  &::-webkit-scrollbar-thumb{
+    background: #701012;
+    border-radius: 30px;
+  }
   strong {
     font-family: 'nunito_sansbold';
   }

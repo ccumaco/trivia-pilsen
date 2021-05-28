@@ -101,44 +101,50 @@
 .cc-footer__nav-item:nth-child(2) {
   @include media-query(wide) {
     @include order(4);
-    padding: 1rem 25px;
+    padding: 1rem 5px;
   }
 }
 .cc-footer__nav-item:nth-child(3) {
   @include media-query(wide) {
     @include order(1); 
-    padding: 1rem 25px;
+    padding: 1rem 5px;
   }
 }
 .cc-footer__nav-item:nth-child(4) {
   @include media-query(wide) {
     @include order(2);
-    padding: 1rem 25px;
+    padding: 1rem 5px;
   }
 }
 .cc-footer__nav-item:nth-child(5) {
   @include media-query(wide) {
     @include order(3);
-    padding: 1rem 25px;
+    padding: 1rem 5px;
   }
 }
 .cc-footer__nav-item:nth-child(6) {
   @include media-query(wide) {
     @include order(7);
-    padding: 1rem 25px;
+    padding: 1rem 5px;
   }
 }
 .cc-footer__nav-item:nth-child(7) {
   @include media-query(wide) {
     @include order(6);
-    padding: 1rem 25px;
+    padding: 1rem 5px;
   }
 }
 .cc-footer__nav-item:nth-child(8) {
   @include media-query(wide) {
     @include order(-1);
-    padding: 1rem 25px;
+    padding: 1rem 5px;
     display: none;
+  }
+}
+.cc-footer__nav-item:nth-child(9) {
+  @include media-query(wide) {
+    @include order(2);
+    padding: 1rem 5px;
   }
 }
 

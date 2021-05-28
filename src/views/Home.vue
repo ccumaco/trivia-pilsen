@@ -1,9 +1,10 @@
 <template lang="pug">
   .cc-home.cc-page(:class="{ 'cc-home_awards': modalIsOpen}")
-    transition(name="fade")
-      Loader(v-if="isLoader", :full="true")
+    //- transition(name="fade")
+    //-   Loader(v-if="isLoader", :full="true")
     .cc-home__hero#como-participar
       .container-first
+        h1(style="display:none") Cerveza pilsen del sur
         h2.title-card Participa en nuestra Trivia y gana un <b>MEET & GREET </b> con Ivan Morales y Maxi Falcón
         //- p.text-card Lata edición especial - 30 años copa libertadores
         router-link(to="/registro").register-here COMENZAR TRIVIA
@@ -14,7 +15,7 @@
       .contain-img
         //- .container-secont
         .container-tertiary
-          img(src="./../assets/img/pilsen/jugadores2.png", alt="colo-colo pilsen del sur")
+          img(src="./../assets/img/pilsen/jugadores.png", alt="colo-colo pilsen del sur")
       transition(name='fade')
         .cc-modal-code(v-if='!continuePlay')
           .cc-modal-code__card
@@ -30,25 +31,25 @@
           carousel(:perPage="1", :centerMode="true", :autoplay="true" :autoplayTimeout="15000" :navigationEnabled="true", :paginationEnabled="false" :paginationColor="'#efefef'")
             slide.cc-learn__slider__item.VueCarousel-slide-active
               .cc-learn__slider-content
-                p.cc-learn__slider-txt Hacer una buena cerveza lleva tiempo así como a ti te ha llevado tiempo poder reconocer lo verdaderamente importante
+                p.cc-learn__slider-txt Hacer una buena cerveza lleva tiempo,así como a ti te ha llevado tiempo poder reconocer lo verdaderamente importante
             slide.cc-learn__slider__item
               .cc-learn__slider-content
-                p.cc-learn__slider-txt mayor tiempo de maduraciónen su elaboración, el cual le otorga un cuerpo y sabor únicos. <br> superior a otras cervezas del mercado
+                p.cc-learn__slider-txt Mayor tiempo de maduración en su elaboración, el cual le otorga un cuerpo y sabor únicos. <br> Superior a otras cervezas del mercado
             slide.cc-learn__slider__item
               .cc-learn__slider-content
-                p.cc-learn__slider-txt Pilsen del Sur es una cerveza elaboradacon 6 lúpulos, los cuales le dan el aroma y amargor justo
+                p.cc-learn__slider-txt Pilsen del Sur es una cerveza elaborada con 6 lúpulos, los cuales le dan el aroma y amargor justo
             slide.cc-learn__slider__item
               .cc-learn__slider-content
                 p.cc-learn__slider-txt El IBU (Unidad internacional de amargor) El IBU de Pilsen del Sur es de 19
             slide.cc-learn__slider__item
               .cc-learn__slider-content
-                p.cc-learn__slider-txt Debido a la malta y su tostado especial,se puede observar su increíble color dorado al servirla.
+                p.cc-learn__slider-txt Debido a la malta y su tostado especial, se puede observar su increíble color dorado al servirla.
             slide.cc-learn__slider__item
               .cc-learn__slider-content
                 p.cc-learn__slider-txt Para aquellos amantes de las cervezas de alta calidad, Pilsen del Sur es una cerveza que fermenta a bajas temperaturas.
             slide.cc-learn__slider__item
               .cc-learn__slider-content
-                p.cc-learn__slider-txt pilsen del Sur es ligera y con una rica espuma, esto hace que sea una cerveza tipo lager, hecha a partir de sólo materias primas seleccionadas y 100% malta de cebada
+                p.cc-learn__slider-txt Pilsen del Sur es ligera y con una rica espuma, esto hace que sea una cerveza tipo lager, hecha a partir de sólo materias primas seleccionadas y 100% malta de cebada
             slide.cc-learn__slider__item
               .cc-learn__slider-content
                 p.cc-learn__slider-txt  Sabemos que quedar en la historia toma tiempo, al igual que elaborar un Pilsen del Sur.
@@ -151,10 +152,8 @@ export default {
           if (self.output.user.user_exists) {
             if(self.output.user.continue) {
               self.continuePlay = true
-              console.log(self.output)
               self.$router.push({name: 'Trivia', params: { mail:this.inputUser, attepmts: self.output.user.attempts}})
             } else {
-              console.log("continuePlay false")
               self.continuePlay = false
             }
           } else {

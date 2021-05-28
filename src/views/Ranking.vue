@@ -14,7 +14,8 @@
               span.cc-ranking__points {{ item.time | filterName }}
         p.cc-ranking__txt SI TE DIO SED
         .container-btn
-          button.shop-here COMPRAR PILSEN AQUÍ
+          a(href="https://www.casadelacerveza.cl/Pilsen%20del%20sur")
+            button.shop-here COMPRAR PILSEN AQUÍ
     </div>
 </template>
 
@@ -29,21 +30,21 @@ export default {
       finalTime: '01:50:08',
       totalPoints: '5.000',
       rankingList: [
-        {time:30, name:'nombre1'},
-        {time:30, name:'nombre2'},
-        {time:30, name:'nombre3'},
-        {time:30, name:'nombre5'},
-        {time:30, name:'nombre6'},
-        {time:30, name:'nombre8'},
-        {time:30, name:'nombre9'},
-        {time:30, name:'nombre0'},
-        {time:30, name:'nombre1'},
-        {time:30, name:'nombre2'},
+        // {time:30, name:'nombre1'},
+        // {time:30, name:'nombre2'},
+        // {time:30, name:'nombre3'},
+        // {time:30, name:'nombre5'},
+        // {time:30, name:'nombre6'},
+        // {time:30, name:'nombre8'},
+        // {time:30, name:'nombre9'},
+        // {time:30, name:'nombre0'},
+        // {time:30, name:'nombre1'},
+        // {time:30, name:'nombre2'},
       ],
     }
   },
   created() {
-    // this.generarRanking()
+    this.generarRanking()
   },
   filters: {
     filterName(value) {
@@ -65,6 +66,7 @@ export default {
       })
       .then((response) => {
         self.rankingList = response.data
+        console.log(response.data);
       }, (error) => {
         console.log(error);
       });
