@@ -226,7 +226,7 @@ export default {
       ],
       responsePilsen3: [
         { id: 0, name: "Viendo deporte con amigos" },
-        { id: 1, name: "Compartiendo con amigs en casa o fuerda de casa" },
+        { id: 1, name: "Compartiendo con amigos en casa o fuerda de casa" },
         { id: 2, name: "En casa en un momento de Relax" },
         { id: 3, name: "En una comida solo o acompañado" },
       ],

@@ -4,6 +4,8 @@
     //-   Loader(v-if="finalTime === '' || isLoader", :full="true")
     //- (v-if="finalTime !== '' && isLoader === false")
     .cc-message__grid
+      .container-botle-mensaje
+        img(src="./../assets/img/pilsen/bott-mesage.png", alt="Pilsen del sur")
       .cc-message__content
         header.cc-message__header
           h2(v-if="!isChecked").cc-title.cc-title_brand ¡TERMINASTE!
