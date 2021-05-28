@@ -11,7 +11,7 @@
           input.cc-form__input-check(type="checkbox" id='noProbado' v-model="noProbado")
           label.cc-form__label.cc-form__label_check.i-check(
             for='noProbado') No
-          .container-test-yes(v-if="probado")
+          .container-test-yes(v-if="probado && (!noProbado || noProbado == null) ")
             p.text-yes Ahora que probaste Pilsen de Sur, ¿qué tan probable es que la vuelvas a compra si estuviese disponible en los lugares que frecuentas?
             select.cc-form__input.cc-form__input_select#ccGender(v-model="response" required)
               option(selected disabled value="" hidden) Selecciona una respuesta
@@ -24,7 +24,7 @@
             select.cc-form__input.cc-form__input_select#ccGender(v-model="response3" required)
               option(selected disabled value="" hidden) Selecciona una respuesta
               option(v-if="response3!==undefined" v-for="item in responsePilsen3" :value="item.id") {{ item.name }}
-        button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" v-if="probado || noProbado" @click="goToTrivia()") Siguiente
+        button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" v-if="probado || noProbado" @click="goToTrivia()") Iniciar Trivia
       .cc-registro__grid
         header.cc-header
           h2.cc-title Si ya estás registrado
@@ -324,6 +324,18 @@ export default {
     }
   },
   watch: {
+    probado: function(){
+      this.btnDisable()
+      if(this.probado){
+        this.noProbado = false
+      }
+    },
+    noProbado: function(){
+      this.btnDisable()
+      if(this.noProbado){
+        this.probado = false
+      }
+    },
     names: function() {
       this.btnDisable()
     },
@@ -331,9 +343,6 @@ export default {
       this.btnDisable()
     },
     ccemail: function() {
-      this.btnDisable()
-    },
-    noProbado: function() {
       this.btnDisable()
     },
     // probado: function() {

@@ -224,9 +224,9 @@ export default {
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-        // if(display){
+        if(document.getElementById('countdown')){
           document.getElementById('countdown').textContent = minutes + ":" + seconds;
-        // }
+        }
         if(self.timeTotal) {
           clearInterval(interval)          
         }
