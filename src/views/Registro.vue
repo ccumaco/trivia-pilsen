@@ -346,12 +346,18 @@ export default {
     },
     birthDay: function() {
       this.btnDisable()
+      if (this.birthDay.length > 2) {
+        this.birthDay = this.birthDay.slice(0,2); 
+      }
     },
     birthMonth: function() {
       this.btnDisable()
     },
     birthYear: function() {
       this.btnDisable()
+      if (this.birthYear.length > 4) {
+        this.birthYear = this.birthYear.slice(0,4); 
+      }
     },
     gender: function() {
       this.btnDisable()
