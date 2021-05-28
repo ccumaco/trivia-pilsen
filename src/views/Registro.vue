@@ -4,15 +4,27 @@
       .container-yes
         p.text-yes Podrías decirme si probaste Pilsen Sur
         .cc-form__terms-item
-          input.cc-form__input-check(type="checkbox" id='ccMrk' v-model="probado")
+          input.cc-form__input-check(type="checkbox" id='probado' v-model="probado")
           label.cc-form__label.cc-form__label_check.i-check(
-            for='ccMrk') Sí
-          //- .container-test-yes(v-if="probado")
+            for='probado') Sí
         .cc-form__terms-item
-          input.cc-form__input-check(type="checkbox" id='ccMrk' v-model="noProbado")
+          input.cc-form__input-check(type="checkbox" id='noProbado' v-model="noProbado")
           label.cc-form__label.cc-form__label_check.i-check(
-            for='ccMrk') No
-        button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="submit") Siguiente
+            for='noProbado') No
+          .container-test-yes(v-if="probado")
+            p.text-yes Podrías decirme si probaste Pilsen Sur Sí No Ahora que probaste Pilsen de Sur, ¿qué tan probable es que la vuelvas a compra si estuviese disponible en los lugares que frecuentas?
+            select.cc-form__input.cc-form__input_select#ccGender(v-model="response" required)
+              option(selected disabled value="" hidden) Selecciona una respuesta
+              option(v-if="response!==undefined" v-for="item in responsePilsen" :value="item.id") {{ item.name }}
+            p.text-yes Que tanto te gustó el sabor de Pilsen de Sur
+            select.cc-form__input.cc-form__input_select#ccGender(v-model="response2" required)
+              option(selected disabled value="" hidden) Selecciona una respuesta
+              option(v-if="response2!==undefined" v-for="item in responsePilsen2" :value="item.id") {{ item.name }}
+            p.text-yes ¿Pensando en la próxima vez que consumas Pilsen de Sur en que ocasión la tomarías?
+            select.cc-form__input.cc-form__input_select#ccGender(v-model="response3" required)
+              option(selected disabled value="" hidden) Selecciona una respuesta
+              option(v-if="response3!==undefined" v-for="item in responsePilsen3" :value="item.id") {{ item.name }}
+        button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" v-if="probado || noProbado" @click="goToTrivia()") Siguiente
       .cc-registro__grid
         header.cc-header
           h2.cc-title Si ya estás registrado
@@ -20,7 +32,7 @@
           router-link.cc-btn.cc-btn_secondary.i-arrow-after(:to="'/login'") INICIAR SESIÓN
       .line-style
       h1.parrafor Ingresa  tus datos personales <br> para participar en la trivia
-      form.cc-form.cc-form__grid(action="/trivia" method="get" id="id-form")
+      form.cc-form.cc-form__grid(action="/trivia" method="get" @submit.prevent="createUser" id="id-form")
         .cc-form__group
           label.cc-form__label(for="ccName") Nombres <sup>*</sup>
           .cc-form__input-inner
@@ -77,7 +89,7 @@
                 for='ccMrk') Deseo recibir información comercial de Pilsen del Sur
             label
             //- button(style="display:none" type="submit" id="btn-submit")
-          button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" @click="createUser()") Siguiente
+          button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="submit" ) Siguiente
       transition(name='fade')
         .cc-modal-code(v-if='invalidCode')
           .cc-modal-code__card
@@ -107,7 +119,30 @@ export default {
       birthMonth: '',
       birthYear: '',
       probado: false,
-      noOrobado: false,
+      noProbado: false,
+      response: '',
+      response2: '',
+      response3: '',
+      responsePilsen: [
+          {id:0, name: 'Definitivamente la compraría'},
+          {id:1, name: 'Probablemente la compraría'},
+          {id:2, name: 'Puede que si/ Puede que no'},
+          {id:3, name: 'Definitivamente no la compraría'},
+          {id:4, name: 'Definitivamente no la compraría'},
+      ],
+      responsePilsen2: [
+          {id:0, name: 'Me gistó Mucho'},
+          {id:1, name: 'Me gustó'},
+          {id:2, name: 'Ni me gustó/ Ni me disgusto'},
+          {id:3, name: 'No me gustó mucho'},
+          {id:4, name: 'No me gustó nada'},
+      ],
+      responsePilsen3: [
+          {id:0, name: 'Viendo deporte con amigos'},
+          {id:1, name: 'Compartiendo con amigs en casa o fuerda de casa'},
+          {id:2, name: 'En casa en un momento de Relax'},
+          {id:3, name: 'En una comida solo o acompañado'},
+      ],
       months: {
         1: 'ENE',
         2: 'FEB',
@@ -161,6 +196,9 @@ export default {
         this.$router.push({name: 'Trivia'})
       }
     },
+    goToTrivia(){
+      this.$router.push({name: 'Trivia', params: {mail: this.ccemail, attempts: 3}})
+    },
     createUser() {
       let self = this
       // document.getElementById('btn-submit').click().preventDefault()
@@ -203,36 +241,36 @@ export default {
           document.getElementsByClassName('parrafor')[0].style.display = 'none'
           document.getElementsByClassName('line-style')[0].style.display = 'none'
           document.getElementsByClassName('container-yes')[0].style.display = 'block'
-          self.$router.push({name: 'Trivia', params: {mail: this.ccemail, attempts: 3}})
+          
         }, (error) => {
           console.log(error);
           console.log("prueba fallo registro");
         });
       } else {
-        if(this.names == ""){
-          alert('nombre es requerido')
-        }
-        if(this.lastName == ""){
-          alert('Apellido es requerido')
-        }
-        if(this.gender == ""){
-          alert('Género es requerido')
-        }
-        if(this.ccemail == ""){
-          alert('E-Mail es requerido')
-        }
-        if(this.birthDay == ""){
-          alert('Dia es requerido')
-        }
-        if(this.birthDay == ""){
-          alert('Mes es requerido')
-        }
-        if(this.birthYear == ""){
-          alert('Año es requerido')
-        }
-        if(this.terms == ""){
-          alert('Terminos es requerido')
-        }
+        // if(this.names == ""){
+        //   alert('nombre es requerido')
+        // }
+        // if(this.lastName == ""){
+        //   alert('Apellido es requerido')
+        // }
+        // if(this.gender == ""){
+        //   alert('Género es requerido')
+        // }
+        // if(this.ccemail == ""){
+        //   alert('E-Mail es requerido')
+        // }
+        // if(this.birthDay == ""){
+        //   alert('Dia es requerido')
+        // }
+        // if(this.birthDay == ""){
+        //   alert('Mes es requerido')
+        // }
+        // if(this.birthYear == ""){
+        //   alert('Año es requerido')
+        // }
+        // if(this.terms == ""){
+        //   alert('Terminos es requerido')
+        // }
       }
     },
     validRegister() {

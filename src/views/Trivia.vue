@@ -27,7 +27,7 @@
                   label.cc-trivia__ask-btn(for="answerC") {{ answerC }}
                 li.cc-trivia__ask-item
                   input.cc-trivia__ask-input(type="radio" name="answer" id="answerD" value="D" v-model="answerAR")
-                  label.cc-trivia__ask-btn(for="answerC") {{ answerD }}
+                  label.cc-trivia__ask-btn(for="answerD") {{ answerD }}
               .cc-trivia__footer
                 button.cc-btn.cc-btn__primary.cc-promotion__card-btn.i-arrow-after(v-if="askActive < 8" type="button" @click="AskQuestion" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") Siguiente
                 button.cc-btn.cc-btn__primary.cc-promotion__card-btn(v-else type="button" @click="AskQuestion" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") Enviar respuestas
