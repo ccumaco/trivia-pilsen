@@ -8,7 +8,7 @@
         img(src="./../assets/img/pilsen/icon-menu.png", alt="icon mobile")
       .icon-mobile(v-else @click="isOpen = !isOpen") X
       ul.ul-izquierda
-        li.list-liks <router-link to="/home"> HOME </router-link>
+        li.list-liks <router-link to="/"> HOME </router-link>
         li.list-liks( @click="drawer = !drawer") CONCURSO
       ul.ul-derecha
         li.links-rs <a href="https://www.instagram.com/pilsendelsur/"><i class="fab fa-instagram"></i></a>

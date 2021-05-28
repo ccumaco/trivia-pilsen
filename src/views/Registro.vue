@@ -12,7 +12,7 @@
           label.cc-form__label.cc-form__label_check.i-check(
             for='noProbado') No
           .container-test-yes(v-if="probado")
-            p.text-yes Podrías decirme si probaste Pilsen Sur Sí No Ahora que probaste Pilsen de Sur, ¿qué tan probable es que la vuelvas a compra si estuviese disponible en los lugares que frecuentas?
+            p.text-yes Ahora que probaste Pilsen de Sur, ¿qué tan probable es que la vuelvas a compra si estuviese disponible en los lugares que frecuentas?
             select.cc-form__input.cc-form__input_select#ccGender(v-model="response" required)
               option(selected disabled value="" hidden) Selecciona una respuesta
               option(v-if="response!==undefined" v-for="item in responsePilsen" :value="item.id") {{ item.name }}

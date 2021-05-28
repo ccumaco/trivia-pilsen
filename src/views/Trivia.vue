@@ -88,7 +88,7 @@ export default {
       triviaListLength: 7,
       askActive: 3,
       time: 'September 4, 2020, 15:15',
-      countdown: 60,
+      countdown: 1,
       withoutTime: false,
       output: '',
       outputQ: '',
