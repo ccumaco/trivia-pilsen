@@ -72,7 +72,12 @@
     width: 70px;
     margin: 0 10px;
   }
+  .cc-age-gate__input::-webkit-input-placeholder  {
+    margin-right: -10px;
+    text-align: center;
+  }
   .cc-age-gate__input {
+    margin-right: 0;
     width: calc(100% + 10px);
     height: 100px  !important;
     padding: 0;
@@ -81,7 +86,7 @@
     // border: 2px solid rgba(0, 0, 0, 0.6) blur(4px);
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
-    font-size: 100%;
+    font-size: 30px;
     color: #fff;
     &:focus,
     &:active {
