@@ -22,6 +22,7 @@
   background-position: center top;
   background-size: 140%;
   background-image: url('#{$img-path}/pilsen/112A7757.png');
+  backdrop-filter: blur(20px);
   .layout-general {
     @include flexbox;
     @include flex-direction(column);
@@ -155,6 +156,8 @@
     .layout-general {
       background: rgba(255, 255, 255, 0.8);
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
       @include flex-direction(row);
       @include justify-content(flex-end);
       @include align-items(stretch);
@@ -226,25 +229,30 @@
     left: 50%;
     width: 80%;
     min-width: 80%;
-    &:before {
-      content: '';
-      display: block;
-      width: 50vh;
-      height: 16vh;
-      max-width: 100%;
-      max-height: 100%;
-      margin: 0 auto;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: 50%;
-      background-image: url('#{$img-path}/pilsen/logo.png');
-    }
+    // &:before {
+    //   content: '';
+    //   display: block;
+    //   width: 50vh;
+    //   height: 16vh;
+    //   max-width: 100%;
+    //   max-height: 100%;
+    //   margin: 0 auto;
+    //   background-repeat: no-repeat;
+    //   background-position: center center;
+    //   background-size: 50%;
+    //   background-image: url('#{$img-path}/pilsen/logo.png');
+    // }
   }
   @include media-query(wide) {
     padding: 40px;
   }
   .title-agegate{
-    font-family: 'DIN Next LT Pro' ;
+    text-align: center;
+    font-family: 'DIN Next LT Pro';
+    font-weight: bold;
+    font-size: 23;
+    line-height: 23px;
+    margin-top: 10px;
   }
 }
 
@@ -321,7 +329,13 @@
   .cc-age-gate__wrapper{
     height: auto;
     width: 100%;
-    background: #fff;
+    background: rgba(249, 249, 249, 0.8);
+    backdrop-filter: blur(27.1319px);
+    .imagen-mobile{
+      margin: 20px 0 10px;
+      text-align: center;
+    }
+
   }
   .cc-age-gate__control_year .border-contain{
     width: 100%;

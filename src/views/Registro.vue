@@ -4,14 +4,14 @@
       .container-yes
         p.text-yes Podrías decirme si probaste Pilsen Sur
         .cc-form__terms-item
-          input.cc-form__input-check(type="checkbox" id='ccMrk' v-model="probado")
+          input.cc-form__input-check(type="checkbox" id='probando' v-model="probado")
           label.cc-form__label.cc-form__label_check.i-check(
-            for='ccMrk') Sí
+            for='probando') Sí
           //- .container-test-yes(v-if="probado")
         .cc-form__terms-item
-          input.cc-form__input-check(type="checkbox" id='ccMrk' v-model="noProbado")
+          input.cc-form__input-check(type="checkbox" id='probando' v-model="noProbado")
           label.cc-form__label.cc-form__label_check.i-check(
-            for='ccMrk') No
+            for='probando') No
         button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="submit") Siguiente
       .cc-registro__grid
         header.cc-header

@@ -2,6 +2,8 @@
 <div class="cc-age-gate cc-page ">
   .layout-general
     .cc-age-gate__wrapper
+      .imagen-mobile
+        img(src="./../assets/img/pilsen/logo.svg", alt="Pilsen del sur")
       h1.title-agegate Bienvenidos
       p.cc-title Debes ser mayor de edad para ingresar<br> Ingresa tu año de nacimiento
       #scrollAgegate.cc-age-gate__grid-wrapper
