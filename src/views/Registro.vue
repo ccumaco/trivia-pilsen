@@ -381,7 +381,7 @@ export default {
             }
           );
         }
-      } else if (this.birthYear == this.fechaActualYear - 18 && this.birthMonth <= this.fechaActualMonth){
+      } else if (this.birthYear == this.fechaActualYear - 18 && this.birthMonth < this.fechaActualMonth){
           if (
           !(self.names == "") &&
           !(self.lastName == "") &&
