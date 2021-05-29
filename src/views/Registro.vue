@@ -381,7 +381,7 @@ export default {
             }
           );
         }
-      } else if (this.birthYear == this.fechaActualYear - 18 && this.birthMonth < this.fechaActualMonth){
+      } else if (this.birthYear == this.fechaActualYear - 18 && this.birthMonth <= this.fechaActualMonth){
           if (
           !(self.names == "") &&
           !(self.lastName == "") &&
@@ -445,7 +445,7 @@ export default {
             }
           );
         }
-      } else if (this.birthYear == this.fechaActualYear - 18 && this.birthMonth < this.fechaActualMonth && this.birthDay <= this.fechaActualDay){
+      } else if (this.birthYear == this.fechaActualYear - 18 && this.birthMonth <= this.fechaActualMonth && this.birthDay <= this.fechaActualDay){
           if (
           !(self.names == "") &&
           !(self.lastName == "") &&
