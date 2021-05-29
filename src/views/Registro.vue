@@ -50,7 +50,7 @@
             ) {{ item.name }}
       button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(
         type="button",
-        v-if="probado || noProbado",
+        v-if="probado && response2 &&  response3 && response || noProbado",
         @click="goToTrivia()"
       ) Iniciar Trivia
     .cc-registro__grid
