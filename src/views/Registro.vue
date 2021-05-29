@@ -47,7 +47,7 @@
               v-if="response3 !== undefined",
               v-for="item in responsePilsen3",
               :value="item.id"
-            ) {{ item.name }} {{probado}}{{response2}} {{response2}} {{response}}
+            ) {{ item.name }}
       button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(
         type="button",
         v-if="(probado && response2 >= 0 &&  response3 >= 0 && response >= 0) || noProbado",
