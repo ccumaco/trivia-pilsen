@@ -317,7 +317,7 @@ export default {
       this.validarForm()
       let self = this;
       // document.getElementById('btn-submit').click().preventDefault()
-      if ( this.birthDay <= this.fechaActualDay && this.birthMonth <= this.fechaActualMonth) {
+      if ( this.birthYear < this.fechaActualYear - 18) {
         if (
           !(self.names == "") &&
           !(self.lastName == "") &&
@@ -381,7 +381,72 @@ export default {
             }
           );
         }
-      } else {
+      } else if (this.birthYear == this.fechaActualYear - 18 && this.birthMonth < this.fechaActualMonth){
+          if (
+          !(self.names == "") &&
+          !(self.lastName == "") &&
+          !(self.birthYear == "") &&
+          !(self.birthMonth == "") &&
+          !(self.birthDay == "") &&
+          !(self.gender == "") &&
+          !(self.ccemail.includes("+")) &&
+          self.terms
+        ) {
+          this.getCookie("_td");
+          self.isLoader = false;
+          const info = {
+            name: self.names,
+            last_name: self.lastName,
+            birth: this.birthYear + "-" + this.birthMonth + "-" + this.birthDay,
+            id_gender: this.gender,
+            // id_city: this.city,
+            mail: this.ccemail,
+            // phone: this.phone,
+            terms_acceptance: this.terms,
+            allow_ads: this.mrk,
+            td: this.td,
+          };
+          axios({
+            method: "post",
+            url:
+              "https://live-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
+            data: info,
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }).then(
+            (response) => {
+              var sha256 = require("js-sha256").sha256;
+              var emailhash = sha256(this.ccemail);
+              self.output = response.data;
+              window.dataLayer.push({
+                event: "trackEvent",
+                eventCategory: "Pilsen del Sur", // Categoría del evento (String). Requerido.
+                eventAction: "Registro Trivia", // Acción o subcategoría del evento (String).
+                eventLabel: emailhash, // Etiqueta de descripción del evento (String).
+                eventValue: "", // Valor o peso (importancia) del evento (String).
+              });
+              document.getElementById("id-form").style.display = "none";
+              document.getElementById("boton-ocultar").style.display = "none";
+              document.getElementsByClassName(
+                "cc-registro__grid"
+              )[0].style.display = "none";
+              document.getElementsByClassName("parrafor")[0].style.display =
+                "none";
+              document.getElementsByClassName("line-style")[0].style.display =
+                "none";
+              document.getElementsByClassName(
+                "container-yes"
+              )[0].style.display = "block";
+            },
+            (error) => {
+              console.log(error);
+              console.log("prueba fallo registro");
+            }
+          );
+        }
+      }
+      else {
         document.getElementsByClassName('menor-edad')[0].style.display = 'block'
       }
     } else{
