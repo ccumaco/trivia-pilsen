@@ -109,6 +109,7 @@
             required
           )
           span.error-input(v-if="ccemail.length == 0") Debe ingresar su correo
+          span.error-input(v-if="ccemail.includes('+')") Contiene caracter "+"
           span.error-input.user-login(v-if="respuesta.existe") El correo ya se encuentra registrado, inicia sesión.
           .cc-form__group
         p.cc-form__label Ingresa tu fecha de Nacimiento
@@ -324,6 +325,7 @@ export default {
           !(self.birthMonth == "") &&
           !(self.birthDay == "") &&
           !(self.gender == "") &&
+          !(self.ccemail.includes("+")) &&
           self.terms
         ) {
           this.getCookie("_td");
