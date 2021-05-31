@@ -286,6 +286,9 @@ export default {
     this.fechaActualYear = f.getFullYear();
   },
   methods: {
+    removeAccents (str) {
+      return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    },
     redirect() {
       if (this.notErrors) {
         this.$router.push({ name: "Trivia" });
@@ -298,9 +301,9 @@ export default {
         email: this.ccemail,
         customer_interest: {
           probo: 'Yes',
-          question1: this.response,
-          question2: this.response2,
-          question3: this.response3,
+          question1: this.removeAccents(this.response),
+          question2: this.removeAccents(this.response2),
+          question3: this.removeAccents(this.response3),
         }
        }
        let res = await axios.post('https://test-pilsendelsur.pantheonsite.io/ab/user/register/interests', infoQuestions)
