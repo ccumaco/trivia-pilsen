@@ -19,7 +19,7 @@
           //- br
           vue-recaptcha(v-if="!isChecked" sitekey="6LcOTvkaAAAAACd8pcY6SFeBSDxVi8jnU7R2sOUu", loadRecaptchaScript=true @verify="onCaptchaVerified" @expired="onCaptchaExpired") 
           //- (v-if="isChecked")
-        p.cc-message__txt El ganador se define todos los días a las 20:00 hrs.
+        p.cc-message__txt Checkea tu ranking diariamente. Los primeros 15 lugares al terminar la campaña serán los ganadores
         .cc-message__grid-btn
           //- router-link(:to="'/#'").cc-btn.cc-message__btn Vuelve a participar
           button(v-if="!isChecked").cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" @click="checkTrivia()" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") VER RANKING

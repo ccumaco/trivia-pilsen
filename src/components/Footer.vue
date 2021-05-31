@@ -3,7 +3,7 @@
     .cc-footer__social
       li.cc-footer__nav-item.logo-footer
         router-link(:to="'/'")
-          img.cc-footer__brand-logo(alt="Logo Becker" src="../assets/img/pilsen/logo-blanco.svg")
+          img.cc-footer__brand-logo(alt="Logo Pilsen del sur" src="../assets/img/pilsen/logo-blanco.svg")
     .cc-footer__layout
       .inner
         ul.cc-footer__nav
