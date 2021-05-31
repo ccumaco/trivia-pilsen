@@ -36,11 +36,11 @@
             slide.cc-learn__slider__item
               .cc-learn__slider-content
                 p.cc-learn__slider-txt.tip Tip 2 de 10
-                p.cc-learn__slider-txt Mayor tiempo de maduración en su elaboración, el cual le otorga un cuerpo y sabor únicos, <br> superior a otras cervezas del mercado
+                p.cc-learn__slider-txt Tiene un mayor tiempo de maduración en su elaboración, el cual le otorga un cuerpo y sabor únicos, <br> superior a otras cervezas del mercado
             slide.cc-learn__slider__item
               .cc-learn__slider-content
                 p.cc-learn__slider-txt.tip Tip 3 de 10
-                p.cc-learn__slider-txt Pilsen del Sur es una cerveza elaborada con 6 lúpulos, los cuales le dan el aroma y amargor justo
+                p.cc-learn__slider-txt Pilsen del Sur es una cerveza elaborada con 6 lúpulos distintos, los cuales le dan el aroma y amargor justo
             slide.cc-learn__slider__item
               .cc-learn__slider-content
                 p.cc-learn__slider-txt.tip Tip 4 de 10
@@ -60,7 +60,7 @@
             slide.cc-learn__slider__item
               .cc-learn__slider-content
                 p.cc-learn__slider-txt.tip Tip 8 de 10
-                p.cc-learn__slider-txt Desde el 2021 nace la unión entre Pilsen del Sur y el Colo Colo, un equipo con tradición y fiel representante del corazón chileno
+                p.cc-learn__slider-txt Desde el 2021 nace la unión entre Pilsen del Sur y Colo Colo, un equipo con tradición y fiel representante del corazón chileno
             slide.cc-learn__slider__item
               .cc-learn__slider-content
                 p.cc-learn__slider-txt.tip Tip 9 de 10
