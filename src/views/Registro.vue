@@ -223,7 +223,7 @@ export default {
         { id: 4, name: "Definitivamente no la compraría" },
       ],
       responsePilsen2: [
-        { id: 0, name: "Me gistó Mucho" },
+        { id: 0, name: "Me gustó Mucho" },
         { id: 1, name: "Me gustó" },
         { id: 2, name: "Ni me gustó/ Ni me disgusto" },
         { id: 3, name: "No me gustó mucho" },
@@ -231,7 +231,7 @@ export default {
       ],
       responsePilsen3: [
         { id: 0, name: "Viendo deporte con amigos" },
-        { id: 1, name: "Compartiendo con amigos en casa o fuerda de casa" },
+        { id: 1, name: "Compartiendo con amigos en casa o fuera de casa" },
         { id: 2, name: "En casa en un momento de Relax" },
         { id: 3, name: "En una comida solo o acompañado" },
       ],
@@ -274,7 +274,7 @@ export default {
   created() {
     var vm = this;
     axios
-      .get("https://live-pilsendelsur.pantheonsite.io/ab/gender")
+      .get("https://test-pilsendelsur.pantheonsite.io/ab/gender")
       .then((response) => {
         vm.genders = response.data;
       });
@@ -291,11 +291,46 @@ export default {
         this.$router.push({ name: "Trivia" });
       }
     },
-    goToTrivia() {
-      this.$router.push({
-        name: "Trivia",
-        params: { mail: this.ccemail, attempts: 3 },
-      });
+    async goToTrivia() {
+      const axios = require('axios')
+      if(this.probado){
+        let infoQuestions = { 
+        email: this.ccemail,
+        customer_interest: {
+          probo: 'Yes',
+          question1: this.response,
+          question2: this.response2,
+          question3: this.response3,
+        }
+       }
+       let res = await axios.post('https://test-pilsendelsur.pantheonsite.io/ab/user/register/interests', infoQuestions)
+       let response = res.data
+       if(!response.has_error){
+         this.$router.push({
+           name: "Trivia",
+           params: { mail: this.ccemail, attempts: 3 },
+         });
+       }
+      }
+      if(this.noProbado){
+        let infoQuestions = { 
+        email: this.ccemail,
+        customer_interest: {
+          probo: 'No',
+          question1: '',
+          question2: '',
+          question3: '',
+        }
+       }
+       let res = await axios.post('https://test-pilsendelsur.pantheonsite.io/ab/user/register/interests', infoQuestions)
+       let response = res.data
+       if(!response.has_error){
+         this.$router.push({
+           name: "Trivia",
+           params: { mail: this.ccemail, attempts: 3 },
+          });
+        }
+      }
     },
     validarForm() {
       console.log("enbtroooo");
@@ -311,7 +346,7 @@ export default {
     async createUser() {
       const axios = require('axios') 
       let info = { login_mail: this.ccemail }
-      let res = await axios.post('https://live-pilsendelsur.pantheonsite.io/ab/user/prevalidate-register', info)
+      let res = await axios.post('https://test-pilsendelsur.pantheonsite.io/ab/user/prevalidate-register', info)
       this.respuesta = res.data
       if (!this.respuesta.existe) {
       this.validarForm()
@@ -345,7 +380,7 @@ export default {
           axios({
             method: "post",
             url:
-              "https://live-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
+              "https://test-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
             data: info,
             headers: {
               "Content-Type": "application/json",
@@ -409,7 +444,7 @@ export default {
           axios({
             method: "post",
             url:
-              "https://live-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
+              "https://test-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
             data: info,
             headers: {
               "Content-Type": "application/json",
@@ -473,7 +508,7 @@ export default {
           axios({
             method: "post",
             url:
-              "https://live-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
+              "https://test-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
             data: info,
             headers: {
               "Content-Type": "application/json",

@@ -136,7 +136,7 @@ export default {
       };
       axios({
         method: "post",
-        url: "https://live-pilsendelsur.pantheonsite.io/ab/challenge/validate?_format=json",
+        url: "https://test-pilsendelsur.pantheonsite.io/ab/challenge/validate?_format=json",
         data: info,
         headers: { "Content-Type": "application/json" }
       })

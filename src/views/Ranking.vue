@@ -61,7 +61,7 @@ export default {
       let self = this
       axios({
         method: "get",
-        url: "https://live-pilsendelsur.pantheonsite.io/ab/trivia/ranking?_format=json",
+        url: "https://test-pilsendelsur.pantheonsite.io/ab/trivia/ranking?_format=json",
         headers: { "Content-Type": "application/json" }
       })
       .then((response) => {
