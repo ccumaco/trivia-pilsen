@@ -139,7 +139,7 @@ export default {
       });
       axios({
         method: "post",
-        url: "https://live-pilsendelsur.pantheonsite.io/ab/trivia/start?_format=json",
+        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/start?_format=json",
         data: info,
         headers: {
           "Content-Type": "application/json",
@@ -163,7 +163,7 @@ export default {
       }); 
       axios({
         method: "post",
-        url: "https://live-pilsendelsur.pantheonsite.io/ab/trivia/q/next?_format=json",
+        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/q/next?_format=json",
         data: inf2,
         headers: {
           "Content-Type": "application/json",
@@ -199,7 +199,7 @@ export default {
       });
       axios({
         method: "post",
-        url: "https://live-pilsendelsur.pantheonsite.io/ab/trivia/q/answer?_format=json",
+        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/q/answer?_format=json",
         data: inf3,
         headers: {
           "Content-Type": "application/json",
