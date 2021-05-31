@@ -46,11 +46,11 @@
             option(
               v-if="response3 !== undefined",
               v-for="item in responsePilsen3",
-              :value="item.id"
+              :value="item.name"
             ) {{ item.name }}
       button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(
         type="button",
-        v-if="(probado && response2.length >= 0 &&  response3.length >= 0 && response.length >= 0) || noProbado",
+        v-if="(probado && response2.length > 0 &&  response3.length > 0 && response.length > 0) || noProbado",
         @click="goToTrivia()"
       ) Iniciar Trivia
     .cc-registro__grid
