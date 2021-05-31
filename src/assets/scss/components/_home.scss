@@ -332,8 +332,8 @@
     // .container-secont{
     //   flex-basis: 40% !important;
     // }
-    .container-tertiary{
-      flex-basis: 100% !important;
+    .container-tertiary.players{
+      display: none;
     }
   }
 }

@@ -32,8 +32,8 @@
         .container-card(v-if="module3 && module2")
           img(src="./../assets/img/pilsen/product-header.png", alt="alt")
           .container-text
-            p Participa en nuestra Trivia y gana un MEET & GREET con Ivan Morales y Maxi Falcón
-            p.text Lata edición especial - 30 años copa libertadores 
+            p Participa en nuestra TRIVIA,<br> <b> Estudia LOS tips sobre Pilsen del Sur, <br> Regístrate y GANA un MEET & GREET con <br> Ivan Morales y Maxi Falcón </b>
+            p.text Lata edición especial - <br> 30 años Campeones de America
             button(@click="isOpen = !isOpen;  drawer = !drawer") <router-link to="/home"> PARTICIPAR</router-link>
     .menu-lateral(v-if="isOpen")
       ul
@@ -43,8 +43,8 @@
         li.list-mobile.card-product(v-if="showConcurso")
           img(src="./../assets/img/pilsen/product-header.png", alt="alt")
           .container-text
-            p Participa en nuestra Trivia y gana un MEET & GREET con Ivan Morales y Maxi Falcón
-            p Lata edición especial - 30 años copa libertadores 
+            p Participa en nuestra TRIVIA, <b> Estudia LOS tips sobre Pilsen del Sur, Regístrate y GANA un MEET & GREET con Ivan Morales y Maxi Falcón </b>
+            p Lata edición especial - <br> 30 años Campeones de America
             button(@click="isOpen = !isOpen") <router-link to="/home">PARTICIPAR</router-link>
         ul.new-list(v-if="showConcurso")
           li.lista-none(@click="isOpen = !isOpen") <router-link to="/trivia"> CÓMO PARTICIPAR </router-link>

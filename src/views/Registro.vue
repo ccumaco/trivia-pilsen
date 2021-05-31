@@ -15,7 +15,7 @@
         .container-test-yes(
           v-if="probado && (!noProbado || noProbado == null)"
         )
-          p.text-yes Ahora que probaste Pilsen de Sur, ¿qué tan probable es que la vuelvas a compra si estuviese disponible en los lugares que frecuentas?
+          p.text-yes Ahora que probaste Pilsen de Sur, ¿Qué tan probable es que la vuelvas a compra si estuviese disponible en los lugares que frecuentas?
           select#ccGender.cc-form__input.cc-form__input_select(
             v-model="response",
             required
@@ -26,7 +26,7 @@
               v-for="item in responsePilsen",
               :value="item.name"
             ) {{ item.name }}
-          p.text-yes Que tanto te gustó el sabor de Pilsen de Sur
+          p.text-yes ¿Que tanto te gustó el sabor de Pilsen de Sur?
           select#ccGender.cc-form__input.cc-form__input_select(
             v-model="response2",
             required
@@ -37,7 +37,7 @@
               v-for="item in responsePilsen2",
               :value="item.name"
             ) {{ item.name }}
-          p.text-yes ¿Pensando en la próxima vez que consumas Pilsen de Sur en que ocasión la tomarías?
+          p.text-yes Pensando en la próxima vez que consumas Pilsen de Sur ¿en que ocasión la tomarías?
           select#ccGender.cc-form__input.cc-form__input_select(
             v-model="response3",
             required
@@ -218,12 +218,12 @@ export default {
       responsePilsen: [
         { id: 0, name: "Definitivamente la compraría" },
         { id: 1, name: "Probablemente la compraría" },
-        { id: 2, name: "Puede que si/ Puede que no" },
-        { id: 3, name: "Definitivamente no la compraría" },
+        { id: 2, name: "Puede que sí/ Puede que no" },
+        { id: 3, name: "Probablemente no la compraría" },
         { id: 4, name: "Definitivamente no la compraría" },
       ],
       responsePilsen2: [
-        { id: 0, name: "Me gustó Mucho" },
+        { id: 0, name: "Me gustó mucho" },
         { id: 1, name: "Me gustó" },
         { id: 2, name: "Ni me gustó/ Ni me disgusto" },
         { id: 3, name: "No me gustó mucho" },

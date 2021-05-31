@@ -14,7 +14,7 @@
         .tertiary-step <div>3</div> <p>Gana</p>
       .contain-img
         //- .container-secont
-        .container-tertiary
+        .container-tertiary.players
           img(src="./../assets/img/pilsen/jugadores.png", alt="colo-colo pilsen del sur")
       transition(name='fade')
         .cc-modal-code(v-if='!continuePlay')
@@ -31,36 +31,43 @@
           carousel(:perPage="1", :centerMode="true", :autoplay="true" :autoplayTimeout="15000" :navigationEnabled="true", :paginationEnabled="false" :paginationColor="'#efefef'")
             slide.cc-learn__slider__item.VueCarousel-slide-active
               .cc-learn__slider-content
+                p.cc-learn__slider-txt.tip Tip 1 de 10
                 p.cc-learn__slider-txt Hacer una buena cerveza lleva tiempo,así como a ti te ha llevado tiempo poder reconocer lo verdaderamente importante
             slide.cc-learn__slider__item
               .cc-learn__slider-content
+                p.cc-learn__slider-txt.tip Tip 2 de 10
                 p.cc-learn__slider-txt Mayor tiempo de maduración en su elaboración, el cual le otorga un cuerpo y sabor únicos, <br> superior a otras cervezas del mercado
             slide.cc-learn__slider__item
               .cc-learn__slider-content
+                p.cc-learn__slider-txt.tip Tip 3 de 10
                 p.cc-learn__slider-txt Pilsen del Sur es una cerveza elaborada con 6 lúpulos, los cuales le dan el aroma y amargor justo
             slide.cc-learn__slider__item
               .cc-learn__slider-content
-                p.cc-learn__slider-txt El IBU (Unidad internacional de amargor) de Pilsen del Sur es de 19
-            slide.cc-learn__slider__item
-              .cc-learn__slider-content
+                p.cc-learn__slider-txt.tip Tip 4 de 10
                 p.cc-learn__slider-txt Debido a la malta y su tostado especial, se puede observar su increíble color dorado al servirla.
             slide.cc-learn__slider__item
               .cc-learn__slider-content
+                p.cc-learn__slider-txt.tip Tip 5 de 10
                 p.cc-learn__slider-txt Para aquellos amantes de las cervezas de alta calidad, Pilsen del Sur es una cerveza que fermenta a bajas temperaturas.
             slide.cc-learn__slider__item
               .cc-learn__slider-content
+                p.cc-learn__slider-txt.tip Tip 6 de 10
                 p.cc-learn__slider-txt Pilsen del Sur es ligera y con una rica espuma, esto hace que sea una cerveza tipo lager, hecha a partir de sólo materias primas seleccionadas y 100% malta de cebada
             slide.cc-learn__slider__item
               .cc-learn__slider-content
+                p.cc-learn__slider-txt.tip Tip 7 de 10
                 p.cc-learn__slider-txt  Sabemos que quedar en la historia toma tiempo, al igual que elaborar un Pilsen del Sur.
             slide.cc-learn__slider__item
               .cc-learn__slider-content
+                p.cc-learn__slider-txt.tip Tip 8 de 10
                 p.cc-learn__slider-txt Desde el 2021 nace la unión entre Pilsen del Sur y el Colo Colo, un equipo con tradición y fiel representante del corazón chileno
             slide.cc-learn__slider__item
               .cc-learn__slider-content
+                p.cc-learn__slider-txt.tip Tip 9 de 10
                 p.cc-learn__slider-txt Pilsen del Sur realizó el lanzamiento de una lata edición especial Campeones de América homenajeando a esa generación del 91 que supo darle alegría a un país entero.
             slide.cc-learn__slider__item
               .cc-learn__slider-content
+                p.cc-learn__slider-txt.tip Tip 10 de 10
                 p.cc-learn__slider-txt Pilsen del Sur Edición especial campeones de América siente los colores y a su hinchada así como también homenajea  el cumpleaños N° 30 de la Copa Libertadores.
 
   </div>

@@ -86,7 +86,7 @@
   width: 100%;
 }
 .cc-learn__slider__item{
-  background-color: rgb(100, 100, 100, 0.3) !important;
+  background-color: linear-gradient(300deg, #1F1A1A -2%, rgba(3, 2, 2, 0) 10%) !important;
   background-blend-mode: soft-light;
 }
 .cc-learn__slider__item:nth-child(1) {
@@ -102,34 +102,30 @@
   background-size: 100% 100%;
 }
 .cc-learn__slider__item:nth-child(4) {
-  background: url(../img/pilsen/slide3.png) top no-repeat;
-  background-size: 100% 100%;
-}
-.cc-learn__slider__item:nth-child(5) {
   background: url(../img/pilsen/slide4.png) top no-repeat;
   background-size: 100% 100%;
 }
-.cc-learn__slider__item:nth-child(6) {
+.cc-learn__slider__item:nth-child(5) {
   background: url(../img/pilsen/slide5.png) top no-repeat;
   background-size: 100% 100%;
 }
-.cc-learn__slider__item:nth-child(7) {
+.cc-learn__slider__item:nth-child(6) {
   background: url(../img/pilsen/slide6.png) top no-repeat;
   background-size: 100% 100%;
 }
-.cc-learn__slider__item:nth-child(8) {
+.cc-learn__slider__item:nth-child(7) {
   background: url(../img/pilsen/slide7.png) top no-repeat;
   background-size: 100% 100%;
 }
-.cc-learn__slider__item:nth-child(9) {
+.cc-learn__slider__item:nth-child(8) {
   background: url(../img/pilsen/slide8.png) top no-repeat;
   background-size: 100% 100%;
 }
-.cc-learn__slider__item:nth-child(10) {
+.cc-learn__slider__item:nth-child(9) {
   background: url(../img/pilsen/slide9.png) top no-repeat;
   background-size: 100% 100%;
 }
-.cc-learn__slider__item:nth-child(11) {
+.cc-learn__slider__item:nth-child(10) {
   background: url(../img/pilsen/slide10.png) top no-repeat;
   background-size: 100% 100%;
 }
@@ -147,36 +143,38 @@
     background-size: 100% 100%;
   }
   .cc-learn__slider__item:nth-child(4) {
-    background: url(../img/pilsen/slide4-mobile.png) top no-repeat;
-    background-size: 100% 100%;
-  }
-  .cc-learn__slider__item:nth-child(5) {
     background: url(../img/pilsen/slide5-mobile.png) top no-repeat;
     background-size: 100% 100%;
   }
-  .cc-learn__slider__item:nth-child(6) {
+  .cc-learn__slider__item:nth-child(5) {
     background: url(../img/pilsen/slide6-mobile.png) top no-repeat;
     background-size: 100% 100%;
   }
-  .cc-learn__slider__item:nth-child(7) {
+  .cc-learn__slider__item:nth-child(6) {
     background: url(../img/pilsen/slide7-mobile.png) top no-repeat;
     background-size: 100% 100%;
   }
-  .cc-learn__slider__item:nth-child(8) {
+  .cc-learn__slider__item:nth-child(7) {
     background: url(../img/pilsen/slide8-mobile.png) top no-repeat;
     background-size: 100% 100%;
   }
-  .cc-learn__slider__item:nth-child(9) {
+  .cc-learn__slider__item:nth-child(8) {
     background: url(../img/pilsen/slide9-mobile.png) top no-repeat;
     background-size: 100% 100%;
   }
-  .cc-learn__slider__item:nth-child(10) {
+  .cc-learn__slider__item:nth-child(9) {
     background: url(../img/pilsen/slide10-mobile.png) top no-repeat;
     background-size: 100% 100%;
+    .cc-learn__slider-txt{
+      width: 75%;
+    }
   }
-  .cc-learn__slider__item:nth-child(11) {
+  .cc-learn__slider__item:nth-child(10) {
     background: url(../img/pilsen/slide11-mobile.png) top no-repeat;
     background-size: 100% 100%;
+    .cc-learn__slider-txt{
+      width: 70%;
+    }
   }
 }
 .cc-learn__slider__item {
@@ -233,8 +231,13 @@
     @include font-rem(26px);
   }
 }
-
+.cc-learn__slider-txt.tip{
+  text-shadow: 3px 0 0 #712325, -3px 0 0 #712325, 0 3px 0 #712325, 0 -3px 0 #712325, 3px 3px #712325, -3px -3px 0 #712325, 3px -3px 0 #712325, -3px 3px 0 #712325;
+  margin-bottom: 0;
+  font-weight: 900;
+}
 .cc-learn__slider-txt {
+  margin-top: 20px;
   text-align: right;
   line-height: 40px;
   text-transform: uppercase;
@@ -323,11 +326,16 @@
       padding-right: 15px;
       // padding-bottom: 40px;
       .cc-learn__slider-txt{
-        width: 70%;
+        width: 57%;
         font-size: 15px;
         line-height: 15px;
         font-weight: normal;
         margin: 0 0 0 auto;
+      }
+      .cc-learn__slider-txt.tip{
+        text-shadow: 1.4px 0 0 #712325, -1.4px 0 0 #712325, 0 1.4px 0 #712325, 0 -1.4px 0 #712325, 1.4px 1.4px #712325, -1.4px -1.4px 0 #712325, 1.4px -1.4px 0 #712325, -1.4px 1.4px 0 #712325;
+        margin-bottom: 10px;
+        font-size: 20px;
       }
     }
     .cc-learn__slider__item{
