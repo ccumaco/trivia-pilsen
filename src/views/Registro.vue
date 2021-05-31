@@ -24,7 +24,7 @@
             option(
               v-if="response !== undefined",
               v-for="item in responsePilsen",
-              :value="item.id"
+              :value="item.name"
             ) {{ item.name }}
           p.text-yes Que tanto te gustó el sabor de Pilsen de Sur
           select#ccGender.cc-form__input.cc-form__input_select(
@@ -35,8 +35,8 @@
             option(
               v-if="response2 !== undefined",
               v-for="item in responsePilsen2",
-              :value="item.id"
-            ) {{ item.name }}
+              :value="item.name"
+            ) {{ item.name }} {{response2}}
           p.text-yes ¿Pensando en la próxima vez que consumas Pilsen de Sur en que ocasión la tomarías?
           select#ccGender.cc-form__input.cc-form__input_select(
             v-model="response3",
@@ -50,7 +50,7 @@
             ) {{ item.name }}
       button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(
         type="button",
-        v-if="(probado && response2 >= 0 &&  response3 >= 0 && response >= 0) || noProbado",
+        v-if="(probado && response2.length >= 0 &&  response3.length >= 0 && response.length >= 0) || noProbado",
         @click="goToTrivia()"
       ) Iniciar Trivia
     .cc-registro__grid
