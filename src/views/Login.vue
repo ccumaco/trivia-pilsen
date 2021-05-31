@@ -27,7 +27,7 @@ export default {
       const sha256 = require('js-sha256').sha256
       let emailhash = sha256(this.inputLogin)    
       let info = { login_mail: this.inputLogin }
-      let res = await axios.post('https://live-pilsendelsur.pantheonsite.io/ab/user/prevalidate-register', info)
+      let res = await axios.post('https://dev-pilsendelsur.pantheonsite.io/ab/user/prevalidate-register', info)
       this.respuesta = res.data
       if (this.respuesta.existe) {
         window.dataLayer.push({
@@ -38,7 +38,7 @@ export default {
             'eventValue': '' // Valor o peso (importancia) del evento (String).
           });
         this.$route.params.mail = this.inputLogin
-        this.$router.push({name: 'Trivia', params: {mail: this.inputLogin, attempts: 3}})
+        this.$router.push({name: 'Trivia', params: {mail: this.inputLogin, attempts: 1}})
       } else {
         this.$router.push({name: 'Registro'})
       }
