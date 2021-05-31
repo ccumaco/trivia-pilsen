@@ -34,13 +34,13 @@
                 p.cc-learn__slider-txt Hacer una buena cerveza lleva tiempo,así como a ti te ha llevado tiempo poder reconocer lo verdaderamente importante
             slide.cc-learn__slider__item
               .cc-learn__slider-content
-                p.cc-learn__slider-txt Mayor tiempo de maduración en su elaboración, el cual le otorga un cuerpo y sabor únicos. <br> Superior a otras cervezas del mercado
+                p.cc-learn__slider-txt Mayor tiempo de maduración en su elaboración, el cual le otorga un cuerpo y sabor únicos, <br> superior a otras cervezas del mercado
             slide.cc-learn__slider__item
               .cc-learn__slider-content
                 p.cc-learn__slider-txt Pilsen del Sur es una cerveza elaborada con 6 lúpulos, los cuales le dan el aroma y amargor justo
             slide.cc-learn__slider__item
               .cc-learn__slider-content
-                p.cc-learn__slider-txt El IBU (Unidad internacional de amargor) El IBU de Pilsen del Sur es de 19
+                p.cc-learn__slider-txt El IBU (Unidad internacional de amargor) de Pilsen del Sur es de 19
             slide.cc-learn__slider__item
               .cc-learn__slider-content
                 p.cc-learn__slider-txt Debido a la malta y su tostado especial, se puede observar su increíble color dorado al servirla.
@@ -58,10 +58,10 @@
                 p.cc-learn__slider-txt Desde el 2021 nace la unión entre Pilsen del Sur y el Colo Colo, un equipo con tradición y fiel representante del corazón chileno
             slide.cc-learn__slider__item
               .cc-learn__slider-content
-                p.cc-learn__slider-txt Pilsen del Sur realizó el lanzamientode una lata edición especial Campeones de América homenajeando a esa generación del 91 que supo darle alegría a un país entero.
+                p.cc-learn__slider-txt Pilsen del Sur realizó el lanzamiento de una lata edición especial Campeones de América homenajeando a esa generación del 91 que supo darle alegría a un país entero.
             slide.cc-learn__slider__item
               .cc-learn__slider-content
-                p.cc-learn__slider-txt Si te estás bajando un pack u otro copete, ponte modo orilla de playa, ¡pero pah tomar agua! Si lo haces, es mucho menos probable que despiertes con esa sed maldita.
+                p.cc-learn__slider-txt Pilsen del Sur Edición especial campeones de América siente los colores y a su hinchada así como también homenajea  el cumpleaños N° 30 de la Copa Libertadores.
 
   </div>
 </template>

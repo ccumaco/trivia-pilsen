@@ -10,7 +10,7 @@
         header.cc-message__header
           h2(v-if="!isChecked").cc-title.cc-title_brand ¡TERMINASTE!
           p(v-if="!isChecked").cc-lead LA HICISTE EN:
-          h1(v-if="isChecked").cc-title.cc-title_brand ¡Weeeena!
+          h1(v-if="isChecked").cc-title.cc-title_brand ¡TERMINASTE!
           p(v-if="isChecked").cc-lead La hiciste en:
           span.cc-lead__time {{ finalTime | filterName }}
         p.cc-message__txt(v-if="!isChecked") 

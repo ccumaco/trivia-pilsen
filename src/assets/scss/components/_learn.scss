@@ -85,6 +85,10 @@
   max-width: 100%;
   width: 100%;
 }
+.cc-learn__slider__item{
+  background-color: rgb(100, 100, 100, 0.3) !important;
+  background-blend-mode: soft-light;
+}
 .cc-learn__slider__item:nth-child(1) {
   background: url(../img/pilsen/slide0.png) top no-repeat;
   background-size: 100% 100%;
