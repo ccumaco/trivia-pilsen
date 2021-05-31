@@ -36,7 +36,7 @@
               v-if="response2 !== undefined",
               v-for="item in responsePilsen2",
               :value="item.name"
-            ) {{ item.name }} {{response2}}
+            ) {{ item.name }}
           p.text-yes ¿Pensando en la próxima vez que consumas Pilsen de Sur en que ocasión la tomarías?
           select#ccGender.cc-form__input.cc-form__input_select(
             v-model="response3",
