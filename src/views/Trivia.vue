@@ -1,5 +1,7 @@
 <template lang="pug">
   <div class="cc-trivia cc-page" id="id-trivia">
+    .content-loader(v-if="bigLoader")
+      .preloader
     .layout-general.layout-trivia
       .cc-trivia__inner
         .cc-trivia__timer
@@ -102,7 +104,8 @@ export default {
       isLoader: true,
       isLoaderUni: false,
       isDisabled: true,
-      timeTotal: false
+      timeTotal: false,
+      bigLoader: true,
     }
   },
   created() {
@@ -111,12 +114,15 @@ export default {
   },
   watch: {
     isLoader: function () {
-    },
+      },
     answerAR: function() {
       this.btnDisable()
     },
   },
   mounted(){
+    setTimeout(() => {
+      this.bigLoader = false
+    }, 2000);
   },
   methods:{
     btnDisable() {
