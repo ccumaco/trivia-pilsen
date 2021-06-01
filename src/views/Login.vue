@@ -29,6 +29,7 @@ export default {
       let info = { login_mail: this.inputLogin }
       let res = await axios.post('https://live-pilsendelsur.pantheonsite.io/ab/user/prevalidate-register', info)
       this.respuesta = res.data
+      console.log(this.respuesta)
       if (this.respuesta.existe && this.respuesta.continue) {
         window.dataLayer.push({
             'event': 'trackEvent',
