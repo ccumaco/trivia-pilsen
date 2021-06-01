@@ -32,7 +32,7 @@
           p {{imagen[indexImage].textBottle}}
           p {{imagen[indexImage].textBottle2}}
       .show-here
-        a(href="https://www.casadelacerveza.cl/pack-24-pds-campeones-de-america/p")
+        a(href="https://www.casadelacerveza.cl/pack-24-pds-campeones-de-america/p" target="_blank")
           button.show-btn COMPRAR AQUÍ
   </div>
 </template>

@@ -14,7 +14,7 @@
               span.cc-ranking__points {{ item.time | filterName }}
         p.cc-ranking__txt SI TE DIO SED
         .container-btn
-          a(href="https://www.casadelacerveza.cl/pack-24-pds-campeones-de-america/p")
+          a(href="https://www.casadelacerveza.cl/pack-24-pds-campeones-de-america/p" target="_blank")
             button.shop-here COMPRAR PILSEN AQUÍ
     </div>
 </template>

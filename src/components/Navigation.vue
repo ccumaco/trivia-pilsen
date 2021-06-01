@@ -34,7 +34,8 @@
           .container-text
             p Participa en nuestra TRIVIA,<br> <b> Estudia LOS tips sobre Pilsen del Sur, <br> Regístrate y GANA un MEET & GREET con <br> Ivan Morales y Maxi Falcón </b>
             p.text Lata edición especial - <br> 30 años Campeones de America
-            button(@click="isOpen = !isOpen;  drawer = !drawer") <router-link to="/home"> PARTICIPAR</router-link>
+            router-link(to="/home")
+              button(@click="isOpen = !isOpen;  drawer = !drawer") PARTICIPAR
     .menu-lateral(v-if="isOpen")
       ul
         li.list-mobile(@click="isOpen = !isOpen") <router-link to="/home"> HOME</router-link>
