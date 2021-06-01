@@ -39,10 +39,10 @@ export default {
             'eventValue': '' // Valor o peso (importancia) del evento (String).
           });
         this.$route.params.mail = this.inputLogin
-        this.$router.push({name: 'Trivia', params: {mail: this.inputLogin, attempts: 3}})
+        this.$router.push({name: 'Trivia', params: {mail: this.inputLogin, attempts: 1}})
       }
       if(this.respuesta.existe && !this.respuesta.continue) {
-        windows.alert(this.respuesta.message);
+        alert(this.respuesta.message);
         this.$router.push({name: 'Home'})
       }
       if(!this.respuesta.existe){
