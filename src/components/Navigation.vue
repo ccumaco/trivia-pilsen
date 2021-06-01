@@ -53,10 +53,10 @@
       .container-footer
         ul
           li.footer-mobile-rs Follow us
-          li.footer-mobile-rs(@click="isOpen = !isOpen") <a href="#"><i class="fab fa-instagram"></i></a>
-          li.footer-mobile-rs(@click="isOpen = !isOpen") <a href="#"><i class="fab fa-twitter"></i></a>
-          li.footer-mobile-rs(@click="isOpen = !isOpen") <a href="#"><i class="fab fa-facebook-f"></i></a>
-          li.footer-mobile-rs(@click="isOpen = !isOpen") <a href="#"><i class="fab fa-youtube"></i></a>
+          li.footer-mobile-rs(@click="isOpen = !isOpen") <a href="https://www.instagram.com/pilsendelsur/"><i class="fab fa-instagram"></i></a>
+          li.footer-mobile-rs(@click="isOpen = !isOpen") <a href="https://www.facebook.com/Pilsendelsur"><i class="fab fa-twitter"></i></a>
+          li.footer-mobile-rs(@click="isOpen = !isOpen") <a href="https://mobile.twitter.com/pilsendelsurcl?lang=en"><i class="fab fa-facebook-f"></i></a>
+          li.footer-mobile-rs(@click="isOpen = !isOpen") <a href="https://www.youtube.com/channel/UC61vjd4wvg0BUr77G7ygo5Q"><i class="fab fa-youtube"></i></a>
       
 </template>
 
