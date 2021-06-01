@@ -405,6 +405,11 @@
   }
 }
 @media screen and (max-height: 650px) {
+  .menu-lateral ul.new-list li.lista-none{
+    margin: 5px 0;
+    font-size: 15px;
+  }
+
   .menu-lateral .container-footer{
     padding: 20px 0;
   }
