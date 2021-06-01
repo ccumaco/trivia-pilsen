@@ -29,7 +29,7 @@ export default {
       let info = { login_mail: this.inputLogin }
       let res = await axios.post('https://live-pilsendelsur.pantheonsite.io/ab/user/prevalidate-register', info)
       this.respuesta = res.data
-      if (this.respuesta.existe) {
+      if (this.respuesta.existe && this.respuesta.continue) {
         window.dataLayer.push({
             'event': 'trackEvent',
             'eventCategory': 'Pilsen del Sur', // Categoría del evento (String). Requerido.
@@ -39,7 +39,12 @@ export default {
           });
         this.$route.params.mail = this.inputLogin
         this.$router.push({name: 'Trivia', params: {mail: this.inputLogin, attempts: 3}})
-      } else {
+      }
+      if(this.respuesta.existe && !this.respuesta.continue) {
+        windows.alert(this.respuesta.message);
+        this.$router.push({name: 'Home'})
+      }
+      if(!this.respuesta.existe){
         this.$router.push({name: 'Registro'})
       }
     }
