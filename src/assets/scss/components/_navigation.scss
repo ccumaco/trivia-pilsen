@@ -130,7 +130,7 @@
     display: flex;
     padding: 30px 0;
     ul:first-child li{
-      padding-left: 50px;
+      margin-left: 50px;
     }
     ul {
       flex-basis: 25%;
@@ -153,6 +153,9 @@
           text-decoration: none;
           color: #fff;
         }
+      }
+      li:hover{
+        border-bottom: 1px solid #fff;
       }
     }
     .container-card{
