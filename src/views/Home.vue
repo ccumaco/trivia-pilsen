@@ -22,13 +22,10 @@
             p.cc-modal-code__title Ya ganaste no puedes seguir participando.
     section.cc-home__learn#tips-consumo-responsable
       .inner
-        //- header.cc-home__learn-header
-        //-   h3.cc-title-section Qué es el consumo responsable
-        //-   p.cc-text Una serie de acciones que hacen los humanes adultos para cuidar su cuerpa
-        //-   p.cc-text.cc-text_bold <strong>Conoce todos los tips de consumo responsable que tenemos para ti y participa en nuestra TRIVIA BECKER. Si no ganaste un día, puedes seguir participando. ¡Así que no bajes las patas! </strong>
-        //-   h3.cc-title-section.cc-title-section_final Tips de consumo responsable
         .cc-learn__slider
-          carousel(:perPage="1", :centerMode="true", :autoplay="true" :autoplayTimeout="15000" :navigationEnabled="true", :paginationEnabled="false" :paginationColor="'#efefef'")
+          .barr-progress
+            .show-barr
+          carousel(:perPage="1", :centerMode="true", :autoplay="true" :autoplayTimeout="15000" :navigationEnabled="true", :paginationEnabled="false" :paginationColor="'#efefef'"  id="elcarrusel" v-model="perPage")
             slide.cc-learn__slider__item.VueCarousel-slide-active
               .cc-learn__slider-content
                 p.cc-learn__slider-txt.tip Tip 1 de 10
@@ -91,6 +88,7 @@ export default {
   },
   data () {
     return {
+      perPage: 1,
       isLogged: false,
       output: '',
       modalIsOpen: false,
@@ -101,16 +99,25 @@ export default {
     }
   },
   watch: {
+    perPage: function(){
+      document.getElementsByClassName('show-barr')[0].setAttribute('style', 'left:' + (this.perPage * 10) + '%')
+    },
     isLoader: function () {
     },
     inputUser: function() {
       this.btnDisable()
     },
   },
+  mounted(){
+    this.changeBar()
+  },
   created () {
     document.querySelector("body").classList.remove("cc-body-agegate");
   },
   methods: {
+    changeBar(){
+      let elemento = document.getElementById("elcarrusel").addEventListener('page-change',console.log('evento escuchado',elemento))
+    },
     btnDisable() {
       if((!this.inputUser == '')) {
         this.isDisabled = false
