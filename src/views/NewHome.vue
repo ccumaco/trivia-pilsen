@@ -5,6 +5,7 @@
       h1(style="display:none") Cerveza pilsen del sur
     .cc-home__hero#como-participar
       .container-first.participa2
+        h2.title-card.concurso ¡CONCURSO!
         h2.title-card Participa en nuestra Trivia y gana un <b>MEET & GREET </b> con Ivan Morales y Maxi Falcón
         p.text-card Lata edición especial - <br>30 años Campeones de America
         router-link(to="/home").register-here.participa PARTICIPA AQUÍ
@@ -12,7 +13,7 @@
       .contain-img
         //- .container-secont
         .container-tertiary
-          img(src="./../assets/img/pilsen/jugadores.png", alt="colo-colo pilsen del sur")
+          img(src="./../assets/img/pilsen/jugadores.jpg", alt="colo-colo pilsen del sur")
       transition(name='fade')
         .cc-modal-code(v-if='!continuePlay')
           .cc-modal-code__card

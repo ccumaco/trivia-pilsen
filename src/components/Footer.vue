@@ -24,7 +24,7 @@
           li.cc-footer__nav-item
             p.cc-footer__nav-txt <b> ¡SIGUENOS! </b>
           li.cc-footer__nav-item
-            router-link(to="/bases").cc-footer__nav-link Bases del Pilsen del sur
+            router-link(to="/bases").cc-footer__nav-link Bases Pilsen del sur
           li.cc-footer__nav-item
             a.cc-footer__nav-link(href="https://www.abinbev.cl/terminos-y-condiciones" target="_blank") Términos y condiciones generales
     .cc-footer__social

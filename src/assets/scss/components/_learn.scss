@@ -89,89 +89,65 @@
 .cc-learn__slider__item{
   background-color: linear-gradient(300deg, #1F1A1A -2%, rgba(3, 2, 2, 0) 10%) !important;
   background-blend-mode: soft-light;
+  background-size: 100% 100% !important;
 }
 .cc-learn__slider__item:nth-child(1) {
   background: url(../img/pilsen/slide0.png) top no-repeat;
-  background-size: 100% 100%;
 }
 .cc-learn__slider__item:nth-child(2) {
   background: url(../img/pilsen/slide1.png) top no-repeat;
-  background-size: 100% 100%;
 }
 .cc-learn__slider__item:nth-child(3) {
   background: url(../img/pilsen/slide2.png) top no-repeat;
-  background-size: 100% 100%;
 }
 .cc-learn__slider__item:nth-child(4) {
-  background: url(../img/pilsen/slide4.png) top no-repeat;
-  background-size: 100% 100%;
+  background: url(../img/pilsen/slide4.jpg) top no-repeat;
 }
 .cc-learn__slider__item:nth-child(5) {
   background: url(../img/pilsen/slide5.png) top no-repeat;
-  background-size: 100% 100%;
 }
 .cc-learn__slider__item:nth-child(6) {
   background: url(../img/pilsen/slide6.png) top no-repeat;
-  background-size: 100% 100%;
 }
 .cc-learn__slider__item:nth-child(7) {
-  background: url(../img/pilsen/slide7.png) top no-repeat;
-  background-size: 100% 100%;
+  background: url(../img/pilsen/slide8.png) top no-repeat;
 }
 .cc-learn__slider__item:nth-child(8) {
-  background: url(../img/pilsen/slide8.png) top no-repeat;
-  background-size: 100% 100%;
+  background: url(../img/pilsen/slide9.jpg) top no-repeat;
 }
 .cc-learn__slider__item:nth-child(9) {
-  background: url(../img/pilsen/slide9.png) top no-repeat;
-  background-size: 100% 100%;
-}
-.cc-learn__slider__item:nth-child(10) {
-  background: url(../img/pilsen/slide10.png) top no-repeat;
-  background-size: 100% 100%;
+  background: url(../img/pilsen/slide10.jpg) top no-repeat;
 }
 @media screen and (max-width: 970px) {
   .cc-learn__slider__item:nth-child(1) {
     background: url(../img/pilsen/slide1-mobile.png) top no-repeat;
-    background-size: 100% 100%;
   }
   .cc-learn__slider__item:nth-child(2) {
     background: url(../img/pilsen/slide2-mobile.png) top no-repeat;
-    background-size: 100% 100%;
   }
   .cc-learn__slider__item:nth-child(3) {
-    background: url(../img/pilsen/slide3-mobile.png) top no-repeat;
-    background-size: 100% 100%;
+    background: url(../img/pilsen/slide3-mobile.jpg) top no-repeat;
   }
   .cc-learn__slider__item:nth-child(4) {
     background: url(../img/pilsen/slide5-mobile.png) top no-repeat;
-    background-size: 100% 100%;
   }
   .cc-learn__slider__item:nth-child(5) {
     background: url(../img/pilsen/slide6-mobile.png) top no-repeat;
-    background-size: 100% 100%;
   }
   .cc-learn__slider__item:nth-child(6) {
     background: url(../img/pilsen/slide7-mobile.png) top no-repeat;
-    background-size: 100% 100%;
   }
   .cc-learn__slider__item:nth-child(7) {
-    background: url(../img/pilsen/slide8-mobile.png) top no-repeat;
-    background-size: 100% 100%;
+    background: url(../img/pilsen/slide9-mobile.png) top no-repeat;
   }
   .cc-learn__slider__item:nth-child(8) {
-    background: url(../img/pilsen/slide9-mobile.png) top no-repeat;
-    background-size: 100% 100%;
-  }
-  .cc-learn__slider__item:nth-child(9) {
-    background: url(../img/pilsen/slide10-mobile.png) top no-repeat;
-    background-size: 100% 100%;
+    background: url(../img/pilsen/slide10-mobile.jpg) top no-repeat;
     .cc-learn__slider-txt{
       width: 75%;
     }
   }
-  .cc-learn__slider__item:nth-child(10) {
-    background: url(../img/pilsen/slide11-mobile.png) top no-repeat;
+  .cc-learn__slider__item:nth-child(9) {
+    background: url(../img/pilsen/slide11-mobile.jpg) top no-repeat;
     background-size: 100% 100%;
     .cc-learn__slider-txt{
       width: 73%;

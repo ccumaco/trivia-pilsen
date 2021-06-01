@@ -15,6 +15,12 @@
       align-items: center;
       text-align: left;
       padding: 60px 60px 20px;
+      .title-card.concurso{
+        width: 100%;
+        font-size: 50px;
+        margin-bottom: 2rem;
+        color: #712325;
+      }
       .title-card{
         color: #484647;
         font-family: 'DIN Next LT Pro';
@@ -344,7 +350,7 @@
     .cc-home__hero{
       flex-direction: column;
       .container-first{
-        padding: 20px 40px;
+        padding:40px 40px;
         flex-basis: 60%;
         justify-content: flex-start;
       }
