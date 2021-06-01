@@ -158,19 +158,24 @@
     .container-card{
       flex-basis: 50%;
       display: flex;
+      img{
+        object-fit: contain;
+      }
       p.text{
         font-family: 'Roboto' !important;
         font-style: normal;
         font-weight: 200;
         font-size: 13px;
-        margin-bottom: 22px;
+        // margin-bottom: 22px;
       }
       p{
+        margin: 10px 0;
         font-family: 'DIN Next LT Pro';
         font-style: normal;
-        font-weight: bold;
+        font-weight: normal;
         font-size: 16px;
         color: #fff;
+        text-transform: uppercase;
       }
       button{
         width: 50%;
@@ -189,6 +194,8 @@
         }
       }
       .container-text{
+        display: flex;
+        flex-direction: column;
         padding-right: 50px;
         padding-left: 20px ;
       }
@@ -213,6 +220,7 @@
       display: flex;
 
       img {
+        width: 45%;
         object-fit: contain;
       }
 
@@ -236,7 +244,7 @@
           font-style: normal;
           color: #fff;
           font-weight: bold;
-          font-size: 15px !important;
+          font-size: 12px !important;
         }
 
         button {

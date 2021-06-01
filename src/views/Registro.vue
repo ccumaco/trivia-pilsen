@@ -15,7 +15,7 @@
         .container-test-yes(
           v-if="probado && (!noProbado || noProbado == null)"
         )
-          p.text-yes Ahora que probaste Pilsen de Sur, ¿qué tan probable es que la vuelvas a compra si estuviese disponible en los lugares que frecuentas?
+          p.text-yes Ahora que probaste Pilsen de Sur, ¿Qué tan probable es que la vuelvas a compra si estuviese disponible en los lugares que frecuentas?
           select#ccGender.cc-form__input.cc-form__input_select(
             v-model="response",
             required
@@ -24,9 +24,9 @@
             option(
               v-if="response !== undefined",
               v-for="item in responsePilsen",
-              :value="item.id"
+              :value="item.name"
             ) {{ item.name }}
-          p.text-yes Que tanto te gustó el sabor de Pilsen de Sur
+          p.text-yes ¿Que tanto te gustó el sabor de Pilsen de Sur?
           select#ccGender.cc-form__input.cc-form__input_select(
             v-model="response2",
             required
@@ -35,9 +35,9 @@
             option(
               v-if="response2 !== undefined",
               v-for="item in responsePilsen2",
-              :value="item.id"
+              :value="item.name"
             ) {{ item.name }}
-          p.text-yes ¿Pensando en la próxima vez que consumas Pilsen de Sur en que ocasión la tomarías?
+          p.text-yes Pensando en la próxima vez que consumas Pilsen de Sur ¿en que ocasión la tomarías?
           select#ccGender.cc-form__input.cc-form__input_select(
             v-model="response3",
             required
@@ -46,11 +46,11 @@
             option(
               v-if="response3 !== undefined",
               v-for="item in responsePilsen3",
-              :value="item.id"
-            ) {{ item.name }} {{probado}}{{response2}} {{response2}} {{response}}
+              :value="item.name"
+            ) {{ item.name }}
       button.cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(
         type="button",
-        v-if="(probado && response2 >= 0 &&  response3 >= 0 && response >= 0) || noProbado",
+        v-if="(probado && response2.length > 0 &&  response3.length > 0 && response.length > 0) || noProbado",
         @click="goToTrivia()"
       ) Iniciar Trivia
     .cc-registro__grid
@@ -218,12 +218,12 @@ export default {
       responsePilsen: [
         { id: 0, name: "Definitivamente la compraría" },
         { id: 1, name: "Probablemente la compraría" },
-        { id: 2, name: "Puede que si/ Puede que no" },
-        { id: 3, name: "Definitivamente no la compraría" },
+        { id: 2, name: "Puede que sí/ Puede que no" },
+        { id: 3, name: "Probablemente no la compraría" },
         { id: 4, name: "Definitivamente no la compraría" },
       ],
       responsePilsen2: [
-        { id: 0, name: "Me gistó Mucho" },
+        { id: 0, name: "Me gustó mucho" },
         { id: 1, name: "Me gustó" },
         { id: 2, name: "Ni me gustó/ Ni me disgusto" },
         { id: 3, name: "No me gustó mucho" },
@@ -231,7 +231,7 @@ export default {
       ],
       responsePilsen3: [
         { id: 0, name: "Viendo deporte con amigos" },
-        { id: 1, name: "Compartiendo con amigos en casa o fuerda de casa" },
+        { id: 1, name: "Compartiendo con amigos en casa o fuera de casa" },
         { id: 2, name: "En casa en un momento de Relax" },
         { id: 3, name: "En una comida solo o acompañado" },
       ],
@@ -274,7 +274,7 @@ export default {
   created() {
     var vm = this;
     axios
-      .get("https://live-pilsendelsur.pantheonsite.io/ab/gender")
+      .get("https://dev-pilsendelsur.pantheonsite.io/ab/gender")
       .then((response) => {
         vm.genders = response.data;
       });
@@ -286,16 +286,54 @@ export default {
     this.fechaActualYear = f.getFullYear();
   },
   methods: {
+    removeAccents (str) {
+      return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    },
     redirect() {
       if (this.notErrors) {
         this.$router.push({ name: "Trivia" });
       }
     },
-    goToTrivia() {
-      this.$router.push({
-        name: "Trivia",
-        params: { mail: this.ccemail, attempts: 3 },
-      });
+    async goToTrivia() {
+      const axios = require('axios')
+      if(this.probado){
+        let infoQuestions = { 
+        email: this.ccemail,
+        customer_interest: {
+          probo: 'Yes',
+          question1: this.removeAccents(this.response),
+          question2: this.removeAccents(this.response2),
+          question3: this.removeAccents(this.response3),
+        }
+       }
+       let res = await axios.post('https://dev-pilsendelsur.pantheonsite.io/ab/user/register/interests', infoQuestions)
+       let response = res.data
+       if(!response.has_error){
+         this.$router.push({
+           name: "Trivia",
+           params: { mail: this.ccemail, attempts: 1 },
+         });
+       }
+      }
+      if(this.noProbado){
+        let infoQuestions = { 
+        email: this.ccemail,
+        customer_interest: {
+          probo: 'No',
+          question1: '',
+          question2: '',
+          question3: '',
+        }
+       }
+       let res = await axios.post('https://dev-pilsendelsur.pantheonsite.io/ab/user/register/interests', infoQuestions)
+       let response = res.data
+       if(!response.has_error){
+         this.$router.push({
+           name: "Trivia",
+           params: { mail: this.ccemail, attempts: 1 },
+          });
+        }
+      }
     },
     validarForm() {
       console.log("enbtroooo");
@@ -311,7 +349,7 @@ export default {
     async createUser() {
       const axios = require('axios') 
       let info = { login_mail: this.ccemail }
-      let res = await axios.post('https://live-pilsendelsur.pantheonsite.io/ab/user/prevalidate-register', info)
+      let res = await axios.post('https://dev-pilsendelsur.pantheonsite.io/ab/user/prevalidate-register', info)
       this.respuesta = res.data
       if (!this.respuesta.existe) {
       this.validarForm()
@@ -345,7 +383,7 @@ export default {
           axios({
             method: "post",
             url:
-              "https://live-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
+              "https://dev-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
             data: info,
             headers: {
               "Content-Type": "application/json",
@@ -409,7 +447,7 @@ export default {
           axios({
             method: "post",
             url:
-              "https://live-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
+              "https://dev-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
             data: info,
             headers: {
               "Content-Type": "application/json",
@@ -473,7 +511,7 @@ export default {
           axios({
             method: "post",
             url:
-              "https://live-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
+              "https://dev-pilsendelsur.pantheonsite.io/ab/user/register?_format=json",
             data: info,
             headers: {
               "Content-Type": "application/json",

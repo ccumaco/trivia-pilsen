@@ -6,7 +6,7 @@
           header.cc-ranking__header.cc-header
             h1.cc-title RANKING TRIVIA PILSEN DEL SUR
             p.cc-ranking__header-txt Logra quedarte en la cima...  <br> ¡Los 15 mejores serán los ganadores! 
-              small.cc-ranking__header-txt_small Posiciones del día
+              //- small.cc-ranking__header-txt_small Posiciones del día
             //- router-link(:to="'/'").cc-btn.cc-promo__btn Batir mi record
           ul.cc-ranking__list
             li.cc-ranking__item(v-for="item in rankingList")
@@ -61,7 +61,7 @@ export default {
       let self = this
       axios({
         method: "get",
-        url: "https://live-pilsendelsur.pantheonsite.io/ab/trivia/ranking?_format=json",
+        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/ranking?_format=json",
         headers: { "Content-Type": "application/json" }
       })
       .then((response) => {

@@ -165,6 +165,27 @@
     }
   }
 }
+.barr-progress{
+  width: 50%;
+  margin: 0 330px;
+  border: 1px solid grey;
+  height: 12px;
+  position: absolute;
+  bottom:  50px;
+  background-color: #fff;
+  z-index: 100;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 90px;
+  left: 0;
+  .show-barr{
+    left: 0;
+    position: relative;
+    border-radius: 30px;
+    height: 10px;
+    width: 10%;
+    background-color: #E1D078;
+  }
+}
 
 .cc-home__header {
   width: 100%;
@@ -314,6 +335,15 @@
   }
 }
 @media screen and (max-width:970px) {
+  .barr-progress{
+    width: 90%;
+    margin: 0 5%;
+    bottom: 10px;
+    height: 10px;
+    .show-barr{
+      height: 8px;
+    }
+  }
   .cc-age-gate__grid-wrapper{
     overflow-x: scroll;
   }
@@ -332,8 +362,8 @@
     // .container-secont{
     //   flex-basis: 40% !important;
     // }
-    .container-tertiary{
-      flex-basis: 100% !important;
+    .container-tertiary.players{
+      display: none;
     }
   }
 }

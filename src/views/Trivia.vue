@@ -1,5 +1,7 @@
 <template lang="pug">
   <div class="cc-trivia cc-page" id="id-trivia">
+    .content-loader(v-if="bigLoader")
+      .preloader
     .layout-general.layout-trivia
       .cc-trivia__inner
         .cc-trivia__timer
@@ -102,7 +104,8 @@ export default {
       isLoader: true,
       isLoaderUni: false,
       isDisabled: true,
-      timeTotal: false
+      timeTotal: false,
+      bigLoader: true,
     }
   },
   created() {
@@ -111,12 +114,15 @@ export default {
   },
   watch: {
     isLoader: function () {
-    },
+      },
     answerAR: function() {
       this.btnDisable()
     },
   },
   mounted(){
+    setTimeout(() => {
+      this.bigLoader = false
+    }, 2000);
   },
   methods:{
     btnDisable() {
@@ -133,7 +139,7 @@ export default {
       });
       axios({
         method: "post",
-        url: "https://live-pilsendelsur.pantheonsite.io/ab/trivia/start?_format=json",
+        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/start?_format=json",
         data: info,
         headers: {
           "Content-Type": "application/json",
@@ -157,7 +163,7 @@ export default {
       }); 
       axios({
         method: "post",
-        url: "https://live-pilsendelsur.pantheonsite.io/ab/trivia/q/next?_format=json",
+        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/q/next?_format=json",
         data: inf2,
         headers: {
           "Content-Type": "application/json",
@@ -193,7 +199,7 @@ export default {
       });
       axios({
         method: "post",
-        url: "https://live-pilsendelsur.pantheonsite.io/ab/trivia/q/answer?_format=json",
+        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/q/answer?_format=json",
         data: inf3,
         headers: {
           "Content-Type": "application/json",

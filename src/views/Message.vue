@@ -10,7 +10,7 @@
         header.cc-message__header
           h2(v-if="!isChecked").cc-title.cc-title_brand ¡TERMINASTE!
           p(v-if="!isChecked").cc-lead LA HICISTE EN:
-          h1(v-if="isChecked").cc-title.cc-title_brand ¡Weeeena!
+          h1(v-if="isChecked").cc-title.cc-title_brand ¡TERMINASTE!
           p(v-if="isChecked").cc-lead La hiciste en:
           span.cc-lead__time {{ finalTime | filterName }}
         p.cc-message__txt(v-if="!isChecked") 
@@ -19,7 +19,7 @@
           //- br
           vue-recaptcha(v-if="!isChecked" sitekey="6LcOTvkaAAAAACd8pcY6SFeBSDxVi8jnU7R2sOUu", loadRecaptchaScript=true @verify="onCaptchaVerified" @expired="onCaptchaExpired") 
           //- (v-if="isChecked")
-        p.cc-message__txt El ganador se define todos los días a las 20:00 hrs.
+        p.cc-message__txt Checkea tu ranking diariamente. Los primeros 15 lugares al terminar la campaña serán los ganadores
         .cc-message__grid-btn
           //- router-link(:to="'/#'").cc-btn.cc-message__btn Vuelve a participar
           button(v-if="!isChecked").cc-form__btn.cc-btn.cc-btn_secondary.i-arrow-after(type="button" @click="checkTrivia()" :class="{ 'cc-btn_disabled': isDisabled}" :disabled="isDisabled") VER RANKING
@@ -91,7 +91,7 @@ export default {
       };
       axios({
         method: "post",
-        url: "https://live-pilsendelsur.pantheonsite.io/ab/trivia/time?_format=json",
+        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/time?_format=json",
         data: info,
         headers: {
           "Content-Type": "application/json"
@@ -113,7 +113,7 @@ export default {
       let self = this
       axios({
         method: "get",
-        url: "https://live-pilsendelsur.pantheonsite.io/ab/trivia/ranking?_format=json",
+        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/ranking?_format=json",
         headers: { "Content-Type": "application/json" }
       })
       .then((response) => {
@@ -137,7 +137,7 @@ export default {
       });
       axios({
         method: "post",
-        url: "https://live-pilsendelsur.pantheonsite.io/ab/challenge/checkrobot?_format=json",
+        url: "https://dev-pilsendelsur.pantheonsite.io/ab/challenge/checkrobot?_format=json",
         data: info,
         headers: { "Content-Type": "application/json" }
       })
@@ -178,7 +178,7 @@ export default {
       };
       axios({
         method: "post",
-        url: "https://live-pilsendelsur.pantheonsite.io/ab/trivia/ranking/customer?_format=json",
+        url: "https://dev-pilsendelsur.pantheonsite.io/ab/trivia/ranking/customer?_format=json",
         data: info,
         headers: {
           "Content-Type": "application/json"
