@@ -404,3 +404,20 @@
     }
   }
 }
+@media screen and (max-height: 650px) {
+  .menu-lateral .container-footer{
+    padding: 20px 0;
+  }
+  .menu-lateral ul li.list-mobile{
+    padding: 5px 20px 5px 30px;
+    font-size: 22px;
+    &::after{
+      height: 20px !important;
+      width: 20px !important;
+    }
+  }
+  .menu-lateral ul li.list-mobile:nth-child(3)::after{
+    font-size: 40px;
+    margin-top: -10px;
+  }
+}
