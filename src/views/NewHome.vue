@@ -32,7 +32,7 @@
           p {{imagen[indexImage].textBottle}}
           p {{imagen[indexImage].textBottle2}}
       .show-here
-        a(href="https://www.casadelacerveza.cl/Pilsen%20del%20sur")
+        a(href="https://www.casadelacerveza.cl/pack-24-pds-campeones-de-america/p")
           button.show-btn COMPRAR AQUÍ
   </div>
 </template>
