@@ -27,9 +27,10 @@ export default {
       const sha256 = require('js-sha256').sha256
       let emailhash = sha256(this.inputLogin)    
       let info = { login_mail: this.inputLogin }
-      let res = await axios.post('https://dev-pilsendelsur.pantheonsite.io/ab/user/prevalidate-register', info)
+      let res = await axios.post('https://live-pilsendelsur.pantheonsite.io/ab/user/prevalidate-register', info)
       this.respuesta = res.data
-      if (this.respuesta.existe) {
+      console.log(this.respuesta)
+      if (this.respuesta.existe && this.respuesta.continue) {
         window.dataLayer.push({
             'event': 'trackEvent',
             'eventCategory': 'Pilsen del Sur', // Categoría del evento (String). Requerido.
@@ -39,7 +40,12 @@ export default {
           });
         this.$route.params.mail = this.inputLogin
         this.$router.push({name: 'Trivia', params: {mail: this.inputLogin, attempts: 1}})
-      } else {
+      }
+      if(this.respuesta.existe && !this.respuesta.continue) {
+        alert(this.respuesta.message);
+        this.$router.push({name: 'Home'})
+      }
+      if(!this.respuesta.existe){
         this.$router.push({name: 'Registro'})
       }
     }
