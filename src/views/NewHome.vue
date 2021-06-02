@@ -110,8 +110,8 @@ export default {
     document.querySelector("body").classList.remove("cc-body-agegate");
   },
   mounted(){
+    window.scroll(0,0)
     let elemento = document.getElementsByClassName('lista-bold')[0]
-    console.log(elemento);
     elemento.setAttribute('style', 'font-weight: bold;');
   },
   methods: {

@@ -11,7 +11,7 @@
           .border-contain
             label.cc-age-gate__label(for="ageGateYear")
             input#ageGateYear.cc-age-gate__input(
-              type="text",
+              type="number",
               data-qadp="age_gate_year",
               maxlength="1",
               min="1",
@@ -20,7 +20,7 @@
               v-model="inputYear1"
             )
             input#ageGateYear.cc-age-gate__input(
-              type="text",
+              type="number",
               data-qadp="age_gate_year",
               maxlength="1",
               min="0",
@@ -29,7 +29,7 @@
               v-model="inputYear2"
             )
             input#ageGateYear.cc-age-gate__input(
-              type="text",
+              type="number",
               data-qadp="age_gate_year",
               maxlength="1",
               min="0",
@@ -38,7 +38,7 @@
               v-model="inputYear3"
             )
             input#ageGateYear.cc-age-gate__input(
-              type="text",
+              type="number",
               data-qadp="age_gate_year",
               maxlength="1",
               min="0",
@@ -49,7 +49,7 @@
         .cc-age-gate__control.cc-age-gate__control_month
           label.cc-age-gate__label(for="ageGateMonth")
           input#ageGateMonth.cc-age-gate__input(
-            type="text",
+            type="number",
             data-qadp="age_gate_month",
             maxlength="1",
             min="0",
@@ -58,7 +58,7 @@
             v-model="inputMonth1"
           )
           input#ageGateMonth.cc-age-gate__input(
-            type="text",
+            type="number",
             data-qadp="age_gate_month",
             maxlength="1",
             min="0",
@@ -69,7 +69,7 @@
         .cc-age-gate__control.cc-age-gate__control_day
           label.cc-age-gate__label(for="ageGateDay")
           input#ageGateDay.cc-age-gate__input(
-            type="text",
+            type="number",
             data-qadp="age_gate_day",
             maxlength="1",
             min="0",
@@ -78,7 +78,7 @@
             v-model="inputDay"
           )
           input#ageGateDay.cc-age-gate__input(
-            type="text",
+            type="number",
             data-qadp="age_gate_day",
             maxlength="1",
             min="0",
@@ -206,7 +206,6 @@ export default {
     validarMes() {
       let mes = this.inputMonth1.toString() + this.inputMonth2.toString();
       let parceadorMes = parseInt(mes);
-      console.log("entro al if");
       if(parceadorMes < this.fechaActualMonth){
         this.persist();
       }
@@ -224,8 +223,6 @@ export default {
         this.inputYear3.toString() +
         this.inputYear4.toString();
       let parceado = parseInt(edadAño);
-      console.log(parceado, "parceadp");
-      console.log(2003);
       if (parceado <= 2002) {
         console.log("valido que es mayor");
         this.persist();
@@ -245,7 +242,6 @@ export default {
         sessionStorage.toNameDestino == null
       ) {
         destino = "Home";
-        console.log("entre a persist");
       } else {
         destino = sessionStorage.toNameDestino;
       }
@@ -276,6 +272,7 @@ export default {
           });
         }
       }
+      window.scroll(0,0)
     },
     setPrice() {
       if (!localStorage.age) {
