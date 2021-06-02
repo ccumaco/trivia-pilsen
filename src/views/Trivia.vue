@@ -185,7 +185,6 @@ export default {
         let elemento = document.getElementById('id-trivia')
         this.numberImg ++
         elemento.setAttribute('style', `padding-top: 70px; background-image: url(${this.imagen[this.numberImg].src2});`)
-        console.log(elemento, 'elemento');
       }, (error) => {
         console.log(error);
       });
