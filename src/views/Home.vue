@@ -27,6 +27,7 @@
             .show-barr
           carousel(:perPage="1", :centerMode="true", :autoplay="true" :autoplayTimeout="15000" :navigationEnabled="true", :paginationEnabled="false" :paginationColor="'#efefef'"  id="elcarrusel" v-model="perPage")
             slide.cc-learn__slider__item.VueCarousel-slide-active
+              .show-information DESLIZA A LA DERECHA Y CONOCE LOS TIPS <img src="./../assets/img/pilsen/flechabanner.svg" alt="flecha banner">
               .cc-learn__slider-content
                 p.cc-learn__slider-txt.tip Tip 1 de 9
                 p.cc-learn__slider-txt Hacer una buena cerveza lleva tiempo, así como a ti te ha llevado tiempo poder reconocer lo verdaderamente importante

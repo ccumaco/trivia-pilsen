@@ -200,7 +200,27 @@
     @include justify-content(flex-end);
   }
 }
-
+.show-information{
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  font-family: 'DIN Next LT Pro';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  img{
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+}
+@media screen and (max-width: 970px) {
+  .show-information{
+    top: 20px;
+    left: 20px;
+    font-size: 10px;
+  }
+}
 .cc-learn__slider-content {
   padding: 0 50px;
   margin-right: 100px;
