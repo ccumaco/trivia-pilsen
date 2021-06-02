@@ -76,7 +76,7 @@ export default {
           src2: require('./../assets/img/pilsen/112A7481.png'),
         },
         {
-          src: require('./../assets/img/pilsen/ask7-bg.png'),
+          src: require('./../assets/img/pilsen/slide4-mobile.png'),
           src2: require('./../assets/img/pilsen/112A7413.png'),
         },
       ],
