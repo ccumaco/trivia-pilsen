@@ -29,7 +29,7 @@
           .bottle
             img(:src="imagen[indexImage].src", :alt="imagen[indexImage].altImagen")
         .text-bottle
-          h2 {{imagen[indexImage].titleBottle}} <br> {{imagen[indexImage].tamaño}}
+          h2 {{imagen[indexImage].titleBottle}} <br> <span>{{imagen[indexImage].tamaño}}</span>
           p {{imagen[indexImage].textBottle}}
           p {{imagen[indexImage].textBottle2}}
       .show-here

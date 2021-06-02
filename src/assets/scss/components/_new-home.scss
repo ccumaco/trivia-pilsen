@@ -140,9 +140,12 @@
           font-family: 'DIN Next LT Pro';
           font-style: normal;
           font-weight: bold;
-          font-size: 34.3957px;
+          font-size: 34px;
           line-height: 32px;
           color: #fff;
+          span{
+            font-size: 29px;
+          }
         }
         p{
           color: #fff;
